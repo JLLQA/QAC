@@ -9,52 +9,57 @@ const OpeningTimes = () => {
         <div>
             <Navbar />
 
-<container align='center'>
-            <h1>OPENING TIMES</h1>
-            <Table borderless dark>
+<container align='center' >
+    <br/>
+            <h1  style={{ color: 'White' }}>OPENING TIMES</h1>
+            <br/>
+            <Table size="sm" borderless  style={{ color: 'White' }}>
       <thead>
-        <tr>
+        <tr >
          
-          <th>Day</th>
-          <th>Time</th>
+          <th >DAY</th>
+          <th>TIME</th>
         </tr>
       </thead>
+      <br/>
       <tbody>
         <tr>
-          <td>Monday</td>
+          <td>MONDAY</td>
           <td>10:00 AM - 11:00 PM</td>
         </tr>
         <tr>
-          <td>Monday</td>
+          <td>TUESDAY</td>
           <td>10:00 AM - 11:00 PM</td>
         </tr> 
         <tr>
-          <td>Tuesday</td>
+          <td>WEDNESDAY</td>
           <td>10:00 AM - 11:00 PM</td>
         </tr> 
         <tr>
-          <td>Wednesday</td>
+          <td>THURSDAY</td>
           <td>10:00 AM - 11:00 PM</td>
         </tr> 
         <tr>
-          <td>Thursday</td>
-          <td>10:00 AM - 11:00 PM</td>
-        </tr> 
-        <tr>
-          <td>Friday</td>
+          <td>FRIDAY</td>
           <td>10:00 AM - 1:00 AM</td>
         </tr>
         <tr>
-          <td>Saturday</td>
+          <td>SATURDAY</td>
           <td>9:00 AM - 1:00 AM</td>
         </tr>
         <tr>
-          <td>Sunday</td>
+          <td>SUNDAY</td>
           <td>9:00 AM - 1:00 AM</td>
+        </tr>
+<br/>
+        <tr>
+          <td>BANK HOLIDAYS</td>
+          <td>11:00 AM - 10:00 PM</td>
         </tr>
       </tbody>
     </Table>
 
+    
 
             </container>
         </div>
