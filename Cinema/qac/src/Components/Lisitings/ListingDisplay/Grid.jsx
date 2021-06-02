@@ -3,6 +3,9 @@ import TableRow from "./TableRow";
 
 const Grid = ({ data }) => {
 
+    console.log(data);
+
+
     const [ready, setReady] = useState(false);
     const [objArray, setObjArray] = useState([]);
 
@@ -13,6 +16,7 @@ const Grid = ({ data }) => {
 
         setObjArray(array);
         setReady(true);
+        console.log(objArray);
     }, []);
 
 

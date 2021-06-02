@@ -1,12 +1,17 @@
-import TableData from "./TableData"
+import TableData from "./TableData";
 
-const TableRow = ({objects}) => {
+const TableRow = ({ objects }) => {
 
     return (
         <>
-            {objects.map((object, i) => (
-                <TableData key={i} object={object}/>
-            ))}
+            <td>
+                <div className="img-container">
+                    <img src={objects.Poster} alt=""/>
+                    <div className="img-overlay">
+                        <div className="img-text">{objects.Title}</div>
+                    </div>
+                </div>
+            </td>
         </>
     );
 }

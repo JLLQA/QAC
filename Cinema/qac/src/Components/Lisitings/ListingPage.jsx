@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Grid from "./ListingDisplay/Grid";
-// import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 
 const ListingPage = () => {
 
@@ -22,14 +22,14 @@ const ListingPage = () => {
     if (isLoaded) {
         return (
             <>
-                {/* <Navbar /> */}
+                <Navbar />
                 <Grid data={data} />
             </>
         );
     } else {
         return (
             <div>
-                {/* <Navbar /> */}
+                <Navbar />
                 <h1>Loading...</h1>
             </div>
         );
