@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 
 const ListingPage = (props) => {
-    console.log("about", props.location.directorProps);
+    const {foo} = props.location.state;
     
     return (
         <div>

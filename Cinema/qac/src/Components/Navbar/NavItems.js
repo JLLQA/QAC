@@ -1,7 +1,7 @@
 export const NavItems = [
     {
         title: 'Opening Times',
-        url: '#2',
+        url: '/openings',
         cName: 'nav-links'
     },
     {

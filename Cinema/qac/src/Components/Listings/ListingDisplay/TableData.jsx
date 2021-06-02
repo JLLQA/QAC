@@ -9,7 +9,7 @@ const TableData = ({ object }) => {
                 <div className="img-container">
                     <Link to={{
                         pathname: "/moviedetails",
-                        directorProps: { name: 'Jim' }
+                        state : {object}
                     }}>
                         <img src={object.Poster} alt={object.Title} />
                         <div className="img-overlay" >
