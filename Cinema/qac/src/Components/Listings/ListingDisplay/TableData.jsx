@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 const TableData = ({ object }) => {
 
+    console.log(object);
 
 
     return (
@@ -8,8 +9,7 @@ const TableData = ({ object }) => {
             <td>
                 <div className="img-container">
                     <Link to={{
-                        pathname: "/moviedetails",
-                        state : {object}
+                        pathname: `/moviedetails/${object.imdbID}`
                     }}>
                         <img src={object.Poster} alt={object.Title} />
                         <div className="img-overlay" >

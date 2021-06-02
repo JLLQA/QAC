@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Homepage from "./Components/Homepage/HomePage"
 import ListingPage from "./Components/Listings/ListingPage"
-import ListingDetails from "./Components/Listings/ListingDetails"
+import ListingDetails from "./Components/Listings/ListingDetails/ListingDetails"
 import OpeningTimes from  "./Components/OpeningTimes/OpeningTimes"
  
 
@@ -17,7 +17,7 @@ const App = () => {
           <Route exact path="/listings">
             <ListingPage />
           </Route>
-          <Route path="/moviedetails/">
+          <Route path="/moviedetails/:id">
             <ListingDetails/>
           </Route>
           <Route exact path="/openings">
