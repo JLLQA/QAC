@@ -2,7 +2,7 @@ import HomePage from "./Components/Homepage/HomePage"
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Homepage from "./Components/Homepage/HomePage"
-import Listings from "./Components/Listings/Listings"
+import ListingPage from "./Components/Listings/ListingPage"
 
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
             <Homepage />
           </Route>
           <Route exact path="/listings">
-            <Listings />
+            <ListingPage />
           </Route>
         </Switch>
       </Router>
