@@ -4,14 +4,9 @@ const TableRow = ({ objects }) => {
 
     return (
         <>
-            <td>
-                <div className="img-container">
-                    <img src={objects.Poster} alt=""/>
-                    <div className="img-overlay">
-                        <div className="img-text">{objects.Title}</div>
-                    </div>
-                </div>
-            </td>
+            {objects.map((object, i) => (
+                <TableData key={i} object={object}/>
+            ))}
         </>
     );
 }

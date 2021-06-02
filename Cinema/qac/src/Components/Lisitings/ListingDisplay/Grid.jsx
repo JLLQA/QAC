@@ -11,14 +11,15 @@ const Grid = ({ data }) => {
 
     useEffect(() => {
         let array = [];
+        let newarr = [];
 
-        array.push(data);
+        array[0] = (data);
 
-        setObjArray(array);
+        newarr[0] = array;
+
+        setObjArray(newarr);
         setReady(true);
-        console.log(objArray);
     }, []);
-
 
     if (ready) {
         return (
@@ -30,10 +31,9 @@ const Grid = ({ data }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {objArray.map((one, i) => (
+                        {objArray.map((ten, i) => (
                             <tr key={i}>
-                                {console.log(objArray)}
-                                <TableRow objects={one} />
+                                <TableRow objects={ten} />
                             </tr>
                         ))}
                     </tbody>
