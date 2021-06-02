@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { NavbarListItems } from "../Navbar/NavbarListItems";
+import { NavItems } from "./NavItems";
 
 const Navbar2 = () => {
     const [clicked, setClicked] = useState(false);
 
-    handleClick = () => {
+    let handleClick = () => {
         setClicked(!clicked);
     }
 
@@ -15,8 +15,16 @@ const Navbar2 = () => {
                 <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
             <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
-                <NavbarListItems/>
-            </ul>
+                {NavItems.map((item, index) => {
+                    return (
+                        <li key={index}>
+                            <a className={item.cName} href={item.url}>
+                                {item.title}
+                            </a>
+                        </li>
+                    )
+                })}
+            </ul>           
         </nav>
     )
 

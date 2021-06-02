@@ -1,12 +1,12 @@
 export const NavItems = [
     {
         title: 'Opening Times',
-        url: '#1',
+        url: '#3',
         cName: 'nav-links'
     },
     {
         title: 'Listings',
-        url: '#2',
+        url: '../Listings/Listings',
         cName: 'nav-links'
     },
     {
