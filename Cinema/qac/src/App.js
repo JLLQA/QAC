@@ -3,7 +3,8 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Homepage from "./Components/Homepage/HomePage"
 import Listings from "./Components/Listings/Listings"
-
+import OpeningTimes from  "./Components/OpeningTimes/OpeningTimes"
+ 
 
 const App = () => {
   return (
@@ -15,6 +16,9 @@ const App = () => {
           </Route>
           <Route exact path="/listings">
             <Listings />
+          </Route>
+          <Route exact path="/openings">
+            <OpeningTimes />
           </Route>
         </Switch>
       </Router>
