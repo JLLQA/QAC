@@ -14,7 +14,6 @@ const Grid = ({ data }) => {
         let newarr = [];
 
         array[0] = (data);
-
         newarr[0] = array;
 
         setObjArray(newarr);

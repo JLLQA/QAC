@@ -1,5 +1,5 @@
-body{
-  background-image: linear-gradient(to right, white, black) ;
+body {
+  background-image: linear-gradient(to right, white, black);
 }
 
 * {
@@ -42,7 +42,7 @@ body{
   color: white;
 }
 
-.menu-icon{
+.menu-icon {
   display: none;
 }
 
@@ -90,14 +90,14 @@ body{
     border-radius: 0;
   }
   .navbar-title {
-    display:block;
+    display: block;
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     transform: translate(20%, 10%);
   }
-  .menu-icon{
-    display:block;
+  .menu-icon {
+    display: block;
     position: absolute;
     top: 0;
     right: 0;
@@ -105,16 +105,15 @@ body{
     font-size: 1.8rem;
     cursor: pointer;
   }
-
-  .fa-times{
+  .fa-times {
     color: white;
     font-size: 2rem;
   }
 }
 
 img {
-  width: 8vw;
-  height: 12vw;
+  width: 16vw;
+  height: 24vw;
   border-radius: 20px 20px 20px 20px;
 }
 
@@ -163,4 +162,19 @@ img {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+/* modal */
+
+.modal-body {
+  overflow-y: auto;
+  max-height: 25vw;
+}
+
+.container{
+  background-color: lightblue;
+}
+
+.colm{
+  background-color: red;
 }
