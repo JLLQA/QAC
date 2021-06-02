@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 const ContactUs = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
+
     const onSubmit = (data, e) => {
         console.log(data, e);
         emailjs.sendForm('service_z6tey7i', 'template_ly9kskf', e.target, 'user_F3eP1aV9v0QtqRuME02vV')
@@ -14,7 +15,6 @@ const ContactUs = () => {
             .catch((errors) => {
                 console.log('Failed...', errors.text);
             })
-
     };
 
     return (
@@ -33,14 +33,14 @@ const ContactUs = () => {
                         </div>
                         <div>
                             <label>Email:</label>
-                            <input type="text" name="user_email" {...register("Email", { required: true })} />
-                            {errors.Email?.type === 'required' && <span>An email is required</span>}
-                            
+                            <input type="text" name="user_email" {...register("Email", { required: true, pattern: /\S+@\S+\.\S+/ })} />
+                            {errors.Email?.type === 'required' && <span>   An email is required</span>}
+                            {errors.Email?.type === 'pattern' && <span>   Enter a valid email</span>}
                         </div>
                         <div>
                             <label for="subject" >Subject:</label>
                             <select id="subject" name="subject" {...register("Subject", { required: "select one option" })}>
-                                <option disabled selected value="" >-- Select a Subject --</option>
+                                <option disabled selected value="sf" >-- Select a Subject --</option>
                                 <option value="Movies">Movies</option>
                                 <option value="Tickets">Ticket Enquiries</option>
                                 <option value="Location">Location</option>
@@ -52,13 +52,13 @@ const ContactUs = () => {
                         <div>
                             <label>Message:</label>
                             <textarea name="message" {...register("Message", { required: true, minLength: 10, maxLength: 1000 })} />
-                            {errors.Message?.type === 'required' && <span>A message is required</span>}
-                            {errors.Message?.type === 'minLength' && <span>10 Characters required</span>}
-                            {errors.Message?.type === 'maxLength' && <span>1000 Characters exceeded</span>}
+                            {errors.Message?.type === 'required' && <span>   A message is required</span>}
+                            {errors.Message?.type === 'minLength' && <span>   10 Characters required</span>}
+                            {errors.Message?.type === 'maxLength' && <span>   1000 Characters exceeded</span>}
                         </div>
                         <div>
                             <input type="submit" value=" Submit Form " />
-                            <button type="reset" id=" button "> Reset </button>
+                            <button type="reset" id=" button" value="reset"> Reset </button>
                         </div>
                     </div>
                 </form>
