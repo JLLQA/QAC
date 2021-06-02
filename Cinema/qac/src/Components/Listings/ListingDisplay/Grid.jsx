@@ -3,9 +3,6 @@ import TableRow from "./TableRow";
 
 const Grid = ({ data }) => {
 
-    console.log(data);
-
-
     const [ready, setReady] = useState(false);
     const [objArray, setObjArray] = useState([]);
 
@@ -22,7 +19,7 @@ const Grid = ({ data }) => {
 
     if (ready) {
         return (
-            <div id="img-grid" className="container-fluid">
+            <div id="dropped-box" className="container-fluid">
                 <table id="img-table">
                     <thead>
                         <tr>

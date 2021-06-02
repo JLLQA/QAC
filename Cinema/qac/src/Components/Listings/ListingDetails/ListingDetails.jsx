@@ -6,13 +6,13 @@ import Navbar from "../../Navbar/Navbar";
 import Showtimes from "./Showtimes"
 
 const ListingPage = () => {
+    
+    const [data, setData] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const { id } = useParams();
 
     var NEWURL = `http://www.omdbapi.com/?i=${id}&apikey=14ff12ef`
-
-    const [data, setData] = useState([]);
-    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
         axios.get(NEWURL)
@@ -27,21 +27,26 @@ const ListingPage = () => {
 
     if (isLoaded) {
         return (
-            <>
+            <div>
                 <Navbar />
                 <br></br>
-                <Container>
-                    <div>
-                        <h1>{data.Title}</h1>
-                        <h2>{data.Director}</h2>
-                        <h3>{data.Actors}</h3>
-                    </div>
-                </Container>
-                <Container className = "showtimes">
-                    <Showtimes
-                        data = {data}/>
-                </Container>
-            </>
+                <div id="dropped-box" className="container-fluid">
+                    <Container>
+                        <div>
+                            <h1>{data.Title}</h1>
+                            <h3 className="directors">DIRECTORS</h3>
+                            <h4>{data.Director}</h4>
+                            <h3>ACTORS</h3>
+                            <h4>{data.Actors}</h4>
+                            <Container className="showtimes">
+                                <Showtimes data={data} />
+                            </Container>
+                            <p></p>
+                        </div>
+                    </Container>
+                    <br></br>
+                </div>
+            </div>
         );
     } else {
         return (
