@@ -1,11 +1,10 @@
-import Navbar2 from "../Navbar/Navbar2";
-import Navbar4 from "../Navbar/Navbar4";
+import Navbar from "../Navbar/Navbar";
 import CarouselDisplay from "./CarouselDisplay";
 
 const HomePage = () => {
     return (
         <div>
-            <Navbar2/>
+            <Navbar/>
             <CarouselDisplay/>
         </div>
     );
