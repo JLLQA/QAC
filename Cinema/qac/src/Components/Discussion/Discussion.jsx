@@ -76,6 +76,7 @@ const Discussion = () => {
                 </Container>
                 <TopicContainer
                     data = {data}
+                    query = {query}
                 />
             </div>
         )
