@@ -37,7 +37,7 @@ const TopicContainer = (props) => {
                             </Col>
                         </Row>
                     ))}
-            </Container>
+            </Container> 
         )
     } else {
         return (
