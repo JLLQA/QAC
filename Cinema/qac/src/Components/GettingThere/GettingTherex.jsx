@@ -21,7 +21,7 @@ const GettingThere = (props) => {
       {/* <Jumbotron align='center'> */}
         <h1 className="display-3"style={{ color: 'white' }} >Getting to the Cinema!</h1>
         <p className="lead"style={{ color: 'white' }} >Getting to the venue has never been easier!</p>
-        <hr className="my-2" />
+        
         <p style={{ color: 'white' }} >With the following travel options, you can arrive at the location on time, etc</p>
         <p className="lead">
           
@@ -99,10 +99,13 @@ const GettingThere = (props) => {
         <Row>
             <Col sm="12" align='center'>
                 <br/>
-              <h2 style={{ color: 'white' }}>Parking</h2>
+              <h2 style={{ color: 'white' }}>PARKING</h2>
+              <br/>  
               <h5 style={{ color: 'white' }}> The nearest parking location is the NCP car park situated in 'Whitworth St, Manchster, M1 6NE' which is only a 5 minute (0.2 mile) walk away from the venue.</h5>
-              <h5 style={{ color: 'white' }}> We advise pre-booking your parking here to make your travel to the venue much quicker and more economic.</h5>
-              <h5 style={{ color: 'white' }}> Early Bird discounts are available if you plan to park between 05:00AM-09:00AM, and if you do so, we reccommend checking out the 'Places to Go' section of the website to plan your day.</h5>            
+              <br/><h5 style={{ color: 'white' }}> We advise pre-booking your parking here to make your travel to the venue much quicker and more economic.</h5>
+              <br/><h5 style={{ color: 'white' }}> Early Bird discounts are available if you plan to park between 05:00AM-09:00AM, and if you do so, we reccommend checking out the 'Places to Go' section of the website to plan your day.</h5>            
+           
+                     
             </Col>
           </Row>
         </TabPane>
@@ -110,7 +113,11 @@ const GettingThere = (props) => {
         <TabPane tabId="3">
         <Row>
             <Col sm="12">
-              <h4 style={{ color: 'white' }}>Tab 3 Contents</h4>
+            <br/>
+              <h2 style={{ color: 'white' }}>TRAIN STATION</h2> <br/>
+              <h5 style={{ color: 'white' }}> The Manchester Oxford Road Station is located in 'Manchester Oxford Road station, Station Approach, Oxford Road, Manchester, Greater Manchester, M1 6FU' and is only a 2 minute (0.1 mile) walk away from the venue</h5>
+              <br/><h5 style={{ color: 'white' }}>Alternatively, if you plan on arriving at the Manchester Piccadilly station located in 'Manchester Piccadilly, Piccadilly Station Approach, Manchester M60 7RA', it would take an approximately 10-15 minute walk to the venue.</h5>   
+              <br/><h5 style={{ color: '#ffe167' }}> We advise pre-booking your train tickets early and to be aware of the station opening and closing times. </h5>
               
             </Col>
           </Row>
@@ -119,7 +126,10 @@ const GettingThere = (props) => {
         <TabPane tabId="4">
         <Row>
             <Col sm="12">
-              <h4 style={{ color: 'white' }}>Tab 4 Contents</h4>
+            <br/>
+              <h2 style={{ color: 'white' }}>BUS TRAVEL</h2> <br/>
+              <h5 style={{ color: 'white' }}>The Manchester city area has buses available frequently, with the nearest being 5 minutes away from the venue. </h5>
+              <br/><h5 style={{ color: 'white' }}></h5>   
               
             </Col>
           </Row>
