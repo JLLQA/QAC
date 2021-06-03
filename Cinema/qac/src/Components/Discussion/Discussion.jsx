@@ -55,7 +55,7 @@ const Discussion = () => {
                 </div>
                 <div id="dropped-box" className="container-fluid">
                     <Container align="center">
-                        <h1 style={{ color: "White" }}>Discussion</h1>
+                        <h1>Discussion</h1>
                         <Row>
                             <Col align="center">
                                 <SearchForm

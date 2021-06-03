@@ -9,6 +9,14 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+h1{
+  color: white;
+}
+
+h5{
+  color: white;
+}
+
 #dropped-box {
   margin-top: 1em;
   display: flex;
