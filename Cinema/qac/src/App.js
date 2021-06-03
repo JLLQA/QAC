@@ -11,6 +11,7 @@ import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDeta
 const App = () => {
   return (
     <>
+    <HomePage />
       <Router>
         <Switch>
           <Route exact path="/">
