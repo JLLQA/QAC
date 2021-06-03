@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Homepage from "./Components/Homepage/HomePage"
 import Listings from "./Components/Listings/Listings"
 import OpeningTimes from  "./Components/OpeningTimes/OpeningTimes"
+import Places from "./Components/Places/Places";
  
 
 const App = () => {
@@ -19,6 +20,9 @@ const App = () => {
           </Route>
           <Route exact path="/openings">
             <OpeningTimes />
+          </Route>
+          <Route exact path="/places">
+            <Places />
           </Route>
         </Switch>
       </Router>

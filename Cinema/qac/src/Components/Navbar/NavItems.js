@@ -31,7 +31,7 @@ export const NavItems = [
     },
     {
         title: 'Places to Go',
-        url: '#7',
+        url: '/places',
         cName: 'nav-links'
     },
     {
