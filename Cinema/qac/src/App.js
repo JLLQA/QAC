@@ -4,6 +4,8 @@ import Homepage from "./Components/Homepage/HomePage"
 import ListingPage from "./Components/Listings/ListingPage"
 import ListingDetails from "./Components/Listings/ListingDetails/ListingDetails"
 import OpeningTimes from  "./Components/OpeningTimes/OpeningTimes"
+import Discussion from "./Components/Discussion/Discussion";
+import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
  
 
 const App = () => {
@@ -22,6 +24,12 @@ const App = () => {
           </Route>
           <Route exact path="/openings">
             <OpeningTimes />
+          </Route>
+          <Route exact path="/discussion">
+            <Discussion/>
+          </Route>
+          <Route exact path="/discussion/movie/:id">
+            <ExtraDetails/>
           </Route>
         </Switch>
       </Router>
