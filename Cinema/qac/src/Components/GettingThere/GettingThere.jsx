@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Map from "./GettingThereComponents/Map";
 
+
 const GettingThere = () => {
     return (
         <Container>
