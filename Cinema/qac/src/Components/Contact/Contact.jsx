@@ -1,6 +1,7 @@
 import emailjs from 'emailjs-com';
 import { useForm } from "react-hook-form";
 import './Contact.css';
+import ContactMap from './ContactMap';
 
 const ContactUs = () => {
 
@@ -21,9 +22,12 @@ const ContactUs = () => {
 
     return (
         <>
-
+            <h1 align="center">Contact</h1>
+            <ContactMap />
+            <br />
             <div id="potato" align="center" >
-                <h2>Contact Us</h2>
+                <h2>Send us an Email</h2>
+                <h4>Please fill out the form below and we will reply by email</h4>
                 <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         <div className="formGroup">
@@ -39,6 +43,7 @@ const ContactUs = () => {
                                 </div>
                             </div>
                         </div>
+
                         <div className="formGroup">
                             <div>
                                 <label>Email:</label>
@@ -82,8 +87,10 @@ const ContactUs = () => {
                             </div>
                         </div>
                         <div className="formGroup">
-                            <input id="submitButton"type="submit" value=" Submit Form " />
-                            {/* <button type="reset" id=" button" value="reset"> Reset </button> */}
+                            <input id="submitButton" type="submit" value=" Submit Form " />
+                        </div>
+                        <div>
+                            <button type="reset" id="resetButton" value="reset"> Reset Form </button>
                         </div>
                     </div>
                 </form>
