@@ -26,7 +26,7 @@ export const NavItems = [
     },
     {
         title: 'Getting There',
-        url: '#6',
+        url: '/#6',
         cName: 'nav-links'
     },
     {
