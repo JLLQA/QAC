@@ -1,0 +1,73 @@
+#potato{
+    font-weight: 500;
+}
+
+.formGroup{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.alertOne{
+    line-height: auto;
+    font-size: 15px;
+    color: palevioletred;
+ 
+}
+
+input[type=text] {
+    padding: 10px;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    border: 2px solid rgb(59, 124, 124);
+  }
+
+#subject{
+    padding: 10px;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    border: 2px solid rgb(59, 124, 124);
+    text-align: center;
+}
+
+#label{
+    text-align: right;
+}
+
+#messageBox{
+    padding: 10px;
+    width: 90%;
+    max-width: 800px;
+    height: 150px;
+    margin: auto;
+    border: 2px solid rgb(59, 124, 124);
+    text-align: center;
+}
+
+#submitButton{
+    padding: 10px;
+    width: 90%;
+    max-width: 800px;
+    background-color: springgreen;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#submitButton:hover{
+    background-color: orange;
+}
+
+#resetButton{
+    padding: 10px;
+    width: 90%;
+    max-width: 400px;
+    background-color: rgba(114, 70, 5, 0.466);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#resetButton:hover{
+    background-color: rgba(245, 78, 0, 0.534);
+}
+
+
+
