@@ -22,9 +22,9 @@ const TopicContainer = (props) => {
                 {dummydata
                     .filter(post => post.title.toLowerCase().includes(query.toLowerCase()))
                     .map((post) => (
-                        <Row>
+                        <Row key={post.id}>
                             <Col>
-                                <Card key={post.id}>
+                                <Card >
                                     <CardBody>
                                         <CardTitle tag="h5">{filter.clean(post.title)}</CardTitle>
                                         <CardSubtitle tag="h6" className="mb-2 text-muted">{filter.clean(post.username)}</CardSubtitle>
@@ -44,7 +44,7 @@ const TopicContainer = (props) => {
             // axios get request for all topic objects - map instead of dummy data
             <Container align="center">
                 {dummydata.map((post) => (
-                    <Row>
+                    <Row key={post.id}>
                         <Col>
                             <Card>
                                 <CardBody>

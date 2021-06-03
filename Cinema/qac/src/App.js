@@ -4,14 +4,14 @@ import Homepage from "./Components/Homepage/HomePage"
 import ListingPage from "./Components/Listings/ListingPage"
 import ListingDetails from "./Components/Listings/ListingDetails/ListingDetails"
 import OpeningTimes from  "./Components/OpeningTimes/OpeningTimes"
-import GettingTherex from "./Components/GettingThere/GettingTherex";
+import GettingThere from "./Components/GettingThere/GettingThere";
 import Discussion from "./Components/Discussion/Discussion";
-import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails"; 
+import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
+import Contact from "./Components/Contact/Contact";
 
 const App = () => {
   return (
     <>
-    <HomePage />
       <Router>
         <Switch>
           <Route exact path="/">
@@ -27,7 +27,10 @@ const App = () => {
             <OpeningTimes />
           </Route>
           <Route exact path="/gettingthere">
-            <GettingTherex/>
+            <GettingThere/>
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
           </Route>
           <Route exact path="/discussion">
             <Discussion/>

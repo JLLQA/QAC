@@ -41,7 +41,7 @@ export const NavItems = [
     },
     {
         title: 'Contact',
-        url: '#9',
+        url: '/contact',
         cName: 'nav-links'
     },
     {

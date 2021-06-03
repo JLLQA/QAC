@@ -6,8 +6,8 @@ const ContactMap = () => {
 
     const defaultProps = {
         center: {
-            lat: 59.95,
-            lng: 30.33
+            lat: 53.4762187236174,
+            lng: -2.2422500459209496
         },
         zoom: 11
     };
@@ -38,10 +38,10 @@ const ContactMap = () => {
                         defaultZoom={defaultProps.zoom}
                     >
                         <AnyReactComponent //find long lat of place QAC cinema
-                            lat={59.955413}
-                            lng={30.337844}
-                            text="My Marker"
-                        />
+                            lat={53.4762187236174}
+                            lng={-2.2422500459209496}
+                            text="QA Cinema"
+                            />
                     </GoogleMapReact>
                 </div>
             </div>
