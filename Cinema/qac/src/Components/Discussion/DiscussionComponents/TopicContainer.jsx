@@ -48,7 +48,9 @@ const TopicContainer = (props) => {
                                     <CardTitle tag="h5">{post.title}</CardTitle>
                                     <CardSubtitle tag="h6" className="mb-2 text-muted">{post.username}</CardSubtitle>
                                     <CardText>{post.body}</CardText>
-                                    <Button onClick={handleClick}>More Details</Button>
+                                    <Link to="/discussion/movie">
+                                        <h3>More</h3>
+                                    </Link>
                                 </CardBody>
                             </Card>
                         </Col>
