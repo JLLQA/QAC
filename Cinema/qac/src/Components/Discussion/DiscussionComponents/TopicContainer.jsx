@@ -8,10 +8,13 @@ import {
 
 const TopicContainer = (props) => {
     const { data, query } = props
-    const dummydata = [{ title: "testtitle", body: "testbody", username: "testusername", id: 1 }, { title: "testtitle2", body: "testbody2", username: "testusername2", id: 2 }]
+    const dummydata = [{ title: "asshole", body: "asshole", username: "asshole", id: 1 }, { title: "testtitle2", body: "testbody2", username: "testusername2", id: 2 }]
     const handleClick = (event) => {
         event.preventDefault();
     }
+    const Filter = require("bad-words");
+    const  filter = new Filter();
+    
 
     if (query.length > 0) {
         return (
@@ -23,9 +26,9 @@ const TopicContainer = (props) => {
                             <Col>
                                 <Card key={post.id}>
                                     <CardBody>
-                                        <CardTitle tag="h5">{post.title}</CardTitle>
-                                        <CardSubtitle tag="h6" className="mb-2 text-muted">{post.username}</CardSubtitle>
-                                        <CardText>{post.body}</CardText>
+                                        <CardTitle tag="h5">{filter.clean(post.title)}</CardTitle>
+                                        <CardSubtitle tag="h6" className="mb-2 text-muted">{filter.clean(post.username)}</CardSubtitle>
+                                        <CardText>{filter.clean(post.body)}</CardText>
                                         <Link to={{ pathname: `/discussion/movie/${post.id}`}}>
                                             <h3>More</h3>
                                         </Link>
@@ -45,9 +48,9 @@ const TopicContainer = (props) => {
                         <Col>
                             <Card>
                                 <CardBody>
-                                    <CardTitle tag="h5">{post.title}</CardTitle>
-                                    <CardSubtitle tag="h6" className="mb-2 text-muted">{post.username}</CardSubtitle>
-                                    <CardText>{post.body}</CardText>
+                                    <CardTitle tag="h5">{filter.clean(post.title)}</CardTitle>
+                                    <CardSubtitle tag="h6" className="mb-2 text-muted">{filter.clean(post.username)}</CardSubtitle>
+                                    <CardText>{filter.clean(post.body)}</CardText>
                                     <Link to={{ pathname: `/discussion/movie/${post.id}` }}>
                                         <h3>More</h3>
                                     </Link>
