@@ -1,25 +1,18 @@
 import { useEffect, useState } from "react";
 import TableRow from "./TableRow";
 
-const Grid = ({ data , query}) => {
+const Grid = ({ data, query }) => {
     const [ready, setReady] = useState(false);
     const [objArray, setObjArray] = useState([]);
-
-    console.log(query);
-
-    // const filterQuery = (query) => (data) => data.Title.toLowerCase().includes(query.toLowerCase());
 
 
     useEffect(() => {
         let array = [];
         let newarr = [];
-        let filteredData = [];
 
         array[0] = (data);
         newarr[0] = array;
 
-
-        // filteredData = newarr.filter(filterQuery(query));
 
         setObjArray(newarr);
         setReady(true);
@@ -37,14 +30,15 @@ const Grid = ({ data , query}) => {
                     <tbody>
                         {objArray.map((ten, i) => (
                             <tr key={i}>
-                                <TableRow objects={ten} />
+                                <TableRow objects={ten} query = {query}/>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
         );
-    } else {
+    }
+    else {
         return (
             <h1> Loading... </h1>
         );

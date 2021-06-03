@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom"
 const TableData = ({ object }) => {
 
-    console.log(object);
-
-
     return (
         <>
             <td>
