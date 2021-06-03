@@ -46,7 +46,7 @@ export const NavItems = [
     },
     {
         title: 'Discussion Board',
-        url: '#10',
+        url: '/discussion',
         cName: 'nav-links'
     }
 ]
