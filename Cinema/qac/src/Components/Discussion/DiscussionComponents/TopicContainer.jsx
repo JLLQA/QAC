@@ -8,50 +8,52 @@ import {
 
 const TopicContainer = (props) => {
     const { data, query } = props
-
+    const dummydata = [{ title: "testtitle", body: "testbody", username: "testusername", id: "1" }, { title: "testtitle2", body: "testbody2", username: "testusername2", id: "2" }]
     const handleClick = (event) => {
         event.preventDefault();
     }
 
     if (query.length > 0) {
-        <Container align="center">
-            <Row>
-
-                {data.filter(post => post.title.toLowerCase().includes(query.toLowerCase())).map((post) => (
-                    <Col>
-                        <Card key={post.id}>
-                            <CardBody>
-                                <CardTitle tag="h5">{post.title}</CardTitle>
-                                <CardSubtitle tag="h6" className="mb-2 text-muted">{post.username}</CardSubtitle>
-                                <CardText>{post.body}</CardText>
-                                <Link to="/discussion/movie">
-                                    <Button onClick={handleClick}>More Details</Button>
-                                </Link>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
-        </Container>
-    } else {
-
         return (
-            // axios get request for all topic objects - map 
             <Container align="center">
-                <Row>
-                    {data.map((post) => (
+                {dummydata
+                    .filter(post => post.title.toLowerCase().includes(query.toLowerCase()))
+                    .map((post) => (
+                        <Row>
+                            <Col>
+                                <Card key={post.id}>
+                                    <CardBody>
+                                        <CardTitle tag="h5">{post.title}</CardTitle>
+                                        <CardSubtitle tag="h6" className="mb-2 text-muted">{post.username}</CardSubtitle>
+                                        <CardText>{post.body}</CardText>
+                                        <Link to="/discussion/movie">
+                                            <Button onClick={handleClick}>More Details</Button>
+                                        </Link>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                        </Row>
+                    ))}
+            </Container>
+        )
+    } else {
+        return (
+            // axios get request for all topic objects - map instead of dummy data
+            <Container align="center">
+                {dummydata.map((post) => (
+                    <Row>
                         <Col>
                             <Card>
                                 <CardBody>
-                                    <CardTitle tag="h5">Topic title</CardTitle>
-                                    <CardSubtitle tag="h6" className="mb-2 text-muted">Username</CardSubtitle>
-                                    <CardText>Card body</CardText>
+                                    <CardTitle tag="h5">{post.title}</CardTitle>
+                                    <CardSubtitle tag="h6" className="mb-2 text-muted">{post.username}</CardSubtitle>
+                                    <CardText>{post.body}</CardText>
                                     <Button onClick={handleClick}>More Details</Button>
                                 </CardBody>
                             </Card>
                         </Col>
-                    ))}
-                </Row>
+                    </Row>
+                ))}
             </Container>
         )
     }
