@@ -8,7 +8,7 @@ import {
 
 const TopicContainer = (props) => {
     const { data, query } = props
-    const dummydata = [{ title: "testtitle", body: "testbody", username: "testusername", id: "1" }, { title: "testtitle2", body: "testbody2", username: "testusername2", id: "2" }]
+    const dummydata = [{ title: "testtitle", body: "testbody", username: "testusername", id: 1 }, { title: "testtitle2", body: "testbody2", username: "testusername2", id: 2 }]
     const handleClick = (event) => {
         event.preventDefault();
     }
@@ -26,8 +26,8 @@ const TopicContainer = (props) => {
                                         <CardTitle tag="h5">{post.title}</CardTitle>
                                         <CardSubtitle tag="h6" className="mb-2 text-muted">{post.username}</CardSubtitle>
                                         <CardText>{post.body}</CardText>
-                                        <Link to="/discussion/movie">
-                                            <Button onClick={handleClick}>More Details</Button>
+                                        <Link to={{ pathname: `/discussion/movie/${post.id}`}}>
+                                            <h3>More</h3>
                                         </Link>
                                     </CardBody>
                                 </Card>
@@ -48,7 +48,7 @@ const TopicContainer = (props) => {
                                     <CardTitle tag="h5">{post.title}</CardTitle>
                                     <CardSubtitle tag="h6" className="mb-2 text-muted">{post.username}</CardSubtitle>
                                     <CardText>{post.body}</CardText>
-                                    <Link to="/discussion/movie">
+                                    <Link to={{ pathname: `/discussion/movie/${post.id}` }}>
                                         <h3>More</h3>
                                     </Link>
                                 </CardBody>

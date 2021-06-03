@@ -25,7 +25,7 @@ const App = () => {
           <Route exact path="/discussion">
             <Discussion/>
           </Route>
-          <Route exact path="/discussion/movie">
+          <Route exact path="/discussion/movie/:id">
             <ExtraDetails/>
           </Route>
         </Switch>
