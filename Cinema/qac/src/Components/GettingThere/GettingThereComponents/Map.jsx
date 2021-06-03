@@ -6,23 +6,24 @@ const Map = () => {
 
     const defaultProps = {
         center: {
-            lat: 59.95,
-            lng: 30.33
+            lat: 53.4762187236174,
+            lng: -2.2422500459209496
         },
         zoom: 11
+        
     };
 
     return (
-        <div style={{ height: '40vh', width: '50%' }}>
+        <div style={{ height: '70vh', width: '50%' }}>
             <GoogleMapReact
                 bootstrapURLKeys={{ key: "AIzaSyDgxqUYRNs1Zyd7FXeovnBzHrFmzB-7Q0I" }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
             >
-                <AnyReactComponent //find long lat of place QAC cinema
-                    lat={59.955413}
-                    lng={30.337844}
-                    text="My Marker"
+                <AnyReactComponent 
+                    lat={53.4762187236174}
+                    lng={-2.2422500459209496}
+                    text="QA Cinema"
                 />
             </GoogleMapReact>
         </div>
