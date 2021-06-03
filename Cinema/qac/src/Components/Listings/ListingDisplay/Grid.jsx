@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
 import TableRow from "./TableRow";
 
-const Grid = ({ data }) => {
-
+const Grid = ({ data , query}) => {
     const [ready, setReady] = useState(false);
     const [objArray, setObjArray] = useState([]);
+
+    console.log(query);
+
+    // const filterQuery = (query) => (data) => data.Title.toLowerCase().includes(query.toLowerCase());
+
 
     useEffect(() => {
         let array = [];
         let newarr = [];
+        let filteredData = [];
 
         array[0] = (data);
         newarr[0] = array;
+
+
+        // filteredData = newarr.filter(filterQuery(query));
 
         setObjArray(newarr);
         setReady(true);
