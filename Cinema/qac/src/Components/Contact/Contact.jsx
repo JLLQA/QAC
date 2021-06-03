@@ -23,11 +23,11 @@ const ContactUs = () => {
     };
 
     return (
-        <>
+        <div>
             <div>
                 <Navbar />
             </div>
-            <div>
+            <div id="dropped-box" className="container-fluid">
                 <Container>
                     <h1 align="center">Contact</h1>
                     <ContactMap />
@@ -103,7 +103,7 @@ const ContactUs = () => {
                     </div>
                 </Container>
             </div>
-        </>
+        </div>
     );
 }
 

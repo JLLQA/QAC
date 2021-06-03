@@ -41,10 +41,9 @@ const ListingPage = () => {
                             <Container className="showtimes">
                                 <Showtimes data={data} />
                             </Container>
-                            <p></p>
+                            <br/>
                         </div>
                     </Container>
-                    <br></br>
                 </div>
             </div>
         );

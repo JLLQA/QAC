@@ -17,7 +17,6 @@ const ContactMap = () => {
         <div className="container" align="center">
             <h2 >Where We Are</h2>
             <div className="row justify-content-md-center">
-
                 <div className="col-md-auto" >
                     <h4>Our Address</h4>
                     <p>8, St James's Bldg</p>
@@ -29,15 +28,13 @@ const ContactMap = () => {
                             window.location.href = '';
                         }}>Click for more Location Info</Button>
                 </div>
-
-
                 <div className="col col-lg-6" style={{ height: '40vh', width: '50%' }}>
                     <GoogleMapReact
                         bootstrapURLKeys={{ key: "AIzaSyDgxqUYRNs1Zyd7FXeovnBzHrFmzB-7Q0I" }}
                         defaultCenter={defaultProps.center}
                         defaultZoom={defaultProps.zoom}
                     >
-                        <AnyReactComponent //find long lat of place QAC cinema
+                        <AnyReactComponent
                             lat={53.4762187236174}
                             lng={-2.2422500459209496}
                             text="QA Cinema"
@@ -47,7 +44,6 @@ const ContactMap = () => {
             </div>
         </div>
     )
-
 }
 
 export default ContactMap;

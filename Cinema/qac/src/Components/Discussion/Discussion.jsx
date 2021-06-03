@@ -50,41 +50,47 @@ const Discussion = () => {
     if (isLoaded) {
         return (
             <div>
-                <Navbar />
-                <Container align="center">
-                    <h1 style={{ color: "White" }}>Discussion</h1>
-                    <Row>
-                        <Col align="center">
-                            <SearchForm
-                                handleSubmitSearch={handleSubmitSearch}
+                <div>
+                    <Navbar />
+                </div>
+                <div id="dropped-box" className="container-fluid">
+                    <Container align="center">
+                        <h1 style={{ color: "White" }}>Discussion</h1>
+                        <Row>
+                            <Col align="center">
+                                <SearchForm
+                                    handleSubmitSearch={handleSubmitSearch}
+                                    query={query}
+                                />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <TopicForm
+                                title={title}
+                                username={username}
+                                body={body}
+                                handleSubmitTopic={handleSubmitTopic}
+                                handleUsername={handleUsername}
+                                handleTitle={handleTitle}
+                                handleBody={handleBody}
+
+                            />
+                        </Row>
+                        <Container>
+                            <TopicContainer
+                                data={data}
                                 query={query}
                             />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <TopicForm
-                            title={title}
-                            username={username}
-                            body={body}
-                            handleSubmitTopic={handleSubmitTopic}
-                            handleUsername={handleUsername}
-                            handleTitle={handleTitle}
-                            handleBody={handleBody}
-
-                        />
-                    </Row>
-                </Container>
-                <TopicContainer
-                    data = {data}
-                    query = {query}
-                />
+                        </Container>
+                    </Container>
+                </div>
             </div>
         )
     } else {
-        return(
+        return (
             <>
-            <Navbar/>
-            <h1>SOMETHING WRONG</h1>
+                <Navbar />
+                <h1>Loading...</h1>
             </>
         )
 

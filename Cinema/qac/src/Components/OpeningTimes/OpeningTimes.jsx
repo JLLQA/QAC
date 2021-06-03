@@ -4,7 +4,6 @@ import { Table } from 'reactstrap';
 
 const OpeningTimes = () => {
   return (
-
     <div>
       <Navbar />
       <div id="dropped-box" className="container-fluid">
