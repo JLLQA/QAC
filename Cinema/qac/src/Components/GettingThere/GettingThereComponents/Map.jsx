@@ -19,7 +19,7 @@ const Map = () => {
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
             >
-                <AnyReactComponent
+                <AnyReactComponent //find long lat of place QAC cinema
                     lat={59.955413}
                     lng={30.337844}
                     text="My Marker"
