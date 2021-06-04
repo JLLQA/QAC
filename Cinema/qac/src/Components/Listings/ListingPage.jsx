@@ -15,13 +15,30 @@ const ListingPage = () => {
         setQ(e.target.value);
     };
 
+    // useEffect(() => {
+    //     axios.get(`http://localhost:5000/movies`)
+    //         .then((res) => {
+    //             setData(res.data);
+    //             console.log("listings page",data);
+    //             setIsLoaded(true);
+    //         }).catch((err) => {
+    //             console.log(err.message);
+    //             setIsLoaded(true);
+    //         });
+    // }, []);
+
     useEffect(() => {
-        axios.get(`http://localhost:5000/movies`)
-            .then((res) => {
-                setData(res.data);
-                console.log("listings page",data);
+        axios({
+            method: "Get",
+            url: "http://127.0.0.1:5000/movies",
+            headers: { "Access-Control-Allow-Origin": "*"}
+        })
+            .then((resp) => {
+                console.log(resp);
+                setData(resp.data);
                 setIsLoaded(true);
-            }).catch((err) => {
+            })
+            .catch((err) => {
                 console.log(err.message);
                 setIsLoaded(true);
             });
@@ -31,8 +48,8 @@ const ListingPage = () => {
         return (
             <div>
                 <Navbar />
-                <Searchbar query={q} queryFunction={qHandler}/>
-                <Grid data={data} query={q}/>
+                <Searchbar query={q} queryFunction={qHandler} />
+                <Grid data={data} query={q} />
             </div>
         );
     } else {

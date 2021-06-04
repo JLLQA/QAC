@@ -12,7 +12,7 @@ const ListingPage = () => {
 
     const { id } = useParams();
 
-    var NEWURL = `http://www.omdbapi.com/?i=${id}&apikey=14ff12ef`
+    var NEWURL = `http://127.0.0.1:5000/movies`
 
     useEffect(() => {
         axios.get(NEWURL)
@@ -33,11 +33,11 @@ const ListingPage = () => {
                 <div id="dropped-box" className="container-fluid">
                     <Container>
                         <div>
-                            <h1>{data.Title}</h1>
+                            <h1>{data.title}</h1>
                             <h3 className="directors">DIRECTORS</h3>
-                            <h4>{data.Director}</h4>
+                            <h4>{data.genre}</h4>
                             <h3>ACTORS</h3>
-                            <h4>{data.Actors}</h4>
+                            <h4>{data.actors}</h4>
                             <Container className="showtimes">
                                 <Showtimes data={data} />
                             </Container>

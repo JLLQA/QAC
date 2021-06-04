@@ -13,7 +13,7 @@ ROUTER.get("/movies", async (req, res) => {
             res.send(mov);
         }
     });
-})
+});
 
 
 // get one
@@ -35,7 +35,7 @@ ROUTER.get("/movies/find/:id", async (req, res, next) => {
         };
 
     }
-)})
+)});
 
 
 // edit

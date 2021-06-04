@@ -1,9 +1,11 @@
 const MONGOOSE = require("mongoose");
 const EXPRESS = require("express");
-const CORS = require('cors')
-let APP = EXPRESS();
+const cors = require('cors');
+let app = EXPRESS();
 
-APP.use(CORS())
+app.use(cors());
+app.options("*",cors());
+
 const routes = require("./route");
 
 
@@ -13,9 +15,8 @@ MONGOOSE.connect("mongodb://localhost/QACinema", {
         useUnifiedTopology: true
     })
     .then(() => {
-        APP = EXPRESS();
-        APP.use(routes);
-        APP.listen(5000, () => {
+        app.use(routes);
+        app.listen(5000, () => {
             console.log("Server has started");
         })
     })

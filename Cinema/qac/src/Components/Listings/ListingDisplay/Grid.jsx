@@ -8,19 +8,20 @@ const Grid = ({ data, query }) => {
 
     useEffect(() => {
         let array = [];
-        let newarr = [];
+        // let newarr = [];
 
         array[0] = (data);
-        newarr[0] = array;
+        // newarr[0] = array;
 
 
-        setObjArray(newarr);
+        setObjArray(array);
         setReady(true);
     }, []);
 
     if (ready) {
         return (
             <div id="dropped-box" className="container-fluid">
+                {console.log(objArray)}
                 <table id="img-table">
                     <thead>
                         <tr>
@@ -46,3 +47,5 @@ const Grid = ({ data, query }) => {
 }
 
 export default Grid;
+
+
