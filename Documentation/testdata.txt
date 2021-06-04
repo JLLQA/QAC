@@ -1,0 +1,15 @@
+{
+    id: 1,
+    title: "testtitle",
+    genre: "testgenre",
+    year: 2020,
+    reviews: [{
+      critic: "testcritic",
+      stars: 5
+      }],
+    actors: [{
+    name: "testname",
+    age: 25
+      }],
+    image: "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+}
