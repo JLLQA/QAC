@@ -26,12 +26,12 @@ export const NavItems = [
     },
     {
         title: 'Getting There',
-        url: '#6',
+        url: '/gettingthere',
         cName: 'nav-links'
     },
     {
         title: 'Places to Go',
-        url: '#7',
+        url: '/places',
         cName: 'nav-links'
     },
     {
@@ -41,11 +41,11 @@ export const NavItems = [
     },
     {
         title: 'Contact',
-        url: '#9',
+        url: '/contact',
         cName: 'nav-links'
     },
     {
-        title: 'Discussion Board',
+        title: 'Discussion',
         url: '/discussion',
         cName: 'nav-links'
     }

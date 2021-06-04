@@ -1,8 +1,5 @@
-import Navbar from "../../Navbar/Navbar"
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Container, Row, Col, Nav
-} from 'reactstrap';
+import Navbar from "../../Multipage/Navbar/Navbar"
+import { Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
 
 const ExtraDetails = () => {
     //axios get request using id
@@ -12,33 +9,35 @@ const ExtraDetails = () => {
     return (
         <>
             <Navbar />
-            <Container>
-                <Row>
-                    <Col>
-                        <Card>
-                            <CardBody>
-                                <CardTitle tag="h5">{filter.clean(dummydata.title)}</CardTitle>
-                                <CardSubtitle tag="h6" className="mb-2 text-muted">{filter.clean(dummydata.username)}</CardSubtitle>
-                                <CardText>{filter.clean(dummydata.body)}</CardText>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-                {dummydata.replies.map((reply) => (
+            <div id="dropped-box" className="container-fluid">
+                <Container>
                     <Row>
-
                         <Col>
                             <Card>
                                 <CardBody>
-                                    <CardTitle tag="h5">{filter.clean(reply.username)}</CardTitle>
-                                    <CardText>{filter.clean(reply.body)}</CardText>
+                                    <CardTitle tag="h5">{filter.clean(dummydata.title)}</CardTitle>
+                                    <CardSubtitle tag="h6" className="mb-2 text-muted">{filter.clean(dummydata.username)}</CardSubtitle>
+                                    <CardText>{filter.clean(dummydata.body)}</CardText>
                                 </CardBody>
                             </Card>
                         </Col>
                     </Row>
-                ))}
-
-            </Container>
+                    <br />
+                    {dummydata.replies.map((reply) => (
+                        <Row>
+                            <Col>
+                                <Card>
+                                    <CardBody>
+                                        <CardTitle tag="h5">{filter.clean(reply.username)}</CardTitle>
+                                        <CardText>{filter.clean(reply.body)}</CardText>
+                                    </CardBody>
+                                </Card>
+                                <br />
+                            </Col>
+                        </Row>
+                    ))}
+                </Container>s
+            </div>
         </>
     )
 }

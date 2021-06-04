@@ -5,9 +5,6 @@ const ExpandedDiscussion = (props) => {
     return(
         <Container>
             <Row>
-
-            </Row>
-            <Row>
                 {comments.map((comment) => {
                     <Col>
                         <h1>Username: {comment.username}</h1>
