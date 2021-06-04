@@ -41,24 +41,16 @@ const topicSchema = new SCHEMA({
         required: [true, "Topic needs a title"],
         max: [255, "Character limit reached"]
     },
-    comments: [commentSchema]
+    commentSchema
 })
-
-
-const actorSchema = new SCHEMA({
-    name: {
-        type: String,
-        required: [true, "Actor must have a name"],
-        minlength: 2
-    },
-    age: {
-        type: Number,
-        min: [1, "Age must be above 1"],
-    }
-});
 
 const movieSchema = new SCHEMA({
     title: {
+        type: String,
+        required: true,
+        minlength: 5
+    },
+    director: {
         type: String,
         required: true,
         minlength: 5
@@ -81,7 +73,15 @@ const movieSchema = new SCHEMA({
         max: [2021, "Maximum is 2021"],
         min: [2000, "Minimum is 2000"]
     },
-    reviews: [{
+    actors: {
+            type: String,
+            required: [true, "Actor must have a name"],
+            minlength: 2
+    },
+    poster: {
+        type: String
+    },
+    reviews: ({
         critic: {
             type: String,
             required: [true, "Review must have a Critic"],
@@ -93,21 +93,8 @@ const movieSchema = new SCHEMA({
             max: [5, "Max is 5 stars"],
             min: [0, "Min is 0 stars"]
         }
-    }],
-    actors: [{
-        name: {
-            type: String,
-            required: [true, "Actor must have a name"],
-            minlength: 2
-        },
-        age: {
-            type: Number,
-            min: [1, "Age must be above 1"],
-        }
-    }],
-    image: {
-        type: String
-    }
+    })
+    // reviewSchema
 });
 
 module.exports = MONGOOSE.model("movie", movieSchema);

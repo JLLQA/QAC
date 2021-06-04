@@ -8,7 +8,7 @@ const TableData = ({ object }) => {
                     <Link to={{
                         pathname: `/moviedetails/${object.title}`
                     }}>
-                        <img src={object.image} alt={object.title} />
+                        <img src={object.poster} alt={object.title} />
                         <div className="img-overlay" >
                             <div className="img-text">{object.title}</div>
                         </div>

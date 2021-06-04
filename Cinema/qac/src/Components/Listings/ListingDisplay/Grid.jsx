@@ -18,7 +18,9 @@ const Grid = ({ data }) => {
         let array = [];
         // let newarr = [];
 
-        array[0] = (data);
+        while (data.length) {
+            array.push(data.splice(0,3));
+        }
         // newarr[0] = array;
 
 
