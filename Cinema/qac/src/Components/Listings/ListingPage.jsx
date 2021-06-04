@@ -16,9 +16,10 @@ const ListingPage = () => {
     };
 
     useEffect(() => {
-        axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=14ff12ef`)
+        axios.get(`http://localhost:5000/movies`)
             .then((res) => {
                 setData(res.data);
+                console.log("listings page",data);
                 setIsLoaded(true);
             }).catch((err) => {
                 console.log(err.message);

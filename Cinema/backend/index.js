@@ -1,7 +1,9 @@
 const MONGOOSE = require("mongoose");
 const EXPRESS = require("express");
+const CORS = require('cors')
 let APP = EXPRESS();
 
+APP.use(CORS())
 const routes = require("./route");
 
 
