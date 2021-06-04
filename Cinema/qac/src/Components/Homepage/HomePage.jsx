@@ -1,4 +1,4 @@
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Multipage/Navbar/Navbar";
 import CarouselDisplay from "./CarouselDisplay";
 
 const HomePage = () => {

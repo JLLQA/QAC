@@ -1,9 +1,9 @@
 import emailjs from 'emailjs-com';
 import { useForm } from "react-hook-form";
-import './Contact.css';
-import ContactMap from './ContactMap';
-import Navbar from '../Navbar/Navbar';
+import ContactMap from '../Multipage/Map';
+import Navbar from '../Multipage/Navbar/Navbar';
 import { Container } from 'reactstrap';
+import { Link } from "react-router-dom"
 
 const ContactUs = () => {
 
@@ -29,9 +29,17 @@ const ContactUs = () => {
             </div>
             <div id="dropped-box" className="container-fluid">
                 <Container>
-                    <h1 align="center">Contact</h1>
+                    <h1>CONTACT</h1>
                     <ContactMap />
                     <br />
+                    <div align="center">
+                        <Link to={{ pathname: `/gettingthere` }}>
+                            <button id = "infoButton" type="button">
+                                Click for more Travel Info     </button>
+                        </Link>
+                        <br />
+                        <br />
+                    </div>
                     <div id="potato" align="center" >
                         <h2>Send us an Email</h2>
                         <h4>Please fill out the form below and we will reply by email</h4>

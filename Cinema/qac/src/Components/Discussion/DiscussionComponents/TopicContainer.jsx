@@ -1,10 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Container, Row, Col
-} from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
 
 const TopicContainer = (props) => {
     const { data, query } = props
@@ -14,7 +11,6 @@ const TopicContainer = (props) => {
     }
     const Filter = require("bad-words");
     const  filter = new Filter();
-    
 
     if (query.length > 0) {
         return (
@@ -62,7 +58,6 @@ const TopicContainer = (props) => {
             </Container>
         )
     }
-
 }
 
 export default TopicContainer;

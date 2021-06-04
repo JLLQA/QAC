@@ -9,12 +9,38 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1{
+h1 {
+  color: white;
+  font-size: 4.5rem !important;
+  text-align: center;
+}
+
+h2 {
   color: white;
 }
 
-h5{
+h3 {
   color: white;
+}
+
+h4 {
+  color: white;
+}
+
+h5 {
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.card-text {
+  color: black;
 }
 
 #dropped-box {
@@ -135,6 +161,7 @@ h5{
 }
 
 /* Navbar end */
+
 /* Carousel start */
 
 .d-block {
@@ -149,16 +176,16 @@ h5{
 }
 
 /* Carousel end */
+
 /* Listings start */
 
 img {
   width: 16vw;
   height: 24vw;
   border-radius: 20px 20px 20px 20px;
-} */
+}
 
-
-#img-grid {
+*/ #img-grid {
   margin-top: 1em;
   display: flex;
   justify-content: center;
@@ -205,9 +232,8 @@ img {
   text-align: center;
 }
 
-
 .container {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   border-radius: 20px;
 }
 
@@ -217,6 +243,7 @@ img {
 }
 
 /* Listings end */
+
 /* Openings start */
 
 #open {
@@ -225,8 +252,93 @@ img {
   color: white;
 }
 
-#open-table{
+#open-table {
   color: white;
 }
 
 /* Openings end */
+
+/* Contact start */
+#potato{
+  font-weight: 500;
+}
+
+.formGroup{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.alertOne{
+  line-height: auto;
+  font-size: 15px;
+  color: palevioletred;
+
+}
+
+input[type=text] {
+  padding: 10px;
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  border: 2px solid rgb(59, 124, 124);
+}
+
+#subject{
+  padding: 10px;
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  border: 2px solid rgb(59, 124, 124);
+  text-align: center;
+}
+
+#label{
+  text-align: right;
+}
+
+#messageBox{
+  padding: 10px;
+  width: 90%;
+  max-width: 800px;
+  height: 150px;
+  margin: auto;
+  border: 2px solid rgb(59, 124, 124);
+  text-align: center;
+}
+
+#infoButton{
+  padding: 10px;
+  width: 90%;
+  max-width: 800px;
+  background-color: #10809C;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#infoButton:hover{
+  background-color: orange;
+}
+
+#submitButton{
+  padding: 10px;
+  width: 90%;
+  max-width: 800px;
+  background-color: rgb(0, 255, 21);
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#submitButton:hover{
+  background-color: orange;
+}
+
+#resetButton{
+  padding: 10px;
+  width: 90%;
+  max-width: 400px;
+  background-color: rgb(185, 3, 3);
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#resetButton:hover{
+  background-color: rgba(255, 0, 0, 0.445);
+}
+/* Contact end */

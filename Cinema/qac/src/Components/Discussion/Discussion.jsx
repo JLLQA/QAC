@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Form, Nav, Row } from "reactstrap"
 import axios from "axios";
-import Navbar from "../Navbar/Navbar"
+import Navbar from "../Multipage/Navbar/Navbar"
 import SearchForm from "./DiscussionComponents/SearchForm";
 import TopicContainer from "./DiscussionComponents/TopicContainer";
 import TopicForm from "./DiscussionComponents/TopicForm";
@@ -55,9 +55,9 @@ const Discussion = () => {
                 </div>
                 <div id="dropped-box" className="container-fluid">
                     <Container align="center">
-                        <h1>Discussion</h1>
+                        <h1>DISCUSSION BOARD</h1>
                         <Row>
-                            <Col align="center">
+                            <Col>
                                 <SearchForm
                                     handleSubmitSearch={handleSubmitSearch}
                                     query={query}
@@ -73,7 +73,6 @@ const Discussion = () => {
                                 handleUsername={handleUsername}
                                 handleTitle={handleTitle}
                                 handleBody={handleBody}
-
                             />
                         </Row>
                         <Container>

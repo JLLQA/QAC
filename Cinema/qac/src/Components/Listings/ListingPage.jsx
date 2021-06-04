@@ -1,19 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Grid from "./ListingDisplay/Grid";
-import Navbar from "../Navbar/Navbar";
-import Searchbar from "../Searchbar/Search";
+import Navbar from "../Multipage/Navbar/Navbar";
 
 const ListingPage = () => {
-
+    
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
-
-    const [q, setQ] = useState("");
-
-    const qHandler = (e) => {
-        setQ(e.target.value);
-    };
 
     useEffect(() => {
         axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=14ff12ef`)
@@ -30,8 +23,7 @@ const ListingPage = () => {
         return (
             <div>
                 <Navbar />
-                <Searchbar query={q} queryFunction={qHandler}/>
-                <Grid data={data} query={q}/>
+                <Grid data={data}/>
             </div>
         );
     } else {

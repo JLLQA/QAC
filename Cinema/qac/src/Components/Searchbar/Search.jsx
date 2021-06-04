@@ -6,8 +6,8 @@ const Search = ({ query, queryFunction}) => {
         <Container>
             <div className="search">
                 <br></br>
-                <label>Search:</label>
                 <input
+                    placeholder = "Type here to search for film"
                     type="text"
                     name="q"
                     id="q"

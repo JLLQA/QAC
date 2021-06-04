@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container } from "reactstrap";
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../../Multipage/Navbar/Navbar";
 import Showtimes from "./Showtimes"
 
 const ListingPage = () => {
@@ -35,9 +35,9 @@ const ListingPage = () => {
                         <div>
                             <h1>{data.Title}</h1>
                             <h3 className="directors">DIRECTORS</h3>
-                            <h4>{data.Director}</h4>
+                            <h4> - {data.Director}</h4>
                             <h3>ACTORS</h3>
-                            <h4>{data.Actors}</h4>
+                            <h4> - {data.Actors}</h4>
                             <Container className="showtimes">
                                 <Showtimes data={data} />
                             </Container>

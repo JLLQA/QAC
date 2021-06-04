@@ -1,8 +1,5 @@
-import Navbar from "../../Navbar/Navbar"
-import {
-    Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Container, Row, Col, Nav
-} from 'reactstrap';
+import Navbar from "../../Multipage/Navbar/Navbar"
+import { Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
 
 const ExtraDetails = () => {
     //axios get request using id
