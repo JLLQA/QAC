@@ -2,7 +2,7 @@ const MONGOOSE = require("mongoose");
 const EXPRESS = require("express");
 const APP = EXPRESS();
 
-// const routes = require("./routes");
+const routes = require("./routes");
 
 
 // setup mongoose
