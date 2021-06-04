@@ -1,18 +1,18 @@
 const MONGOOSE = require("mongoose");
 const EXPRESS = require("express");
-const APP = EXPRESS();
+let APP = EXPRESS();
 
-const routes = require("./routes");
+const routes = require("./route");
 
 
 // setup mongoose
-MONGOOSE.connect("mongodb://localhost/movie", {
+MONGOOSE.connect("mongodb://localhost/QACinema", {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
     .then(() => {
         APP = EXPRESS();
-        APP.use("/api", routes);
+        APP.use(routes);
         APP.listen(5000, () => {
             console.log("Server has started");
         })
