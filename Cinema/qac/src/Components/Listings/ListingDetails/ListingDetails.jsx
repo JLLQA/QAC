@@ -35,15 +35,9 @@ const ListingPage = () => {
                         <div>
                             <h1>{data.title}</h1>
                             <h3 className="directors">DIRECTORS</h3>
-<<<<<<< HEAD
                             <h4>{data.genre}</h4>
                             <h3>ACTORS</h3>
                             <h4>{data.actors}</h4>
-=======
-                            <h4> - {data.Director}</h4>
-                            <h3>ACTORS</h3>
-                            <h4> - {data.Actors}</h4>
->>>>>>> 010471e18eea6a90b36feb4b41b02e6a437666b6
                             <Container className="showtimes">
                                 <Showtimes data={data} />
                             </Container>

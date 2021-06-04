@@ -21,31 +21,14 @@ const Grid = ({ data }) => {
         array[0] = (data);
         // newarr[0] = array;
 
-<<<<<<< HEAD
 
         setObjArray(array);
-=======
-        setObjArray(newarr);
->>>>>>> 010471e18eea6a90b36feb4b41b02e6a437666b6
         setReady(true);
     }, []);
 
     if (ready) {
         return (
             <div id="dropped-box" className="container-fluid">
-<<<<<<< HEAD
-                {console.log(objArray)}
-                <table id="img-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {objArray.map((ten, i) => (
-                            <tr key={i}>
-                                <TableRow objects={ten} query = {query}/>
-=======
                 <Container align="center">
                     <h1>LISTINGS</h1>
                     <Searchbar query={q} queryFunction={qHandler} />
@@ -55,7 +38,6 @@ const Grid = ({ data }) => {
                             <tr>
                                 <th></th>
                                 <th></th>
->>>>>>> 010471e18eea6a90b36feb4b41b02e6a437666b6
                             </tr>
                         </thead>
                         <tbody>

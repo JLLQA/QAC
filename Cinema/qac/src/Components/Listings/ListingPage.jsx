@@ -35,7 +35,6 @@ const ListingPage = () => {
         return (
             <div>
                 <Navbar />
-                <Searchbar query={q} queryFunction={qHandler} />
                 <Grid data={data} query={q} />
             </div>
         );
