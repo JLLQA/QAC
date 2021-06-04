@@ -19,7 +19,7 @@ ROUTER.get("/movies", async (req, res) => {
 // get one
 ROUTER.get("/movies/find/:id", async (req, res, next) => {
     const ID = req.params.id;
-    const MOV = await MOVIE.findOne({ id: req.params.id },
+    const MOV = await MOVIE.findOne({ id: parseInt(req.params.id) },
     (err, mov) => {
         if (err) {
             console.error("Error occured: ", err);
@@ -40,25 +40,27 @@ ROUTER.get("/movies/find/:id", async (req, res, next) => {
 
 // edit
 ROUTER.patch("/movies/topics/:id/:username/:body", async (req, res, next) => {
-    const MOV = await MOVIE.findOne({ id: req.params.id },
+    console.log(parseInt(req.params.id))
+    const MOV = await MOVIE.findOne({ id: parseInt(req.params.id) },
         (err, mov) => {
             if (err) {
-                console.log("Movie does not exist", err);
+                console.log("ERROR", err);
                 res.status(404).send(err.stack);
             } else {
                 try{
-                    let COMMENTS = mov.comments;
-                    let COMMENT = {username:req.params.username,body:req.params.body};
-                    COMMENTS.push(COMMENT);
+                    let reviews = mov.reviews;
+                    let review = {critic:req.params.username,stars:2};
+                    reviews.push(review);
                     mov.save();
                     res.status(202).send(`${mov} has been updated`);
                 } catch(error){
-                    const myNotFoundError = new Error(`No movie with id ${req.params.id} found in the database`);
+                    const myNotFoundError = new Error(`No ${req.params.id} found in the database`);
                     next(myNotFoundError);
                 }
             }
         }
-)});
+        )});
+
 
 
 

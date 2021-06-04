@@ -45,6 +45,10 @@ const topicSchema = new SCHEMA({
 })
 
 const movieSchema = new SCHEMA({
+    id: {
+        type: Number,
+        required: true
+    },
     title: {
         type: String,
         required: true,
@@ -74,9 +78,9 @@ const movieSchema = new SCHEMA({
         min: [2000, "Minimum is 2000"]
     },
     actors: {
-            type: String,
-            required: [true, "Actor must have a name"],
-            minlength: 2
+        type: String,
+        required: [true, "Actor must have a name"],
+        minlength: 2
     },
     poster: {
         type: String
