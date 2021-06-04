@@ -11,7 +11,7 @@ MONGOOSE.connect("mongodb://localhost/movie", {
         useUnifiedTopology: true
     })
     .then(() => {
-        const APP = EXPRESS();
+        APP = EXPRESS();
         APP.use("/api", routes);
         APP.listen(5000, () => {
             console.log("Server has started");

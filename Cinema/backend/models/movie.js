@@ -17,6 +17,34 @@ const reviewSchema = new SCHEMA({
     }
 });
 
+const topicSchema = new SCHEMA({
+    username:{
+        type:String
+    },
+    body:{
+        type: String,
+        required: [true, "Need comment to discuss"],
+        max: [255, "Character limit reached"]
+    },
+    title:{
+        type:String,
+        required:[true,"Topic needs a title"],
+        max:[255,"Character limit reached"]
+    },
+    comments:[commentSchema]
+})
+
+const commentSchema = new SCHEMA({
+    username:{
+        type:String
+    },
+    body:{
+        type:String,
+        required:[true,"Need comment to discuss"],
+        max:[255,"Character limit reached"]
+    }
+})
+
 const actorSchema = new SCHEMA({
     name: {
         type: String,
@@ -54,7 +82,7 @@ const movieSchema = new SCHEMA({
         min: [2000, "Minimum is 2000"]
     },
     reviews: [reviewSchema],
-    actors: [actorSchema]
+    actors: [actorSchema],
 });
 
 module.exports = MONGOOSE.model("movie", movieSchema);
