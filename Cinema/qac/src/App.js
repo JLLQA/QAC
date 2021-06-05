@@ -9,6 +9,7 @@ import GettingThere from "./Components/GettingThere/GettingThere";
 import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
 import Contact from "./Components/Contact/Contact";
+import NewReleases from './Components/NewReleases/NewReleases';
 
 const App = () => {
   return (
@@ -41,6 +42,9 @@ const App = () => {
           </Route>
           <Route exact path="/discussion/movie/:id">
             <ExtraDetails/>
+          </Route>
+          <Route exact path="/newreleases">
+            <NewReleases/>
           </Route>
         </Switch>
       </Router>
