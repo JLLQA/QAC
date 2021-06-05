@@ -8,7 +8,7 @@ const NewReleases = () => {
     return (
         <div>
             <Navbar />
-            <h2>New Releases</h2>
+            <h1>NEW RELEASES</h1>
         </div>
     );
 
