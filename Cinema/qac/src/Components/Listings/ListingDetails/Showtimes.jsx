@@ -8,11 +8,11 @@ const Showtimes = (props) => {
             <h3>Show Times</h3>
             <CollapsibleComponent>
                 <CollapsibleHead className="additionalClassForHead">
-                    {props.data.Title}
-                </CollapsibleHead>
+                    {props.data.title}
+                    </CollapsibleHead>
                 <CollapsibleContent className="additionalClassForContent">
                     <p>
-                        {props.data.Actors}
+                        {props.data.genre}
                     </p>
                 </CollapsibleContent>
                 <CollapsibleHead className="additionalClassForHead">
