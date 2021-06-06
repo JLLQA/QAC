@@ -10,7 +10,7 @@ const TopicContainer = (props) => {
         event.preventDefault();
     }
     const Filter = require("bad-words");
-    const  filter = new Filter();
+    const filter = new Filter();
 
     if (query.length > 0) {
         return (
@@ -23,17 +23,19 @@ const TopicContainer = (props) => {
                                 <Card >
                                     <CardBody>
                                         <CardTitle tag="h5">{filter.clean(post.title)}</CardTitle>
-                                        <CardSubtitle tag="h6" className="mb-2 text-muted">{filter.clean(post.username)}</CardSubtitle>
+                                        <CardSubtitle tag="h6">{filter.clean(post.username)}</CardSubtitle>
                                         <CardText>{filter.clean(post.body)}</CardText>
-                                        <Link to={{ pathname: `/discussion/movie/${post.id}`}}>
+                                        <Link to={{ pathname: `/discussion/movie/${post.id}` }}>
                                             <h3>More</h3>
                                         </Link>
+                                        <br />
                                     </CardBody>
                                 </Card>
+                                <br />
                             </Col>
                         </Row>
                     ))}
-            </Container> 
+            </Container>
         )
     } else {
         return (
@@ -45,13 +47,14 @@ const TopicContainer = (props) => {
                             <Card>
                                 <CardBody>
                                     <CardTitle tag="h5">{filter.clean(post.title)}</CardTitle>
-                                    <CardSubtitle tag="h6" className="mb-2 text-muted">{filter.clean(post.username)}</CardSubtitle>
+                                    <CardSubtitle tag="h6">{filter.clean(post.username)}</CardSubtitle>
                                     <CardText>{filter.clean(post.body)}</CardText>
                                     <Link to={{ pathname: `/discussion/movie/${post.id}` }}>
                                         <h3>More</h3>
                                     </Link>
                                 </CardBody>
                             </Card>
+                            <br />
                         </Col>
                     </Row>
                 ))}

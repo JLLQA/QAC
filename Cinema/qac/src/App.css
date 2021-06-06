@@ -32,6 +32,11 @@ h5 {
   color: white;
 }
 
+h6{
+  color: white;
+  padding: 0.5rem;
+}
+
 label {
   color: white;
 }
@@ -288,11 +293,26 @@ img {
 }
 
 /* Getting There end */
-/* Contact start */
+/* Places to Go start */
 
-#potato{
-  font-weight: 500;
+.card{
+  background-color: #10809C !important;
 }
+
+#external{
+  background-color: #4F0821;
+}
+
+#external:hover{
+  background-color: #9C0036;
+}
+
+.card-text {
+  color: white;
+}
+
+/* Places to Go end */
+/* Contact start */
 
 .formGroup{
   padding-top: 10px;
@@ -301,9 +321,8 @@ img {
 
 .alertOne{
   line-height: auto;
-  font-size: 15px;
-  color: palevioletred;
-
+  font-size: 20px !important;
+  color: red !important;
 }
 
 input[type=text] {
@@ -346,30 +365,33 @@ input[type=text] {
 }
 
 #infoButton:hover{
-  background-color: orange;
+  background-color: #0964B3;
+  color: white;
 }
 
 #submitButton{
   padding: 10px;
   width: 90%;
   max-width: 800px;
-  background-color: rgb(0, 255, 21);
+  background-color: #08A870;
   border: 2px solid rgb(255, 255, 255);
 }
 
 #submitButton:hover{
-  background-color: orange;
+  background-color: #00B50F;
+  color: white;
 }
 
 #resetButton{
   padding: 10px;
   width: 90%;
   max-width: 400px;
-  background-color: rgb(185, 3, 3);
+  background-color: #A82708;
   border: 2px solid rgb(255, 255, 255);
 }
 
 #resetButton:hover{
-  background-color: rgba(255, 0, 0, 0.445);
+  background-color: #BF0A00;
+  color: white;
 }
 /* Contact end */
