@@ -6,7 +6,7 @@ import Navbar from "../../Multipage/Navbar/Navbar";
 import Showtimes from "./Showtimes"
 
 const ListingPage = () => {
-    
+
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -38,10 +38,11 @@ const ListingPage = () => {
                             <h4> - {data.Director}</h4>
                             <h3>ACTORS</h3>
                             <h4> - {data.Actors}</h4>
+                            <br />
                             <Container className="showtimes">
                                 <Showtimes data={data} />
                             </Container>
-                            <br/>
+                            <br />
                         </div>
                     </Container>
                 </div>

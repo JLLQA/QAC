@@ -3,6 +3,7 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Container } from 
 import classnames from 'classnames';
 import Navbar from "../Multipage/Navbar/Navbar";
 import ContactMap from "../Multipage/Map";
+import { Link } from "react-router-dom"
 
 const GettingThere = () => {
   const [activeTab, setActiveTab] = useState('1');
@@ -18,13 +19,13 @@ const GettingThere = () => {
         <Container>
           <div align='center'>
             <h1>GETTING TO THE CINEMA</h1>
-            <p className="lead" style={{ color: 'white' }} >Getting to the venue has never been easier!</p>
-            <p style={{ color: 'white' }} >With the following travel options, you can arrive at the location on time, etc</p>
+            <h5>Getting to the venue has never been easier!</h5>
+            <p>With the following travel options, you can arrive at the location on time, etc</p>
           </div>
           <br />
           <Container>
-            <div align='center'>
-              <Nav tabs >
+            <div>
+              <Nav tabs>
                 <NavItem>
                   <NavLink
                     className={classnames({ active: activeTab === '1' })}
@@ -69,57 +70,61 @@ const GettingThere = () => {
               <TabContent activeTab={activeTab}>
                 <TabPane tabId="1">
                   <Row>
-                    <Col sm="12">
+                    <Col>
                       <ContactMap />
                     </Col>
                   </Row>
                 </TabPane>
                 <TabPane tabId="2">
                   <Row>
-                    <Col sm="12" align='center'>
+                    <Col>
                       <br />
-                      <h2 style={{ color: 'white' }}>PARKING</h2>
+                      <h2>PARKING</h2>
                       <br />
                       <h5> The nearest parking location is the NCP car park situated in 'Whitworth St, Manchester, M1 6NE' which is only a 5 minute (0.2 mile) walk away from the venue.</h5>
                       <br />
                       <h5> We advise pre-booking your parking here to make your travel to the venue much quicker and more economic.</h5>
                       <br />
-                      <h5> Early Bird discounts are available if you plan to park between 05:00AM-09:00AM, and if you do so, we recommend checking out the 'Places to Go' section of the website to plan your day.</h5>
+                      <h5 id="highlight"> Early Bird discounts are available if you plan to park between 05:00AM-09:00AM, and if you do so, we recommend checking out the <Link id="highlight"
+                        to={{ pathname: `/places` }}>
+                        "Places to Go"
+                        </Link> section of the website to plan your day.</h5>
                     </Col>
                   </Row>
                 </TabPane>
                 <TabPane tabId="3">
                   <Row>
-                    <Col sm="12">
+                    <Col>
                       <br />
-                      <h2 style={{ color: 'white' }}>TRAIN STATION</h2>
+                      <h2>TRAIN STATION</h2>
                       <br />
-                      <h5> The Manchester Oxford Road Station is located in 'Manchester Oxford Road station, Station Approach, Oxford Road, Manchester, Greater Manchester, M1 6FU' and is only a 2 minute (0.1 mile) walk away from the venue</h5>
+                      <h5> The Manchester Oxford Road Station is located in 'Manchester Oxford Road station, Station Approach, Oxford Road, Manchester, Greater Manchester, M1 6FU' and is only a 2 minute walk away from the venue</h5>
                       <br />
                       <h5>Alternatively, if you plan on arriving at the Manchester Piccadilly station located in 'Manchester Piccadilly, Piccadilly Station Approach, Manchester M60 7RA', it would take an approximately 10-15 minute walk to the venue.</h5>
                       <br />
-                      <h5 style={{ color: '#ffe167' }}> We advise pre-booking your train tickets early and to be aware of the station opening and closing times. </h5>
+                      <h5 id="highlight"> We advise pre-booking your train tickets early and to be aware of the station opening and closing times. </h5>
                     </Col>
                   </Row>
                 </TabPane>
                 <TabPane tabId="4">
                   <Row>
-                    <Col sm="12">
+                    <Col>
                       <br />
-                      <h2 style={{ color: 'white' }}>BUS TRAVEL</h2>
+                      <h2>BUS TRAVEL</h2>
                       <br />
                       <h5>The Manchester city area has buses available frequently, with the nearest being 5 minutes away from the venue.</h5>
                       <br />
+                      <h5 id="highlight"> We advise pre-booking your bus tickets early and to be aware of the station opening and closing times. </h5>
                     </Col>
                   </Row>
                 </TabPane>
                 <TabPane tabId="5">
                   <Row>
-                    <Col sm="12" align='left'>
+                    <Col>
                       <br />
-                      <h2 align='center' style={{ color: 'white' }}>Travel by Goose!</h2>
+                      <h2>Travel by Goose</h2>
                       <br />
-                      <h4 style={{ color: 'yellow' }}>Our staff are currently training the geese, alas to no success.
+                      <h4 id="highlight">Our staff are currently training the geese, alas to no success.
                         <br />
                         The geese are currently rebelling and we hope to restart this service as soon as we have the situation under control.</h4>
                     </Col>
