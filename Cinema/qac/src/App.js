@@ -10,6 +10,7 @@ import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
 import Contact from "./Components/Contact/Contact";
 import Bookings from './Components/Bookings/Bookings';
+import Screens from './Components/Bookings/BookingDetails/Screens'
 
 const App = () => {
   return (
@@ -30,6 +31,9 @@ const App = () => {
           </Route>
           <Route exact path="/bookings">
             <Bookings />
+          </Route>
+          <Route exact path="/screens">
+            <Screens />
           </Route>
           <Route exact path="/gettingthere">
             <GettingThere/>
