@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Grid from "../Listings/ListingDisplay/Grid";
 import Navbar from "../Multipage/Navbar/Navbar";
 import Release from "./Release";
 
