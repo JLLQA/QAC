@@ -1,9 +1,9 @@
 import axios from 'axios';
 import StarRating from './StarRating';
 import {useEffect, useState} from 'react';
+import Navbar from '../Multipage/Navbar/Navbar';
 
-
-const Discussion2 = () => {
+const RatingPage = () => {
 
     const [usersName, setUsersName] = useState("");
     const [reviewBody, setReviewBody] = useState("");
@@ -19,7 +19,7 @@ const Discussion2 = () => {
     return(
             <>
             <div>
-                <NavBar />
+                <Navbar />
             </div>
             <h1>Let us know what you thought!</h1>
             <h2>Film title</h2>
@@ -48,4 +48,4 @@ const Discussion2 = () => {
     }
 
 
-export default Discussion2;
+export default RatingPage;
