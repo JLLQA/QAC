@@ -8,15 +8,41 @@ const RatingPage = () => {
     const [usersName, setUsersName] = useState("");
     const [reviewBody, setReviewBody] = useState("");
 
+    const [incomingData, setIncomingData] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false);
 
-    const submitReview = (e) => {
-        e.preventDefault();
-        const dataSend = JSON.stringify({usersName, reviewBody});
-        setUsersName("");
-        setReviewBody("");
+    const getReviews = () => {
+        useEffect(() => {
+        axios({
+            method: "Get",
+            url: "http://localhost:5000/Reviews",
+            headers: { "Access-Control-Allow-Origin" : "*"}
+        }).then((resp) => {
+            console.log(resp);
+            setIncomingData(resp.data);
+            setIsLoaded(true);
+        }).catch((err) => {
+            console.log(err.message);
+            setIsLoaded(true);
+        })
+        }, []);
     }
 
-    return(
+    const submitReviewAxios = (e) => {
+        e.preventDefault();
+        
+        const reviewData = {
+            name: usersName,
+            review: reviewBody
+        }
+
+        axios.post("http://localhost:5000/Reviews", reviewData)
+            .then(response => {
+                console.log(response);
+            })
+        };
+
+        return(
             <>
             <div>
                 <Navbar />
@@ -34,18 +60,17 @@ const RatingPage = () => {
                 <br/>
                 <input id="reviewBody" type="text" name="reviewBody" onChange={(e) => setReviewBody(e.target.value)}/>
                 <br/>
-                <button type="submit">Submit</button>
+                <button type="submit" onClick={submitReviewAxios}>Submit</button>
             </form>
 
-            <p> 
-                Name:{usersName}
-                <br/>
-                Review:{reviewBody}
-            </p>
-
+            <button onClick={getReviews}>Show Reviews</button>
+            
             </>
         )
-    }
+
+        //add in if statement that will be set to true when display reviews is shown and will show the table with reviews in.
+
+        }
 
 
 export default RatingPage;
