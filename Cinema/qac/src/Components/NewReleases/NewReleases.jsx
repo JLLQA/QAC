@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Navbar from "../Multipage/Navbar/Navbar";
 import Release from "./Release";
+import { Container } from "reactstrap";
+import Searchbar from "../Searchbar/Search";
 
 
 const NewReleases = () => {
@@ -14,6 +16,7 @@ const NewReleases = () => {
     const qHandler = (e) => {
         setQ(e.target.value);
     };
+  
 
     useEffect(() => {
         axios({
@@ -36,11 +39,13 @@ const NewReleases = () => {
         return (
             <div>
                 <Navbar />
-                {/* <h1>NEW RELEASES</h1> */}
-                <div>
-                        <Release data={data} query={q}/>  
+                <div id="dropped-box" className="container-fluid">
+                    <Container align="center">
+                        <h1>NEW RELEASES</h1>
+                        <Searchbar query={q} queryFunction={qHandler} />
+                        <Release data={data} query={q} />
+                    </Container>
                 </div>
-                
             </div>
         );
     }
