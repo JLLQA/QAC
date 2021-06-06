@@ -21,7 +21,7 @@ export const NavItems = [
     },
     {
         title: 'Bookings',
-        url: '#5',
+        url: '/bookings',
         cName: 'nav-links'
     },
     {

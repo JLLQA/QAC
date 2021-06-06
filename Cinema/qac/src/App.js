@@ -9,6 +9,7 @@ import GettingThere from "./Components/GettingThere/GettingThere";
 import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
 import Contact from "./Components/Contact/Contact";
+import Bookings from './Components/Bookings/Bookings';
 
 const App = () => {
   return (
@@ -18,20 +19,23 @@ const App = () => {
           <Route exact path="/">
             <Homepage />
           </Route>
+          <Route exact path="/openings">
+            <OpeningTimes />
+          </Route>
           <Route exact path="/listings">
             <ListingPage />
           </Route>
           <Route exact path="/moviedetails/:id">
             <ListingDetails/>
           </Route>
-          <Route exact path="/openings">
-            <OpeningTimes />
-          </Route>
-          <Route exact path="/places">
-            <Places />
+          <Route exact path="/bookings">
+            <Bookings />
           </Route>
           <Route exact path="/gettingthere">
             <GettingThere/>
+          </Route>
+          <Route exact path="/places">
+            <Places />
           </Route>
           <Route exact path="/contact">
             <Contact />
