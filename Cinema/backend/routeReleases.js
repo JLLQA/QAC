@@ -3,7 +3,7 @@ const RELEASE = require("./models/newreleases")
 
 // get all
 ROUTERNEW.get("/newreleases", async (req, res) => {
-    const REL = await RELEASE.find((err, rel) => {
+    await RELEASE.find((err, rel) => {
         if (err) {
             console.error("Error occured: ", err);
             res.send(err.stack);
@@ -28,6 +28,7 @@ ROUTERNEW.post('/createjam', async (req, res) => {
     });
     await REL.save();
     res.send(REL);
+    console.log("Space Jam movie created");
 })
 
 
@@ -45,6 +46,7 @@ ROUTERNEW.post('/create007', async (req, res) => {
     });
     await REL.save();
     res.send(REL);
+    console.log("007 movie created");
 })
 
 
@@ -62,6 +64,7 @@ ROUTERNEW.post('/createspiderman', async (req, res) => {
     });
     await REL.save();
     res.send(REL);
+    console.log("Spiderman movie created");
 })
 
 //create candyman movie
@@ -78,6 +81,18 @@ ROUTERNEW.post('/createcandyman', async (req, res) => {
     });
     await REL.save();
     res.send(REL);
+    console.log("Candyman movie created");
+})
+
+//delted by _id 
+ROUTERNEW.delete("/delById/:id", async (req, res) => {
+    try {
+        const REL = await RELEASE.findByIdAndDelete(req.params.id).exec();
+        res.send(REL);
+        console.log("Item deleted");
+    } catch {
+        res.status(500).send("item has not been deleted");
+    }
 })
 
 
