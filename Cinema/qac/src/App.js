@@ -9,9 +9,13 @@ import GettingThere from "./Components/GettingThere/GettingThere";
 import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
 import Contact from "./Components/Contact/Contact";
+<<<<<<< HEAD
 import Bookings from './Components/Bookings/Bookings';
 import Screens from './Components/Bookings/BookingDetails/Screens'
 import Payment from './Components/Bookings/Payment';
+=======
+import Classification from './Components/Classification/Classification';
+>>>>>>> d2742044580ed6cdf79a2ee8bdc6ac0105245174
 
 const App = () => {
   return (
@@ -54,6 +58,10 @@ const App = () => {
           <Route exact path="/discussion/movie/:id">
             <ExtraDetails/>
           </Route>
+          <Route exact path="/classification">
+            <Classification/>
+          </Route>
+
         </Switch>
       </Router>
     </>

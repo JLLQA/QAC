@@ -60,7 +60,6 @@ const BookingDetails = () => {
     }
 
     const submitForm = (event) => {
-        let movID;
         let mov;
         event.preventDefault();
         if (typeof (film) == "undefined") {
@@ -75,13 +74,12 @@ const BookingDetails = () => {
         } else {
             mov = film;
             console.log("movie id: " + mov);
-            movID = Number(mov);
+            console.log("Film date: " + filmDate);
             console.log("Film time : " + selectedTime);
             console.log("Adult seats: ");
             console.log("Child seats: ");
             console.log("Consession seats: ");
             console.log(newBookerName);
-            console.log(filmDate);
         }
 
         // history.push('/payment')
