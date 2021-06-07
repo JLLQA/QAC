@@ -53,29 +53,29 @@ const Seating = () => {
             <br />
             <label>Adult Seats: </label>
             <input placeholder={countA} disabled></input>
-            <button onClick={setAdultDown}>
-                ""-""
+            <button id="neg" onClick={setAdultDown}>
+                -
             </button>
-            <button onClick={setAdultUp}>
-                ""+""
+            <button id="pos" onClick={setAdultUp}>
+                +
             </button>
             <br />
             <label>Child Seats: </label>
             <input placeholder={countB} disabled></input>
-            <button onClick={setChildDown}>
-                ""-""
+            <button id="neg" onClick={setChildDown}>
+                -
             </button>
-            <button onClick={setChildUp}>
-                ""+""
+            <button id="pos" onClick={setChildUp}>
+                +
             </button>
             <br />
             <label>Consession Seats: </label>
             <input placeholder={countC} disabled></input>
-            <button onClick={setComDown}>
-                ""-""
+            <button id="neg" onClick={setComDown}>
+                -
             </button>
-            <button onClick={setComUp}>
-                ""+""
+            <button id="pos" onClick={setComUp}>
+                +
             </button>
         </>
     );

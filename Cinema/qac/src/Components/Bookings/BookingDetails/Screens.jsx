@@ -19,7 +19,11 @@ const Screens = () => {
                         <img id="plan" src={Standard} alt="basicplan"></img>
                         <h1>Screen 3</h1>
                         <h3>Deluxe Screen</h3>
-                        <p>We like to refer to this as our "Directors Box" screen.</p>
+                        <p>We like to refer to this as our "Directors Box" screen.
+                            <br />
+                            These VIP seats have extra room to stretch out, a wider chair and are in a prime position,
+                            giving you a perfect, unobstructed view of the screen every time.
+                        </p>
                         <img src='https://www.showcasecinemas.com/Media/1739/woburnseatsmob2.jpg' alt="deluxeseat"></img>
                         <img id="plan" src={Deluxe} alt="deluxeplan"></img>
                     </div>

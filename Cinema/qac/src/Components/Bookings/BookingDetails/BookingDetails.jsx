@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import { Container } from 'reactstrap';
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { addDays } from 'date-fns';
+import { useHistory } from 'react-router'
 import DatePicker from "react-datepicker";
-import Seating from './Seating';
-
 
 import "react-datepicker/dist/react-datepicker.css";
 
 const BookingDetails = () => {
 
     const placeholder = [
-        { id: 0, title: "testtitle", showtimes: ["Please select a film", "Please select a film", "Please select a film", "Please select a film", "Please select a film", "Please select a film", "Please select a film", "Please select a film", "Please select a film", "Please select a film"] },
+        { id: 0, title: "testtitle", showtimes: ["Please select a film"] },
         {
             id: 1, title: "testtitle", showtimes: [
                 "10:00 Screen 1",
@@ -25,24 +24,72 @@ const BookingDetails = () => {
                 "20:30 Screen 3",
                 "22:00 Screen 1"]
         },
-        { id: 2, title: "testtitle2", showtimes: [
-            "10:15 Screen 2",
-            "11:30 Screen 3",
-            "12:15 Screen 2",
-            "14:15 Screen 2",
-            "15:30 Screen 3",
-            "16:15 Screen 2",
-            "18:15 Screen 2",
-            "19:30 Screen 3",
-            "20:15 Screen 2",
-            "22:15 Screen 2"] }
+        {
+            id: 2, title: "testtitle2", showtimes: [
+                "10:15 Screen 2",
+                "11:30 Screen 3",
+                "12:15 Screen 2",
+                "14:15 Screen 2",
+                "15:30 Screen 3",
+                "16:15 Screen 2",
+                "18:15 Screen 2",
+                "19:30 Screen 3",
+                "20:15 Screen 2",
+                "22:15 Screen 2"]
+        }
     ];
 
     const [film, setMovie] = useState("");
     const [filmTime, setFilmTime] = useState(0);
-    const [selectedTime, setTime] = useState(0);
+    const [selectedTime, setTime] = useState("");
     const [newBookerName, setBookerName] = useState("");
     const [filmDate, setStartDate] = useState(null);
+    const [countA, setCountA] = useState(0);
+    const [countB, setCountB] = useState(0);
+    const [countC, setCountC] = useState(0);
+
+    const setAdultUp = (event) => {
+        event.preventDefault();
+        setCountA(countA => countA + 1);
+    }
+
+    const setAdultDown = (event) => {
+        event.preventDefault();
+        if (countA == 0) {
+            alert("You cannot have less than 0 seats");
+        } else {
+            setCountA(countA => countA - 1);
+
+        }
+    }
+
+    const setChildUp = (event) => {
+        event.preventDefault();
+        setCountB(countB => countB + 1)
+    }
+
+    const setChildDown = (event) => {
+        event.preventDefault();
+        if (countB == 0) {
+            alert("You cannot have less than 0 seats");
+        } else {
+            setCountB(countB => countB - 1)
+        }
+    }
+
+    const setComUp = (event) => {
+        event.preventDefault();
+        setCountC(countC => countC + 1)
+    }
+
+    const setComDown = (event) => {
+        event.preventDefault();
+        if (countC == 0) {
+            alert("You cannot have less than 0 seats");
+        } else {
+            setCountC(countC => countC - 1)
+        }
+    }
 
     const bookerName = ({ target }) => {
         setBookerName(target.value)
@@ -68,6 +115,10 @@ const BookingDetails = () => {
         } else if (filmDate == null) {
             alert('please pick a date');
             return
+        }
+        else if (selectedTime == "") {
+            alert('please pick a time and screen');
+            return
         } else if (newBookerName == "") {
             alert('please enter the ticket bookers name');
             return
@@ -76,14 +127,18 @@ const BookingDetails = () => {
             console.log("movie id: " + mov);
             console.log("Film date: " + filmDate);
             console.log("Film time : " + selectedTime);
-            console.log("Adult seats: ");
-            console.log("Child seats: ");
-            console.log("Consession seats: ");
-            console.log(newBookerName);
+            console.log("Adult seats: " + countA);
+            console.log("Child seats: " + countB);
+            console.log("Consession seats: " + countC);
+            console.log("Booker Name: "+ newBookerName);
         }
 
-        // history.push('/payment')
+        history.push({
+            pathname: "/payment"
+        })
     }
+
+    const history = useHistory();
 
     return (
         <div id="dropped-box" className="container-fluid">
@@ -114,24 +169,45 @@ const BookingDetails = () => {
                         <br />
                         <Container id="timeSelect">
                             <select value={selectedTime} onChange={setNewTime}>
-                                <option value={placeholder[filmTime].showtimes[0]}>{placeholder[filmTime].showtimes[0]}</option>
-                                <option value={placeholder[filmTime].showtimes[1]}>{placeholder[filmTime].showtimes[1]}</option>
-                                <option value={placeholder[filmTime].showtimes[2]}>{placeholder[filmTime].showtimes[2]}</option>
-                                <option value={placeholder[filmTime].showtimes[3]}>{placeholder[filmTime].showtimes[3]}</option>
-                                <option value={placeholder[filmTime].showtimes[4]}>{placeholder[filmTime].showtimes[4]}</option>
-                                <option value={placeholder[filmTime].showtimes[5]}>{placeholder[filmTime].showtimes[5]}</option>
-                                <option value={placeholder[filmTime].showtimes[6]}>{placeholder[filmTime].showtimes[6]}</option>
-                                <option value={placeholder[filmTime].showtimes[7]}>{placeholder[filmTime].showtimes[7]}</option>
-                                <option value={placeholder[filmTime].showtimes[8]}>{placeholder[filmTime].showtimes[8]}</option>
-                                <option value={placeholder[filmTime].showtimes[9]}>{placeholder[filmTime].showtimes[9]}</option>
+                                <option value="">-- Select a Time and Screen --</option>
+                                {placeholder[filmTime].showtimes.map((many, i) => (
+                                    <option key={i}>{placeholder[filmTime].showtimes[i]}</option>
+                                ))}
                             </select>
                             <Link to={{ pathname: `/screens` }} target="_blank">
                                 <button id="screenButton" type="button" >
                                     Please click for sceen info     </button>
                             </Link>
                         </Container>
-                        <Seating />
-                        <br />
+                        <Container>
+                            <br />
+                            <label>Adult Seats: </label>
+                            <input placeholder={countA} disabled></input>
+                            <button id="neg" onClick={setAdultDown}>
+                                -
+                            </button>
+                            <button id="pos" onClick={setAdultUp}>
+                                +
+                            </button>
+                            <br />
+                            <label>Child Seats: </label>
+                            <input placeholder={countB} disabled></input>
+                            <button id="neg" onClick={setChildDown}>
+                                -
+                            </button>
+                            <button id="pos" onClick={setChildUp}>
+                                +
+                            </button>
+                            <br />
+                            <label>Consession Seats: </label>
+                            <input placeholder={countC} disabled></input>
+                            <button id="neg" onClick={setComDown}>
+                                -
+                            </button>
+                            <button id="pos" onClick={setComUp}>
+                                +
+                            </button>
+                        </Container>
                         <br />
                         <Container>
                             <input placeholder="Please enter your name here:" type="text" onChange={bookerName}></input>

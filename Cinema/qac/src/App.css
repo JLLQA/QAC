@@ -405,3 +405,31 @@ input[type=text] {
 }
 
 /* Contact end */
+
+/*Booking*/
+
+#neg {
+  padding: 2px;
+  width: 5%;
+  max-width: 800px;
+  background-color: #10809C;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+#neg:hover {
+  background-color: #BF0A00;
+  color: white;
+}
+
+#pos {
+  padding: 2px;
+  width: 5%;
+  max-width: 800px;
+  background-color: #10809C;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+#pos:hover {
+  background-color: #08A870;
+  color: white;
+}
