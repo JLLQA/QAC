@@ -1,0 +1,14 @@
+
+db.movies.insertOne({
+    id: 1,
+    title: "testtitle",
+    director: "testdirector",
+    genre: "testgenre",
+    year: 2020,
+    actors: "testactor",
+    poster: "https://pbs.twimg.com/profile_images/479053337937977345/kAkoZCZF_400x400.jpeg",
+    reviews: {
+      critic: "testcritic",
+      stars: 5
+    },
+})

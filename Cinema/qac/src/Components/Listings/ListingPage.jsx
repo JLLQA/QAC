@@ -9,11 +9,17 @@ const ListingPage = () => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=14ff12ef`)
-            .then((res) => {
-                setData(res.data);
+        axios({
+            method: "Get",
+            url: "http://127.0.0.1:5000/movies",
+            headers: { "Access-Control-Allow-Origin": "*"}
+        })
+            .then((resp) => {
+                console.log(resp);
+                setData(resp.data);
                 setIsLoaded(true);
-            }).catch((err) => {
+            })
+            .catch((err) => {
                 console.log(err.message);
                 setIsLoaded(true);
             });
@@ -23,7 +29,7 @@ const ListingPage = () => {
         return (
             <div>
                 <Navbar />
-                <Grid data={data}/>
+                <Grid data={data} />
             </div>
         );
     } else {

@@ -16,7 +16,7 @@ const ExtraDetails = () => {
                             <Card>
                                 <CardBody>
                                     <CardTitle tag="h5">{filter.clean(dummydata.title)}</CardTitle>
-                                    <CardSubtitle tag="h6" className="mb-2 text-muted">{filter.clean(dummydata.username)}</CardSubtitle>
+                                    <CardSubtitle tag="h6">{filter.clean(dummydata.username)}</CardSubtitle>
                                     <CardText>{filter.clean(dummydata.body)}</CardText>
                                 </CardBody>
                             </Card>

@@ -16,12 +16,15 @@ const Grid = ({ data }) => {
 
     useEffect(() => {
         let array = [];
-        let newarr = [];
+        // let newarr = [];
 
-        array[0] = (data);
-        newarr[0] = array;
+        while (data.length) {
+            array.push(data.splice(0,3));
+        }
+        // newarr[0] = array;
 
-        setObjArray(newarr);
+
+        setObjArray(array);
         setReady(true);
     }, []);
 
@@ -59,3 +62,5 @@ const Grid = ({ data }) => {
 }
 
 export default Grid;
+
+

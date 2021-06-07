@@ -15,13 +15,14 @@ const ContactMap = () => {
         <div className="container" align="center">
             <br />
             <h2>Where We Are</h2>
+            <br/>
             <div className="row justify-content-md-center">
                 <div className="col-md-auto" >
-                    <h4>Our Address</h4>
-                    <p>8th Floor St James Buildings</p>
-                    <p>79 Oxford Street</p>
-                    <p>Manchester</p>
-                    <p>M1 6FQ</p>
+                    <h3>Our Address</h3>
+                    <p>8th Floor St James Buildings<br/>
+                    79 Oxford Street<br/>
+                    Manchester<br/>
+                    M1 6FQ</p>
                 </div>
                 <div className="col col-lg-6" style={{ height: '40vh', width: '50%' }}>
                     <GoogleMapReact
