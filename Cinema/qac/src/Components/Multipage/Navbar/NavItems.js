@@ -16,7 +16,7 @@ export const NavItems = [
     },
     {
         title: 'Classifications',
-        url: '#4',
+        url: '/classification',
         cName: 'nav-links'
     },
     {
@@ -36,7 +36,7 @@ export const NavItems = [
     },
     {
         title: 'About',
-        url: '#8',
+        url: '/about',
         cName: 'nav-links'
     },
     {

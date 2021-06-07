@@ -10,6 +10,9 @@ import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
 import Contact from "./Components/Contact/Contact";
 import NewReleases from './Components/NewReleases/NewReleases';
+import Classification from './Components/Classification/Classification';
+import About from './Components/About/About';
+
 
 const App = () => {
   return (
@@ -40,11 +43,17 @@ const App = () => {
           <Route exact path="/discussion">
             <Discussion/>
           </Route>
-          <Route exact path="/discussion/movie/:id">
+          <Route exact path="/discussion/:title">
             <ExtraDetails/>
           </Route>
           <Route exact path="/newreleases">
             <NewReleases/>
+          </Route>
+          <Route exact path="/classification">
+            <Classification/>
+          </Route>
+          <Route exact path="/about">
+            <About/>
           </Route>
         </Switch>
       </Router>

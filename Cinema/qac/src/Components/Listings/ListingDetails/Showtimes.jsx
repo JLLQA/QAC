@@ -1,10 +1,11 @@
 import { CollapsibleComponent, CollapsibleHead, CollapsibleContent } from "react-collapsible-component";
 
-const Showtimes = (props) =>{
+const Showtimes = (props) => {
 
     return (
         <div>
-            <h4>Show Times</h4>
+            <br />
+            <h3>Show Times</h3>
             <CollapsibleComponent>
                 <CollapsibleHead className="additionalClassForHead">
                     {props.data.title}
@@ -15,7 +16,7 @@ const Showtimes = (props) =>{
                     </p>
                 </CollapsibleContent>
                 <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 1   
+                    Day 1 + 1
                     </CollapsibleHead>
                 <CollapsibleContent className="additionalClassForContent">
                     <p>
@@ -23,43 +24,43 @@ const Showtimes = (props) =>{
                     </p>
                 </CollapsibleContent>
                 <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 2    
+                    Day 1 + 2
                     </CollapsibleHead>
                 <CollapsibleContent className="additionalClassForContent">
                     <p>
-                        Lorem 
+                        Lorem
                     </p>
                 </CollapsibleContent>
                 <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 3    
+                    Day 1 + 3
                     </CollapsibleHead>
                 <CollapsibleContent className="additionalClassForContent">
                     <p>
-                        Lorem 
+                        Lorem
                     </p>
                 </CollapsibleContent>
                 <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 4    
+                    Day 1 + 4
                     </CollapsibleHead>
                 <CollapsibleContent className="additionalClassForContent">
                     <p>
-                        Lorem 
+                        Lorem
                     </p>
                 </CollapsibleContent>
                 <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 5    
+                    Day 1 + 5
                     </CollapsibleHead>
                 <CollapsibleContent className="additionalClassForContent">
                     <p>
-                        Lorem 
+                        Lorem
                     </p>
                 </CollapsibleContent>
                 <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 6    
+                    Day 1 + 6
                     </CollapsibleHead>
                 <CollapsibleContent className="additionalClassForContent">
                     <p>
-                        Lorem 
+                        Lorem
                     </p>
                 </CollapsibleContent>
             </CollapsibleComponent>
