@@ -43,7 +43,9 @@ const NewReleases = () => {
                     <Container align="center">
                         <h1>NEW RELEASES</h1>
                         <Searchbar query={q} queryFunction={qHandler} />
+                        <h3>{data.length} Upcoming Movie Releases</h3>
                         <Release data={data} query={q} />
+                        <p>Coming soon to QACinemas...</p>
                     </Container>
                 </div>
             </div>
