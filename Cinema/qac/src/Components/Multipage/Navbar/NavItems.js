@@ -36,7 +36,7 @@ export const NavItems = [
     },
     {
         title: 'About',
-        url: '#8',
+        url: '/about',
         cName: 'nav-links'
     },
     {
