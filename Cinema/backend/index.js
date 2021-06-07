@@ -8,6 +8,7 @@ app.use(cors());
 app.options("*",cors());
 
 const routes = require("./route");
+const newroutes = require("./routeReleases")
 
 
 // setup mongoose
@@ -16,7 +17,7 @@ MONGOOSE.connect("mongodb://localhost/QACinema", {
         useUnifiedTopology: true
     })
     .then(() => {
-        app.use(routes);
+        app.use(routes, newroutes);
         app.listen(5000, () => {
             console.log("Server has started");
         })

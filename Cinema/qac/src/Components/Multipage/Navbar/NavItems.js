@@ -11,7 +11,7 @@ export const NavItems = [
     },
     {
         title: 'New Releases',
-        url: '#3',
+        url: '/newreleases',
         cName: 'nav-links'
     },
     {

@@ -395,3 +395,48 @@ input[type=text] {
   color: white;
 }
 /* Contact end */
+
+/* New Listing start*/
+
+.ModalBody{
+  color: white;
+   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.95), #4F0821);
+}
+
+.modal-footer {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.95), #4F0821);
+}
+
+.modalRow{
+  line-height:32px;
+  border-top: 0.5px solid rgb(255, 255, 255, 0.295);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.295) ;
+
+}
+
+.modalBorder{
+  border-top: 1px solid rgb(255, 255, 255, 0.295);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.295);
+}
+
+#modalButton{
+  padding: 10px;
+  background-color: #ffa2a250;
+  border: 2px solid rgb(255, 255, 255, 0.295);
+}
+
+#modalButton:hover{
+  background-color: rgb(92, 46, 49);
+}
+
+#modalClose{
+  padding: 10px;
+  background-color: #aaffa250;
+  border: 2px solid rgb(255, 255, 255, 0.295);
+}
+
+#modalClose:hover{
+  background-color: rgb(90, 197, 90);
+}
+
+/* New Listing start*/
