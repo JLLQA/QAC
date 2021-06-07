@@ -11,6 +11,7 @@ import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDeta
 import Contact from "./Components/Contact/Contact";
 import Bookings from './Components/Bookings/Bookings';
 import Screens from './Components/Bookings/BookingDetails/Screens'
+import Payment from './Components/Bookings/Payment';
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Homepage />
+            <Homepage />S
           </Route>
           <Route exact path="/openings">
             <OpeningTimes />
@@ -34,6 +35,9 @@ const App = () => {
           </Route>
           <Route exact path="/screens">
             <Screens />
+          </Route>
+          <Route exact path="/payment">
+            <Payment />
           </Route>
           <Route exact path="/gettingthere">
             <GettingThere/>

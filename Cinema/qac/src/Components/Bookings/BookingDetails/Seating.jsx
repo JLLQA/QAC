@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 
 const Seating = () => {
     const [countA, setCountA] = useState(0);
@@ -12,7 +12,12 @@ const Seating = () => {
 
     const setAdultDown = (event) => {
         event.preventDefault();
-        setCountA(countA => countA - 1);
+        if (countA == 0) {
+            alert("You cannot have less than 0 seats");
+        } else {
+            setCountA(countA => countA - 1);
+
+        }
     }
 
     const setChildUp = (event) => {
@@ -22,7 +27,11 @@ const Seating = () => {
 
     const setChildDown = (event) => {
         event.preventDefault();
-        setCountB(countB => countB - 1)
+        if (countB == 0) {
+            alert("You cannot have less than 0 seats");
+        } else {
+            setCountB(countB => countB - 1)
+        }
     }
 
     const setComUp = (event) => {
@@ -32,7 +41,11 @@ const Seating = () => {
 
     const setComDown = (event) => {
         event.preventDefault();
-        setCountC(countC => countC - 1)
+        if (countC == 0) {
+            alert("You cannot have less than 0 seats");
+        } else {
+            setCountC(countC => countC - 1)
+        }
     }
 
     return (
@@ -40,30 +53,30 @@ const Seating = () => {
             <br />
             <label>Adult Seats: </label>
             <input placeholder={countA} disabled></input>
-            <button onClick={setAdultUp}>
-                ""+""
-            </button>
             <button onClick={setAdultDown}>
                 ""-""
+            </button>
+            <button onClick={setAdultUp}>
+                ""+""
             </button>
             <br />
             <label>Child Seats: </label>
             <input placeholder={countB} disabled></input>
-            <button onClick={setChildUp}>
-                ""+""
-            </button>
             <button onClick={setChildDown}>
                 ""-""
+            </button>
+            <button onClick={setChildUp}>
+                ""+""
             </button>
             <br />
             <label>Consession Seats: </label>
             <input placeholder={countC} disabled></input>
+            <button onClick={setComDown}>
+                ""-""
+            </button>
             <button onClick={setComUp}>
                 ""+""
             </button>
-            <button onClick={setComDown}>
-                ""-""
-            </button>            
         </>
     );
 }

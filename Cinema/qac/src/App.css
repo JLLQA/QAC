@@ -32,7 +32,7 @@ h5 {
   color: white;
 }
 
-h6{
+h6 {
   color: white;
   padding: 0.5rem;
 }
@@ -49,11 +49,11 @@ p {
   color: black;
 }
 
-.additionalClassForHead{
+.additionalClassForHead {
   background-color: #004050 !important;
 }
 
-.additionalClassForContent{
+.additionalClassForContent {
   background-color: #4F0821 !important;
 }
 
@@ -203,12 +203,18 @@ p {
 }
 
 /* Openings end */
+
 /* Listings start */
 
 img {
   width: 16vw;
   height: 24vw;
   border-radius: 20px 20px 20px 20px;
+}
+
+#plan {
+  width: 36vw;
+  height: 24vw;
 }
 
 */ #img-grid {
@@ -268,9 +274,10 @@ img {
 }
 
 /* Listings end */
+
 /* Getting There start */
 
-.nav-tabs{
+.nav-tabs {
   justify-content: center;
   align-items: center;
 }
@@ -288,22 +295,23 @@ img {
   transition: all 0.2s ease-out;
 }
 
-#highlight{
+#highlight {
   color: #ffe167;
 }
 
 /* Getting There end */
+
 /* Places to Go start */
 
-.card{
+.card {
   background-color: #10809C !important;
 }
 
-#external{
+#external {
   background-color: #4F0821;
 }
 
-#external:hover{
+#external:hover {
   background-color: #9C0036;
 }
 
@@ -312,14 +320,15 @@ img {
 }
 
 /* Places to Go end */
+
 /* Contact start */
 
-.formGroup{
+.formGroup {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.alertOne{
+.alertOne {
   line-height: auto;
   font-size: 20px !important;
   color: red !important;
@@ -333,7 +342,7 @@ input[type=text] {
   border: 2px solid rgb(59, 124, 124);
 }
 
-#subject{
+#subject {
   padding: 10px;
   width: 90%;
   max-width: 700px;
@@ -342,11 +351,11 @@ input[type=text] {
   text-align: center;
 }
 
-#label{
+#label {
   text-align: right;
 }
 
-#messageBox{
+#messageBox {
   padding: 10px;
   width: 90%;
   max-width: 800px;
@@ -356,7 +365,7 @@ input[type=text] {
   text-align: center;
 }
 
-#infoButton{
+#infoButton {
   padding: 10px;
   width: 90%;
   max-width: 800px;
@@ -364,12 +373,12 @@ input[type=text] {
   border: 2px solid rgb(255, 255, 255);
 }
 
-#infoButton:hover{
+#infoButton:hover {
   background-color: #0964B3;
   color: white;
 }
 
-#submitButton{
+#submitButton {
   padding: 10px;
   width: 90%;
   max-width: 800px;
@@ -377,12 +386,12 @@ input[type=text] {
   border: 2px solid rgb(255, 255, 255);
 }
 
-#submitButton:hover{
+#submitButton:hover {
   background-color: #00B50F;
   color: white;
 }
 
-#resetButton{
+#resetButton {
   padding: 10px;
   width: 90%;
   max-width: 400px;
@@ -390,8 +399,9 @@ input[type=text] {
   border: 2px solid rgb(255, 255, 255);
 }
 
-#resetButton:hover{
+#resetButton:hover {
   background-color: #BF0A00;
   color: white;
 }
+
 /* Contact end */
