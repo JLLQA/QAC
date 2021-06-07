@@ -10,8 +10,13 @@ const Classification = () => {
     return (
         <>
             <Navbar />
-            <h1>Classification</h1>
-
+            <container align="center">
+             <h1>CLASSIFICATION</h1>
+            <p>The film classification system in the UK is dictated by the rating system provided by the British Board of Film Classification (BBFC).
+                The BBFC has been rating the motion pictures and home video since as early as 1912 and their ratings are comprised of 7 categories. 
+                These catagories and their guideliness are displayed and described below.
+            </p>
+            </container>
             <div id="dropped-box" className="container-fluid">
                 <Row>
 
@@ -97,7 +102,7 @@ const Classification = () => {
                                     <li>Violence: Moderate violence is permissible. Infrequent strong violent scenes are permissible as long as there is a proper context.</li>
                                 </ul>
                             </List>
-                            <Button href="https://www.bbfc.co.uk/rating/12">For more info on '12A – Suitable for 12 years and over' rating.</Button>
+                            <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/12">For more info on '12A – Suitable for 12 years and over' rating.</Button>
                         </Card>
                     </Col>
 
@@ -124,7 +129,7 @@ const Classification = () => {
                                     <li>Violence: Moderate violence is permissible. Infrequent strong violent scenes are permissible as long as there is a proper context.</li>
                                 </ul>
                             </List>
-                            <Button href="https://www.bbfc.co.uk/rating/12">For more info on '12 – Suitable for 12 years and over' rating.</Button>
+                            <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/12">For more info on '12 – Suitable for 12 years and over' rating.</Button>
                         </Card>
                     </Col>
 
@@ -141,60 +146,60 @@ const Classification = () => {
                                         Ease of access of weapons should only be displayed if the context is justified.   </li>
                                     <li>Discimination: The film as a whole should not endorse discrimination. Strong discriminatory language may be present as long as it is not endorsed in the film.
           </li>
-                                    <li>Drugs: Drug abuse can be present as long as it is not encouraged or promoted. 
-                                        Abuse of easily accessible drugs is likely to be unacceptable.
+                                    <li>Drugs: Drug abuse can be present as long as it is not encouraged or promoted.
+                                    Abuse of easily accessible drugs is likely to be unacceptable.
                                     </li>
                                     <li>Language: Strong language may be present. Very strong language is permissible as long as the context is justified and is infrequent.</li>
                                     <li>Nudity: Non-sexual nudity is permissible as well as if it is educational. Sexual nudity is permissible as long as it is brief and not in detail.</li>
                                     <li>Sex: Sexual activity is permssible as long as it is not strongly detailed. Strong sexual language is permissible but should not be frequent, especially dialoge regarding pornographic detail.
-                                        The film should not be purposefully sexual in tone.
+                                    The film should not be purposefully sexual in tone.
                                     </li>
-                                    <li>Sexual Violence and Sexual Threat: Can be referred, but very strong sexual violence shall not be present in detail. 
+                                    <li>Sexual Violence and Sexual Threat: Can be referred, but very strong sexual violence shall not be present in detail.
                                      </li>
                                     <li>Threat and Horror: Strong horror scenes can be present but sadistic horror threats are not permissible.</li>
-                                    <li>Violence: Strong violence is permissible but the film should not focus on injury or the aspect of infilciting pain. 
+                                    <li>Violence: Strong violence is permissible but the film should not focus on injury or the aspect of infilciting pain.
                                         Strong gore and sadistic violence is not permissible.</li>
                                 </ul>
                             </List>
 
-                            <Button href="https://www.bbfc.co.uk/rating/15">For more info on '15 – Suitable only for 15 years and over' rating.</Button>
+                            <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/15">For more info on '15 – Suitable only for 15 years and over' rating.</Button>
                         </Card>
                     </Col>
 
 
                     <Col sm="6">
-                    <br/><h3 align="center">18 – Suitable only for adults</h3> <br />
+                        <br /><h3 align="center">18 – Suitable only for adults</h3> <br />
                         <CardImg src="https://static.wikia.nocookie.net/rating-system/images/9/9f/BBFC_18.svg" alt="18 – Suitable only for adults"></CardImg>
                         <Card body>
                             <CardText>With supporting text below as a natural lead-in to additional content.
-                                A rated 18 movie is unrestricted in a majority of the aspects and themes but there are exceptions;
+                            A rated 18 movie is unrestricted in a majority of the aspects and themes but there are exceptions;
                             </CardText>
-                        <List>
-                            <ul>
-                                <li>The material should not break the law or created through the commision of a criminal offence.</li>
-             <li> The material should have individuals or society, such as promotion of rape, sadistic violence, etc.</li>
-             <li> Presence of overly explicit sexual content.</li>
-             </ul>
+                            <List>
+                                <ul>
+                                    <li>The material should not break the law or created through the commision of a criminal offence.</li>
+                                    <li> The material should have individuals or society, such as promotion of rape, sadistic violence, etc.</li>
+                                    <li> Presence of overly explicit sexual content.</li>
+                                </ul>
 
                             </List>
-                            <Button href="https://www.bbfc.co.uk/rating/18">For more info on '18 – Suitable only for adults' rating.</Button>
+                            <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/18">For more info on '18 – Suitable only for adults' rating.</Button>
                         </Card>
                     </Col>
 
                     <Col sm="6">
-                    <br/><h3 align="center">R18 - Adult works for licensed premises only</h3> <br />
+                        <br /><h3 align="center">R18 - Adult works for licensed premises only</h3> <br />
                         <CardImg src="https://static.wikia.nocookie.net/rating-system/images/9/90/BBFC_R18.svg" alt="18 – Adult works for licensed premises only"></CardImg>
                         <Card body>
                             <CardText>The R18 film category is a legally restricted classification for works including strong sexual content.
-                                These films can only be should in specially licensed cinemas and may only be distributed in licensed sex shops.
-                                These works may not be supplied by mail order and will be filtered out of main publicly available search services unless adult content is enabled.
+                            These films can only be should in specially licensed cinemas and may only be distributed in licensed sex shops.
+                            These works may not be supplied by mail order and will be filtered out of main publicly available search services unless adult content is enabled.
 
                             </CardText>
                             <Button href="https://www.bbfc.co.uk/rating/r18">For more info on '18 – Adult works for licensed premises only' rating.</Button>
                         </Card>
                     </Col>
 
-                    
+
                 </Row>
 
             </div>
