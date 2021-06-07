@@ -27,9 +27,17 @@ const Discussion = () => {
 
     const handleSubmitTopic = (event) => {
         event.preventDefault();
-        console.log(title);
-        console.log(username);
-        console.log(body);
+        axios.post("http://localhost:5000/movies/topics/create",
+            {   
+                username:username,
+                title:title,
+                body:body
+            })
+            .then((res) =>{
+                console.log(res)
+            }).catch((err)=> {
+                console.log(err.message);
+            })
         //axios request to create a new discussion object using states
     }
 
@@ -37,7 +45,7 @@ const Discussion = () => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=14ff12ef`)
+        axios.get(`http://localhost:5000/topics`)
             .then((res) => {
                 setData(res.data);
                 setIsLoaded(true);

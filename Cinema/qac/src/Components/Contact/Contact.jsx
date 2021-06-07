@@ -34,27 +34,29 @@ const ContactUs = () => {
                     <br />
                     <div align="center">
                         <Link to={{ pathname: `/gettingthere` }}>
-                            <button id = "infoButton" type="button">
+                            <button id="infoButton" type="button">
                                 Click for more Travel Info     </button>
                         </Link>
                         <br />
                         <br />
                     </div>
-                    <div id="potato" align="center" >
+                    <div align="center" >
                         <h2>Send us an Email</h2>
                         <h4>Please fill out the form below and we will reply by email</h4>
                         <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
                             <div>
                                 <div className="formGroup">
                                     <div>
-                                        <label className="label">Name:</label>
+                                        <label>Name:</label>
                                     </div>
                                     <div >
-                                        <input type="text" {...register("Name", { required: true, minLength: 3, maxLength: 30 })} />
-                                        <div className="alertOne">
-                                            {errors.Name?.type === 'required' && <p>  A name is required  </p>}
-                                            {errors.Name?.type === 'minLength' && <p>  3 Characters required  </p>}
-                                            {errors.Name?.type === 'maxLength' && <p>  30 Characters exceeded  </p>}
+                                        <input
+                                            placeholder="Enter name here"
+                                            type="text" {...register("Name", { required: true, minLength: 3, maxLength: 30 })} />
+                                        <div>
+                                            {errors.Name?.type === 'required' && <p className="alertOne">  A name is required  </p>}
+                                            {errors.Name?.type === 'minLength' && <p className="alertOne">  3 Characters required  </p>}
+                                            {errors.Name?.type === 'maxLength' && <p className="alertOne">  30 Characters exceeded  </p>}
                                         </div>
                                     </div>
                                 </div>
@@ -63,16 +65,18 @@ const ContactUs = () => {
                                         <label>Email:</label>
                                     </div>
                                     <div >
-                                        <input type="text" {...register("Email", { required: true, pattern: /\S+@\S+\.\S+/ })} />
-                                        <div className="alertOne">
-                                            {errors.Email?.type === 'required' && <p>An email is required</p>}
-                                            {errors.Email?.type === 'pattern' && <p>Enter a valid email</p>}
+                                        <input
+                                            placeholder="Enter email here"
+                                            type="text" {...register("Email", { required: true, pattern: /\S+@\S+\.\S+/ })} />
+                                        <div>
+                                            {errors.Email?.type === 'required' && <p className="alertOne">An email is required</p>}
+                                            {errors.Email?.type === 'pattern' && <p className="alertOne">Enter a valid email</p>}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="formGroup">
                                     <div>
-                                        <label for="subject" >Subject:</label>
+                                        <label>Subject:</label>
                                     </div>
                                     <div>
                                         <select id="subject" {...register("Subject", { required: "select one option" })}>
@@ -82,8 +86,8 @@ const ContactUs = () => {
                                             <option value="Location">Location</option>
                                             <option value="Other">Other</option>
                                         </select>
-                                        <div className="alertOne">
-                                            {errors.Subject && <p>Select a Subject</p>}
+                                        <div>
+                                            {errors.Subject && <p className="alertOne">A subject is required</p>}
                                         </div>
                                     </div>
                                 </div>
@@ -92,16 +96,18 @@ const ContactUs = () => {
                                         <label>Message:</label>
                                     </div>
                                     <div >
-                                        <textarea id="messageBox" {...register("Message", { required: true, minLength: 10, maxLength: 1000 })} />
-                                        <div className="alertOne">
-                                            {errors.Message?.type === 'required' && <p>A message is required</p>}
-                                            {errors.Message?.type === 'minLength' && <p>10 Characters required</p>}
-                                            {errors.Message?.type === 'maxLength' && <p>1000 Characters exceeded</p>}
+                                        <textarea
+                                            placeholder="Enter message here"
+                                            id="messageBox" {...register("Message", { required: true, minLength: 10, maxLength: 1000 })} />
+                                        <div>
+                                            {errors.Message?.type === 'required' && <p className="alertOne">A message is required</p>}
+                                            {errors.Message?.type === 'minLength' && <p className="alertOne">Minimum 10 characters required</p>}
+                                            {errors.Message?.type === 'maxLength' && <p className="alertOne">1000 Characters exceeded</p>}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="formGroup">
-                                    <input id="submitButton" type="submit" value=" Submit Form " />
+                                    <input id="submitButton" type="submit" value=" Submit Form "/>
                                 </div>
                                 <div>
                                     <button type="reset" id="resetButton" value="reset"> Reset Form </button>

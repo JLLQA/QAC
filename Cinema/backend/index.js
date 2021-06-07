@@ -3,6 +3,7 @@ const EXPRESS = require("express");
 const cors = require('cors');
 let app = EXPRESS();
 
+app.use(EXPRESS.json())
 app.use(cors());
 app.options("*",cors());
 

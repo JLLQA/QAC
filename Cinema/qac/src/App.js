@@ -9,6 +9,7 @@ import GettingThere from "./Components/GettingThere/GettingThere";
 import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
 import Contact from "./Components/Contact/Contact";
+import Classification from './Components/Classification/Classification';
 
 const App = () => {
   return (
@@ -39,9 +40,13 @@ const App = () => {
           <Route exact path="/discussion">
             <Discussion/>
           </Route>
-          <Route exact path="/discussion/movie/:id">
+          <Route exact path="/discussion/:title">
             <ExtraDetails/>
           </Route>
+          <Route exact path="/classification">
+            <Classification/>
+          </Route>
+
         </Switch>
       </Router>
     </>
