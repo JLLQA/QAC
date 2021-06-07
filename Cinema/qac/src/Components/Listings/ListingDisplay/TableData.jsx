@@ -6,7 +6,7 @@ const TableData = ({ object }) => {
             <td>
                 <div className="img-container">
                     <Link to={{
-                        pathname: `/moviedetails/${object.title}`
+                        pathname: `/moviedetails/${object.id}`
                     }}>
                         <img src={object.poster} alt={object.title} />
                         <div className="img-overlay" >

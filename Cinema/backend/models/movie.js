@@ -3,46 +3,19 @@ const MONGOOSE = require("mongoose");
 const SCHEMA = MONGOOSE.Schema;
 
 
-// const reviewSchema = new SCHEMA({
-//     critic: {
-//         type: String,
-//         required: [true, "Review must have a Critic"],
-//         minlength: 5
-//     },
-//     stars: {
-//         type: Number,
-//         required: [true, "Review must have a star rating"],
-//         max: [5, "Max is 5 stars"],
-//         min: [0, "Min is 0 stars"]
-//     }
-// });
-
-// const commentSchema = new SCHEMA({
-//     username: {
-//         type: String
-//     },
-//     body: {
-//         type: String,
-//         required: [true, "Need comment to discuss"],
-//         max: [255, "Character limit reached"]
-//     }
-// })
-// const topicSchema = new SCHEMA({
-//     username: {
-//         type: String
-//     },
-//     body: {
-//         type: String,
-//         required: [true, "Need comment to discuss"],
-//         max: [255, "Character limit reached"]
-//     },
-//     title: {
-//         type: String,
-//         required: [true, "Topic needs a title"],
-//         max: [255, "Character limit reached"]
-//     },
-//     commentSchema
-// })
+const reviewSchema = new SCHEMA({
+    critic: {
+        type: String,
+        required: [true, "Review must have a Critic"],
+        minlength: 5
+    },
+    stars: {
+        type: Number,
+        required: [true, "Review must have a star rating"],
+        max: [5, "Max is 5 stars"],
+        min: [0, "Min is 0 stars"]
+    }
+});
 
 const movieSchema = new SCHEMA({
     id: {
@@ -85,20 +58,7 @@ const movieSchema = new SCHEMA({
     poster: {
         type: String
     },
-    reviews: ([{
-        critic: {
-            type: String,
-            required: [true, "Review must have a Critic"],
-            minlength: 5
-        },
-        stars: {
-            type: Number,
-            required: [true, "Review must have a star rating"],
-            max: [5, "Max is 5 stars"],
-            min: [0, "Min is 0 stars"]
-        }
-    }])
-    // reviewSchema
+    reviews: ([reviewSchema])
 });
 
 module.exports = MONGOOSE.model("movie", movieSchema);
