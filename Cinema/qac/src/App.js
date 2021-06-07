@@ -10,8 +10,8 @@ import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
 import Contact from "./Components/Contact/Contact";
 import Bookings from './Components/Bookings/Bookings';
-import Screens from './Components/Bookings/BookingDetails/Screens'
-import Payment from './Components/Bookings/Payment';
+import Screens from './Components/Bookings/BookingDetails/Screens/Screens'
+import Payment from './Components/Bookings/BookingDetails/Payment/Payment';
 import Classification from './Components/Classification/Classification';
 
 const App = () => {
@@ -58,7 +58,6 @@ const App = () => {
           <Route exact path="/classification">
             <Classification/>
           </Route>
-
         </Switch>
       </Router>
     </>

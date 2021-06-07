@@ -1,7 +1,7 @@
 import { Container } from 'reactstrap';
-import Navbar from '../../Multipage/Navbar/Navbar';
-import Deluxe from './Screens/Deluxe_Screen.png';
-import Standard from './Screens/Standard_Screen.png';
+import Navbar from '../../../Multipage/Navbar/Navbar';
+import Deluxe from './Pictures/Deluxe_Screen.png';
+import Standard from './Pictures/Standard_Screen.png';
 
 const Screens = () => {
     return (

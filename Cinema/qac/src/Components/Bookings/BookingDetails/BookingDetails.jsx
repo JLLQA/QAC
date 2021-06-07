@@ -47,49 +47,38 @@ const BookingDetails = () => {
     const [countA, setCountA] = useState(0);
     const [countB, setCountB] = useState(0);
     const [countC, setCountC] = useState(0);
-    const ticketPrice = [12.99, 4.99, 6.49];
+    const ticketPrice = [10.75, 5.65, 7.25];
+
+    let total = Number(ticketPrice[0] * countA + ticketPrice[1] * countB + ticketPrice[2] * countC).toFixed(2);
 
     const setAdultUp = (event) => {
         event.preventDefault();
-        setCountA(countA => countA + 1);
+        setCountA(countA => Math.min(24, countA + 1));
     }
 
     const setAdultDown = (event) => {
         event.preventDefault();
-        if (countA == 0) {
-            alert("You cannot have less than 0 seats");
-        } else {
-            setCountA(countA => countA - 1);
-
-        }
+        setCountA(countA => Math.max(0, countA - 1));
     }
 
     const setChildUp = (event) => {
         event.preventDefault();
-        setCountB(countB => countB + 1)
+        setCountB(countB => Math.min(24, countB + 1));
     }
 
     const setChildDown = (event) => {
         event.preventDefault();
-        if (countB == 0) {
-            alert("You cannot have less than 0 seats");
-        } else {
-            setCountB(countB => countB - 1)
-        }
+        setCountB(countB => Math.max(0, countB - 1));
     }
 
     const setComUp = (event) => {
         event.preventDefault();
-        setCountC(countC => countC + 1)
+        setCountC(countC => Math.min(24, countC + 1));
     }
 
     const setComDown = (event) => {
         event.preventDefault();
-        if (countC == 0) {
-            alert("You cannot have less than 0 seats");
-        } else {
-            setCountC(countC => countC - 1)
-        }
+        setCountC(countC => Math.max(0, countC - 1));
     }
 
     const bookerName = ({ target }) => {
@@ -109,7 +98,6 @@ const BookingDetails = () => {
 
     const submitForm = (event) => {
         let paye = [];
-        let total= ticketPrice[0]*countA + ticketPrice[1]*countB + ticketPrice[2]*countC;
         event.preventDefault();
         if (typeof (film) == "undefined") {
             alert('please pick a movie');
@@ -125,13 +113,13 @@ const BookingDetails = () => {
             alert('please enter the ticket bookers name');
             return
         } else {
-            paye= [film, filmDate, selectedTime, countA, countB, countC, total, newBookerName];
+            paye = [film, filmDate, selectedTime, countA, countB, countC, total, newBookerName];
             console.log(paye);
         }
 
         history.push({
             pathname: "/payment",
-            state: {paye}
+            state: { paye }
         })
     }
 
@@ -145,7 +133,7 @@ const BookingDetails = () => {
                 <Container >
                     <form align="center" onSubmit={submitForm}>
                         <Container id="filmSelect">
-                            <select value={film} onChange={setFilm}>
+                            <select id="Booking" value={film} onChange={setFilm} >
                                 <option disabled value="">-- Select a Film --</option>
                                 <option value={placeholder[1].id}>{placeholder[1].title}</option>
                                 <option value={placeholder[2].id}>{placeholder[2].title}</option>
@@ -155,6 +143,7 @@ const BookingDetails = () => {
                         <DatePicker
                             selected={filmDate}
                             onChange={(date) => setStartDate(date)}
+                            isClearable
                             includeDates={[new Date(),
                             addDays(new Date(), 1), addDays(new Date(), 2), addDays(new Date(), 3), addDays(new Date(), 4),
                             addDays(new Date(), 5), addDays(new Date(), 6), addDays(new Date(), 7), addDays(new Date(), 8),
@@ -165,12 +154,13 @@ const BookingDetails = () => {
                         <br />
                         <br />
                         <Container id="timeSelect">
-                            <select value={selectedTime} onChange={setNewTime}>
+                            <select id="Booking" value={selectedTime} onChange={setNewTime}>
                                 <option value="">-- Select a Time and Screen --</option>
                                 {placeholder[filmTime].showtimes.map((many, i) => (
                                     <option key={i}>{placeholder[filmTime].showtimes[i]}</option>
                                 ))}
                             </select>
+                            <br />
                             <Link to={{ pathname: `/screens` }} target="_blank">
                                 <button id="screenButton" type="button" >
                                     Please click for sceen info     </button>
@@ -178,8 +168,7 @@ const BookingDetails = () => {
                         </Container>
                         <Container>
                             <br />
-                            <label>Adult Seats (£{ticketPrice[0]} each): </label>
-                            <input placeholder={countA} disabled></input>
+                            <label>Adult Seats (£{ticketPrice[0]} each)</label>
                             <button id="neg" onClick={setAdultDown}>
                                 -
                             </button>
@@ -187,8 +176,10 @@ const BookingDetails = () => {
                                 +
                             </button>
                             <br />
-                            <label>Child Seats (£{ticketPrice[1]} each): </label>
-                            <input placeholder={countB} disabled></input>
+                            <input id="seatCounter" placeholder={countA} disabled></input>
+                            <br />
+                            <br />
+                            <label>Child Seats (£{ticketPrice[1]} each)</label>
                             <button id="neg" onClick={setChildDown}>
                                 -
                             </button>
@@ -196,22 +187,27 @@ const BookingDetails = () => {
                                 +
                             </button>
                             <br />
-                            <label>Consession Seats (£{ticketPrice[2]} each): </label>
-                            <input placeholder={countC} disabled></input>
+                            <input id="seatCounter" placeholder={countB} disabled></input>
+                            <br />
+                            <br />
+                            <label>Consession Seats (£{ticketPrice[2]} each)</label>
                             <button id="neg" onClick={setComDown}>
                                 -
                             </button>
                             <button id="pos" onClick={setComUp}>
                                 +
                             </button>
+                            <br />
+                            <input id="seatCounter" placeholder={countC} disabled></input>
                         </Container>
                         <br />
                         <Container>
-                            <input placeholder="Please enter your name here:" type="text" onChange={bookerName}></input>
+                            <label>Booking Name</label>
+                            <input id="Booking" placeholder="Please enter your name here:" type="text" onChange={bookerName}></input>
                         </Container>
                         <br />
                         <Link to={{ pathname: `/payment` }} target="_blank">
-                            <button type="submit" >Submit and Pay</button>
+                            <button id="submitButtonStripe" type="submit" >Submit and Pay: £{total}</button>
                         </Link>
                     </form>
                 </Container>

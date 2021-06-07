@@ -334,7 +334,7 @@ img {
   color: red !important;
 }
 
-input[type=text] {
+#contact {
   padding: 10px;
   width: 90%;
   max-width: 700px;
@@ -412,8 +412,10 @@ input[type=text] {
   padding: 2px;
   width: 5%;
   max-width: 800px;
+  margin-left: 10px;
   background-color: #10809C;
   border: 1px solid rgb(255, 255, 255);
+  color: white;
 }
 
 #neg:hover {
@@ -425,11 +427,107 @@ input[type=text] {
   padding: 2px;
   width: 5%;
   max-width: 800px;
+  margin-left: 10px;
   background-color: #10809C;
   border: 1px solid rgb(255, 255, 255);
+  color: white;
 }
 
 #pos:hover {
   background-color: #08A870;
   color: white;
 }
+
+#screenButton {
+  padding: 2px 6px;
+  background-color: #10809C;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  border-radius: 8px;
+}
+
+#screenButton:hover {
+  background-color: #0964B3;
+  color: white;
+}
+
+#seatCounter {
+  padding: 10px;
+  width: 50%;
+  max-width: 700px;
+  margin: auto;
+  display: inline-block;
+}
+
+#Booking {
+  padding: 10px;
+  width: 50%;
+  max-width: 700px;
+  margin: auto;
+  border: 2px solid rgb(59, 124, 124);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stripe start */
+
+#cardName {
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  padding: 10px 14px;
+  font-size: 1em;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background: white;
+}
+
+input, .StripeElement {
+  display: block;
+  margin: 10px 0 20px 0;
+  max-width: 500px;
+  padding: 10px 14px;
+  font-size: 1em;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background: white;
+}
+
+input::placeholder {
+  color: #aab7c4;
+}
+
+input:focus, .StripeElement--focus {
+  box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px, rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+.StripeElement.IdealBankElement, .StripeElement.FpxBankElement, .StripeElement.PaymentRequestButton {
+  padding: 0;
+}
+
+.StripeElement.PaymentRequestButton {
+  height: 40px;
+}
+
+#submitButtonStripe {
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+  background-color: #08A870;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#submitButtonStripe:hover {
+  background-color: #00B50F;
+  color: white;
+}
+
+/* Stripe end */
