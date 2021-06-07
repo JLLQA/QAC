@@ -7,26 +7,26 @@ const ReleaseModal = (props) => {
 
     return (
         <Modal {...props} centered  >
-            <Modal.Header style={{ color: "white", backgroundImage: "linear-gradient(to right, #000, #4F0821)" }} closeButton>
+            <Modal.Header className="ModalBody" closeButton>
                 <Modal.Title>
                     Movie: {eachRel.title} 
                 </Modal.Title>
             </Modal.Header>
-            <Modal.Body style={{ color: "white", backgroundImage: "linear-gradient(to right, #000, #4F0821)" }}>
+            <Modal.Body className="ModalBody">
                 <Container>
                     <Row >
                         <Col >
                             <br />
-                            <Row style={{lineHeight:"40px"}}>
+                            <Row className="modalRow">
                                 Genre: {eachRel.genre}
                             </Row>
-                            <Row style={{lineHeight:"40px"}}>
+                            <Row className="modalRow">
                                 Budget: ${eachRel.budget} Million 
                             </Row>
-                            <Row style={{lineHeight:"40px"}}>
+                            <Row className="modalRow">
                                 Director: {eachRel.director}
                             </Row>
-                            <Row style={{lineHeight:"40px",}}>
+                            <Row className="modalRow">
                                 Release: {eachRel.releasedate}
                             </Row>
                         </Col>
@@ -35,7 +35,7 @@ const ReleaseModal = (props) => {
                         </Col>
                     </Row>
                     <br />
-                    <Row style={{ border: "1px solid white" }}>
+                    <Row className="modalBorder">
                         <Col>
                             <div >
                                 <Row>
@@ -52,7 +52,7 @@ const ReleaseModal = (props) => {
                     </Row>
                     <br />
                     <Row>
-                        <div style={{ border: "1px solid white" }}>
+                        <div className="modalBorder">
                             <h5 >Storyline:</h5>
                             <p>{eachRel.story}</p>
                         </div>
@@ -60,9 +60,9 @@ const ReleaseModal = (props) => {
 
                 </Container>
             </Modal.Body>
-            <Modal.Footer class="modal-footer justify-content-center" style={{ alignContent: "left", color: "white", backgroundImage: "linear-gradient(to right, #000, #4F0821)" }}>
-                <Button href={eachRel.web} target="_blank">{eachRel.title} Website</Button>
-                <Button onClick={props.onHide} >Close</Button>
+            <Modal.Footer className="modal-footer justify-content-center" >
+                <Button href={eachRel.web} target="_blank" id="modalButton">{eachRel.title} Website</Button>
+                <Button onClick={props.onHide} id="modalClose">Close</Button>
             </Modal.Footer>
         </Modal>
     );

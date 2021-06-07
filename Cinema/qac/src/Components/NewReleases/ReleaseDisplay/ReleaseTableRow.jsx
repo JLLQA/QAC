@@ -1,7 +1,6 @@
 import ReleaseTableData from "./ReleaseTableData";
 
 const ReleaseTableRow = ({ objects, query }) => {
-    // console.log("table row", objects);
     console.log(objects);
 
     if (query.length > 0) {

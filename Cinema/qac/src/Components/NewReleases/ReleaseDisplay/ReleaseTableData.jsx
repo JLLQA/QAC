@@ -2,8 +2,6 @@ import { useState } from "react";
 import ReleaseModal from "../ReleaseModal/ReleaseModal";
 
 const ReleaseTableData = ({ object }) => {
-    // console.log("this");
-    // console.log(object);
 
     const [modalShow, setModalShow] = useState(false);
     return (

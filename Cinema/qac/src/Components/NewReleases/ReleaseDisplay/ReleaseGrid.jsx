@@ -19,7 +19,7 @@ const ReleaseGrid = ({ data }) => {
         // let newarr = [];
 
         while (data.length) {
-            array.push(data.splice(0,3));
+            array.push(data.splice(0,2));
         }
         // newarr[0] = array;
 
@@ -35,7 +35,6 @@ const ReleaseGrid = ({ data }) => {
                     <h1>NEW RELEASES</h1>
                     <h3> Upcoming Movie Releases</h3>
                     <Searchbar query={q} queryFunction={qHandler} />
-                    {/* {console.log(objArray)} */}
                     <table id="img-table">
                         <thead>
                             <tr>
