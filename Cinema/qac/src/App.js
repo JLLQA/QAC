@@ -10,6 +10,7 @@ import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
 import Contact from "./Components/Contact/Contact";
 import Classification from './Components/Classification/Classification';
+import RatingPage from './Components/Review/RatingPage';
 
 const App = () => {
   return (
@@ -45,6 +46,9 @@ const App = () => {
           </Route>
           <Route exact path="/classification">
             <Classification/>
+          </Route>
+          <Route exact path="/movie/review/:id">
+            <RatingPage/>
           </Route>
 
         </Switch>

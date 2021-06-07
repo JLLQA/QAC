@@ -2,8 +2,12 @@ import axios from 'axios';
 import StarRating from './StarRating';
 import {useEffect, useState} from 'react';
 import Navbar from '../Multipage/Navbar/Navbar';
+import ReviewTableView from "./ReviewDisplay/ReviewTableView";
+import { useParams } from 'react-router';
 
 const RatingPage = () => {
+
+    const [rating, setRating] = useState(null);
 
     const [usersName, setUsersName] = useState("");
     const [reviewBody, setReviewBody] = useState("");
@@ -11,37 +15,43 @@ const RatingPage = () => {
     const [incomingData, setIncomingData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
-    const getReviews = () => {
-        useEffect(() => {
-        axios({
-            method: "Get",
-            url: "http://localhost:5000/Reviews",
-            headers: { "Access-Control-Allow-Origin" : "*"}
-        }).then((resp) => {
-            console.log(resp);
-            setIncomingData(resp.data);
-            setIsLoaded(true);
-        }).catch((err) => {
-            console.log(err.message);
-            setIsLoaded(true);
-        })
-        }, []);
-    }
+    
+    // useEffect(() => {
+    //     axios({
+    //         method: "Get",
+    //         url: "http://localhost:5000/review_practice",
+    //         headers: { "Access-Control-Allow-Origin" : "*"}
+    //     }).then((resp) => {
+    //         console.log(resp);
+    //         setIncomingData(resp.data);
+    //         setIsLoaded(true);
+    //     }).catch((err) => {
+    //         console.log(err.message);
+    //         setIsLoaded(true);
+    //     })
+    //     }, []);
+
+    const{id} = useParams();
 
     const submitReviewAxios = (e) => {
         e.preventDefault();
         
         const reviewData = {
-            name: usersName,
-            review: reviewBody
+            critic: usersName,
+            star: rating,
+            review: reviewBody,
         }
 
-        axios.post("http://localhost:5000/Reviews", reviewData)
-            .then(response => {
+        axios.patch(`http://localhost:5000/movies/review/${id}`, reviewData)
+            .then((response => {
                 console.log(response);
-            })
+            }))
+            .catch((err => {
+                console.log(err);
+            }))
         };
 
+        // if (isLoaded) {
         return(
             <>
             <div>
@@ -49,8 +59,8 @@ const RatingPage = () => {
             </div>
             <h1>Let us know what you thought!</h1>
             <h2>Film title</h2>
-            <StarRating/>
-            <form onSubmit={submitReview}>
+            <StarRating star={rating} starHandler={setRating}/>
+            <form>
                 <label>Username</label>
                 <br/>
                 <input id="Name" type="text" name="usersName" onChange={(e) => setUsersName(e.target.value)}/>
@@ -63,14 +73,17 @@ const RatingPage = () => {
                 <button type="submit" onClick={submitReviewAxios}>Submit</button>
             </form>
 
-            <button onClick={getReviews}>Show Reviews</button>
+            {/* <button>Show Reviews</button> */}
             
+            {/* <ReviewTableView data={incomingData}/> */}
+
             </>
         )
-
-        //add in if statement that will be set to true when display reviews is shown and will show the table with reviews in.
+        // } else {
 
         }
+
+        // }
 
 
 export default RatingPage;

@@ -1,14 +1,14 @@
-import ReviewTableData from './ReviewTableData';
+// import ReviewTableData from './ReviewTableData';
 
-const ReviewTableRow = ({objects}) => {
-    return (
-        <>
-        {objects.map((object, i) => (
-            <ReviewTableData key={i} object={object} />
-        ))}
-        </>
-    );
+// const ReviewTableRow = ({objects}) => {
+//     return (
+//         <>
+//         {objects.map((object, i) => (
+//             <ReviewTableData key={i} object={object} />
+//         ))}
+//         </>
+//     );
 
-}
+// }
 
-export default ReviewTableRow;
+// export default ReviewTableRow;
