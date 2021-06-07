@@ -1,4 +1,3 @@
-// import { Container } from "reactstrap";
 import ReleaseCard from "./ReleaseCard";
 
 const Release = ({ data , query}) => {
@@ -9,15 +8,13 @@ const Release = ({ data , query}) => {
     return (
           <div>
               <p>Click A Movie For More Information</p>     
-              
          {
             filteredList.map((rel)=>(
             <ReleaseCard key={rel._id} release={rel}/>
             ))
         } 
         </div>
-    )
-
+    );
 }
 
 export default Release;

@@ -1,5 +1,4 @@
-import { Modal, Container, Row, Col, Button } from "react-bootstrap";
-
+import { Modal, Row, Col, Button, Image, Container } from "react-bootstrap";
 
 const ReleaseModal = (props) => {
 
@@ -7,38 +6,53 @@ const ReleaseModal = (props) => {
     console.log(eachRel);
 
     return (
-        <Modal {...props} aria-labelledby="contained-modal-title-vcenter" size="lg" centered >
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter"  >
+        <Modal {...props} centered style={{border: "2px solid white"}} >
+            <Modal.Header style={{color:"white" ,backgroundImage: "linear-gradient(to right, #004050, #4F0821)"}}closeButton>
+                <Modal.Title  >
                     {eachRel.title}
                 </Modal.Title>
             </Modal.Header>
-            <Modal.Body className="show-grid" >
-                <Container >
-                    <Row>
-                        <Col xs={6} md={4}>
+            <Modal.Body style={{color:"white" ,backgroundImage: "linear-gradient(to right, #004050, #4F0821)"}}>
+                <Container>
+                    <Row >
+                        <Col >
+                            <br />
                             <Row>
-                            Main Actor: {eachRel.actors}
+                                Genre: {eachRel.genre}
                             </Row>
+                            <br />
                             <Row>
-                            Main Director: {eachRel.director}
+                                Budget: ${eachRel.budget} million
                             </Row>
+                            <br />
                             <Row>
-                            Expected Release: {eachRel.releasedate}
+                                Director: {eachRel.director}
+                            </Row>
+                            <br />
+                            <Row>
+                                Release Date: {eachRel.releasedate}
                             </Row>
                         </Col>
                         <Col >
-                            <img src={eachRel.poster} alt={eachRel.title} align="right" />
+                            <Image src={eachRel.poster} alt={eachRel.title} align="right" style={{ minHeight: "250px", minWidth: "160px", maxHeight: "250px", maxWidth: "160px" }} />
                         </Col>
                     </Row>
-
+                    <br />
                     <Row>
-                           Plot: {eachRel.story}
+                        Plot: {eachRel.story}
                     </Row>
+                    <Row>
+                        Main Actors: {eachRel.mainactors}
+                    </Row>
+                    <Row>
+                        Other Actors Include: {eachRel.actors}
+                    </Row>
+
                 </Container>
             </Modal.Body>
-            <Modal.Footer>
-                <Button  onClick={props.onHide} align="left">Close</Button>
+        <Modal.Footer class="modal-footer justify-content-center"style={{alignContent:"left", color:"white" , backgroundImage: "linear-gradient(to right, #000, #4F0821)"}}>
+                <Button href={eachRel.web} target="_blank">{eachRel.title} Website</Button>
+                <Button onClick={props.onHide} >Close</Button>
             </Modal.Footer>
         </Modal>
     );

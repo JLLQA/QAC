@@ -25,7 +25,6 @@ const NewReleases = () => {
             headers: { "Access-Control-Allow-Origin": "*" }
         })
             .then((resp) => {
-                // console.log(resp.data);
                 setData(resp.data);
                 setIsLoaded(true);
             })

@@ -25,9 +25,14 @@ const releaseSchema = new SCHEMA({
         type: String,
         required: true
     },
-    actors: {
+    mainactors: {
         type: String,
         required: [true, "Actor must have a name"],
+        minlength: 2
+    },
+    actors: {
+        type: String,
+        required: [true, "Actors must have a name"],
         minlength: 2
     },
     poster: {
@@ -36,6 +41,12 @@ const releaseSchema = new SCHEMA({
     story: {
         type: String,
         minlength: 20
+    },
+    web: {
+        type: String
+    },
+    budget: {
+        type: Number
     }
 });
 
