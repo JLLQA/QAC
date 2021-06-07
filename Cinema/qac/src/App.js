@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Homepage from "./Components/Homepage/HomePage"
 import ListingPage from "./Components/Listings/ListingPage"
 import ListingDetails from "./Components/Listings/ListingDetails/ListingDetails"
+import OpeningTimes from  "./Components/OpeningTimes/OpeningTimes"
 import Places from "./Components/Places/Places";
 import GettingThere from "./Components/GettingThere/GettingThere";
 import Discussion from "./Components/Discussion/Discussion";
@@ -51,7 +52,7 @@ const App = () => {
           <Route exact path="/discussion">
             <Discussion/>
           </Route>
-          <Route exact path="/discussion/:title">
+          <Route exact path="/discussion/movie/:id">
             <ExtraDetails/>
           </Route>
           <Route exact path="/classification">

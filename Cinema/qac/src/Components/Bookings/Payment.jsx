@@ -1,6 +1,6 @@
 import Navbar from '../Multipage/Navbar/Navbar';
 
-const Payment = () => {
+const Payment = ({data}) => {
 
 
     return (
@@ -8,6 +8,7 @@ const Payment = () => {
             <Navbar />
             <div id="dropped-box" className="container-fluid">
                 <h1>Payment</h1>
+                {console.log(data)};
             </div>
         </>
     );

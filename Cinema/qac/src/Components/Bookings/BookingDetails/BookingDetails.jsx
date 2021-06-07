@@ -47,6 +47,7 @@ const BookingDetails = () => {
     const [countA, setCountA] = useState(0);
     const [countB, setCountB] = useState(0);
     const [countC, setCountC] = useState(0);
+    const ticketPrice = [12.99, 4.99, 6.49];
 
     const setAdultUp = (event) => {
         event.preventDefault();
@@ -107,7 +108,8 @@ const BookingDetails = () => {
     }
 
     const submitForm = (event) => {
-        let mov;
+        let paye = [];
+        let total= ticketPrice[0]*countA + ticketPrice[1]*countB + ticketPrice[2]*countC;
         event.preventDefault();
         if (typeof (film) == "undefined") {
             alert('please pick a movie');
@@ -123,18 +125,13 @@ const BookingDetails = () => {
             alert('please enter the ticket bookers name');
             return
         } else {
-            mov = film;
-            console.log("movie id: " + mov);
-            console.log("Film date: " + filmDate);
-            console.log("Film time : " + selectedTime);
-            console.log("Adult seats: " + countA);
-            console.log("Child seats: " + countB);
-            console.log("Consession seats: " + countC);
-            console.log("Booker Name: "+ newBookerName);
+            paye= [film, filmDate, selectedTime, countA, countB, countC, total, newBookerName];
+            console.log(paye);
         }
 
         history.push({
-            pathname: "/payment"
+            pathname: "/payment",
+            state: {paye}
         })
     }
 
@@ -181,7 +178,7 @@ const BookingDetails = () => {
                         </Container>
                         <Container>
                             <br />
-                            <label>Adult Seats: </label>
+                            <label>Adult Seats (£{ticketPrice[0]} each): </label>
                             <input placeholder={countA} disabled></input>
                             <button id="neg" onClick={setAdultDown}>
                                 -
@@ -190,7 +187,7 @@ const BookingDetails = () => {
                                 +
                             </button>
                             <br />
-                            <label>Child Seats: </label>
+                            <label>Child Seats (£{ticketPrice[1]} each): </label>
                             <input placeholder={countB} disabled></input>
                             <button id="neg" onClick={setChildDown}>
                                 -
@@ -199,7 +196,7 @@ const BookingDetails = () => {
                                 +
                             </button>
                             <br />
-                            <label>Consession Seats: </label>
+                            <label>Consession Seats (£{ticketPrice[2]} each): </label>
                             <input placeholder={countC} disabled></input>
                             <button id="neg" onClick={setComDown}>
                                 -
