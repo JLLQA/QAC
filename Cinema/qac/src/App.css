@@ -17,6 +17,7 @@ h1 {
 
 h2 {
   color: white;
+  text-align: center;
 }
 
 h3 {
@@ -31,6 +32,11 @@ h5 {
   color: white;
 }
 
+h6{
+  color: white;
+  padding: 0.5rem;
+}
+
 label {
   color: white;
 }
@@ -41,6 +47,14 @@ p {
 
 .card-text {
   color: black;
+}
+
+.additionalClassForHead{
+  background-color: #004050 !important;
+}
+
+.additionalClassForContent{
+  background-color: #4F0821 !important;
 }
 
 #dropped-box {
@@ -98,7 +112,6 @@ p {
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(10, auto);
-  grid-gap: auto;
   list-style: none;
   text-align: center;
   width: 90vw;
@@ -177,6 +190,19 @@ p {
 
 /* Carousel end */
 
+/* Openings start */
+
+#open {
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  color: white;
+}
+
+#open-table {
+  color: white;
+}
+
+/* Openings end */
 /* Listings start */
 
 img {
@@ -233,7 +259,6 @@ img {
 }
 
 .container {
-  /* background-color: lightblue; */
   border-radius: 20px;
 }
 
@@ -243,25 +268,51 @@ img {
 }
 
 /* Listings end */
+/* Getting There start */
 
-/* Openings start */
+.nav-tabs{
+  justify-content: center;
+  align-items: center;
+}
 
-#open {
-  background-color: rgba(0, 0, 0, 0);
-  text-align: center;
+.nav-link {
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: #9C8F08;
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+}
+
+#highlight{
+  color: #ffe167;
+}
+
+/* Getting There end */
+/* Places to Go start */
+
+.card{
+  background-color: #10809C !important;
+}
+
+#external{
+  background-color: #4F0821;
+}
+
+#external:hover{
+  background-color: #9C0036;
+}
+
+.card-text {
   color: white;
 }
 
-#open-table {
-  color: white;
-}
-
-/* Openings end */
-
+/* Places to Go end */
 /* Contact start */
-#potato{
-  font-weight: 500;
-}
 
 .formGroup{
   padding-top: 10px;
@@ -270,9 +321,8 @@ img {
 
 .alertOne{
   line-height: auto;
-  font-size: 15px;
-  color: palevioletred;
-
+  font-size: 20px !important;
+  color: red !important;
 }
 
 input[type=text] {
@@ -315,30 +365,33 @@ input[type=text] {
 }
 
 #infoButton:hover{
-  background-color: orange;
+  background-color: #0964B3;
+  color: white;
 }
 
 #submitButton{
   padding: 10px;
   width: 90%;
   max-width: 800px;
-  background-color: rgb(0, 255, 21);
+  background-color: #08A870;
   border: 2px solid rgb(255, 255, 255);
 }
 
 #submitButton:hover{
-  background-color: orange;
+  background-color: #00B50F;
+  color: white;
 }
 
 #resetButton{
   padding: 10px;
   width: 90%;
   max-width: 400px;
-  background-color: rgb(185, 3, 3);
+  background-color: #A82708;
   border: 2px solid rgb(255, 255, 255);
 }
 
 #resetButton:hover{
-  background-color: rgba(255, 0, 0, 0.445);
+  background-color: #BF0A00;
+  color: white;
 }
 /* Contact end */

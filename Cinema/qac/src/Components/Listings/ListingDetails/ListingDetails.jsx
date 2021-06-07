@@ -6,7 +6,7 @@ import Navbar from "../../Multipage/Navbar/Navbar";
 import Showtimes from "./Showtimes"
 
 const ListingPage = () => {
-    
+
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -35,18 +35,16 @@ const ListingPage = () => {
                 <div id="dropped-box" className="container-fluid">
                     <Container>
                         <div>
-                            {console.log(newdata)}
-                            {console.log(newdata.genre)}
-                            {console.log(newdata.actors)}
                             <h1 key = {newdata.id}>{newdata.title}</h1>
                             <h3 className="directors">DIRECTORS</h3>
-                            <h4 key = {newdata.id+1}>{newdata.genre}</h4>
+                            <h4 key = {newdata.id+1}>- {newdata.genre}</h4>
                             <h3>ACTORS</h3>
-                            <h4 key = {newdata.id}>{newdata.actors}</h4>
+                            <h4 key = {newdata.id}>- {newdata.actors}</h4>
+                            <br />
                             <Container className="showtimes">
                                 <Showtimes data={newdata} />
                             </Container>
-                            <br/>
+                            <br />
                         </div>
                     </Container>
                 </div>
