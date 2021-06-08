@@ -13,7 +13,7 @@ const StarRating = (props) => {
 
                 return( 
                 <label>
-                    <input type="radio" name="rating" value={star} onClick={starHandler}/>
+                    <input type="radio" name="rating" value={ratingValue} onClick={() => starHandler(ratingValue)}/>
                     <FaStar className="star" color={ratingValue <= (hover || star) ? "#ffc107" : "#e4e5e9"} size={50}
                     onMouseEnter={()=>setHover(ratingValue)} onMouseLeave={()=>setHover(null)} />
                 </label>

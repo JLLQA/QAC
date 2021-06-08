@@ -16,31 +16,36 @@ const RatingPage = () => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     
-    // useEffect(() => {
-    //     axios({
-    //         method: "Get",
-    //         url: "http://localhost:5000/review_practice",
-    //         headers: { "Access-Control-Allow-Origin" : "*"}
-    //     }).then((resp) => {
-    //         console.log(resp);
-    //         setIncomingData(resp.data);
-    //         setIsLoaded(true);
-    //     }).catch((err) => {
-    //         console.log(err.message);
-    //         setIsLoaded(true);
-    //     })
-    //     }, []);
+    useEffect(() => {
+        axios({
+            method: "Get",
+            url: `http://localhost:5000/movies/find/${id}`,
+            headers: { "Access-Control-Allow-Origin" : "*"}
+        }).then((resp) => {
+            console.log(resp);
+            setIncomingData(resp.data);
+            setIsLoaded(true);
+        }).catch((err) => {
+            console.log(err.message);
+            setIsLoaded(true);
+        })
+        }, []);
 
     const{id} = useParams();
+    console.log(id);
 
     const submitReviewAxios = (e) => {
         e.preventDefault();
         
+        console.log(usersName, rating, reviewBody);
+
         const reviewData = {
             critic: usersName,
-            star: rating,
+            stars: rating,
             review: reviewBody,
         }
+
+        console.log(reviewData);
 
         axios.patch(`http://localhost:5000/movies/review/${id}`, reviewData)
             .then((response => {
