@@ -45,6 +45,10 @@ p {
   color: white;
 }
 
+li {
+  color: white;
+}
+
 .card-text {
   color: black;
 }
@@ -580,5 +584,9 @@ input:focus, .StripeElement--focus {
 #modalClose:hover{
   background-color: rgb(90, 197, 90);
 }
-
 /* New Listing start*/
+/* Classifications */
+#movCert{
+  height: 5vw;
+  width:5vw;
+}

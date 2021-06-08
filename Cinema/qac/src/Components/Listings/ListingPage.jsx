@@ -32,7 +32,7 @@ const ListingPage = () => {
         );
     } else {
         return (
-            <div>
+            <div id="dropped-box" className="container-fluid">
                 <h1>Loading...</h1>
             </div>
         );
