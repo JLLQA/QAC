@@ -24,7 +24,7 @@ const Payment = () => {
                     <br />
                     <Container>
                         <Elements stripe={promise}>
-                            <CheckoutForm total={ticketTotal} custName={bookName}/>
+                            <CheckoutForm total={ticketTotal} custName={bookName} />
                         </Elements>
                     </Container>
                     <br />

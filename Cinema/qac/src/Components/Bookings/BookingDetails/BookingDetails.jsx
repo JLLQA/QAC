@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Container } from 'reactstrap';
 import { Link, useHistory } from "react-router-dom";
 import { addDays } from 'date-fns';
-// import { useHistory } from 'react-router-dom'
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -50,6 +49,7 @@ const BookingDetails = () => {
     const ticketPrice = [10.75, 5.65, 7.25];
 
     let total = Number(ticketPrice[0] * countA + ticketPrice[1] * countB + ticketPrice[2] * countC).toFixed(2);
+    let countAll = countA + countB + countC;
 
     const setAdultUp = (event) => {
         event.preventDefault();
@@ -115,7 +115,7 @@ const BookingDetails = () => {
             alert('please enter the ticket bookers name');
             return
         } else {
-            paye = [film, filmDate, selectedTime, countA, countB, countC, total, newBookerName];
+            paye = [film, filmDate, selectedTime, countA, countB, countC, total, newBookerName, countAll];
             console.log(paye);
         }
 
