@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 import Navbar from '../Multipage/Navbar/Navbar';
 import ReviewTableView from "./ReviewDisplay/ReviewTableView";
 import { useParams } from 'react-router';
+import { Container } from 'reactstrap';
 
 const RatingPage = () => {
 
@@ -48,6 +49,7 @@ const RatingPage = () => {
         axios.patch(`http://localhost:5000/movies/review/${id}`, reviewData)
             .then((response => {
                 console.log(response);
+
             }))
             .catch((err => {
                 console.log(err);
@@ -60,8 +62,8 @@ const RatingPage = () => {
         <div>
             <Navbar />
         </div>
+        <Container>
         <h1>Let us know what you thought!</h1>
-        <h2>Film title</h2>
         <StarRating star={rating} starHandler={setRating}/>
         {console.log(incomingData)}
         <form>
@@ -75,7 +77,9 @@ const RatingPage = () => {
             <input id="reviewBody" type="text" name="reviewBody" onChange={(e) => setReviewBody(e.target.value)}/>
             <br/>
             <button type="submit" onClick={submitReviewAxios}>Submit</button>
+            <button type="reset"> Reset Fields </button>
         </form>
+        </Container>
 
         <ReviewTableView data={incomingData}/>
 
