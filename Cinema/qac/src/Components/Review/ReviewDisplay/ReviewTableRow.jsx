@@ -1,14 +1,17 @@
-// import ReviewTableData from './ReviewTableData';
+import ReviewTableData from './ReviewTableData';
 
-// const ReviewTableRow = ({objects}) => {
-//     return (
-//         <>
-//         {objects.map((object, i) => (
-//             <ReviewTableData key={i} object={object} />
-//         ))}
-//         </>
-//     );
+const ReviewTableRow = ({data}) => {
+    console.log(data);
+    return (
+        <>
+            <td>
+                <div>
+                    <p>Name:{data.critic} : Review:{data.review}</p>
+                </div>
+            </td>
+        </>
+    );
 
-// }
+}
 
-// export default ReviewTableRow;
+export default ReviewTableRow;

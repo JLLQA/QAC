@@ -15,15 +15,15 @@ const RatingPage = () => {
     const [incomingData, setIncomingData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
-    
     useEffect(() => {
         axios({
-            method: "Get",
+            method: "get",
             url: `http://localhost:5000/movies/find/${id}`,
             headers: { "Access-Control-Allow-Origin" : "*"}
         }).then((resp) => {
-            console.log(resp);
-            setIncomingData(resp.data);
+            console.log(resp.data.reviews);
+            setIncomingData(resp.data.reviews);
+            // console.log(incomingData);
             setIsLoaded(true);
         }).catch((err) => {
             console.log(err.message);
@@ -32,7 +32,6 @@ const RatingPage = () => {
         }, []);
 
     const{id} = useParams();
-    console.log(id);
 
     const submitReviewAxios = (e) => {
         e.preventDefault();
@@ -56,39 +55,40 @@ const RatingPage = () => {
             }))
         };
 
-        // if (isLoaded) {
+        if (isLoaded) {
         return(
-            <>
-            <div>
-                <Navbar />
-            </div>
-            <h1>Let us know what you thought!</h1>
-            <h2>Film title</h2>
-            <StarRating star={rating} starHandler={setRating}/>
-            <form>
-                <label>Username</label>
-                <br/>
-                <input id="Name" type="text" name="usersName" onChange={(e) => setUsersName(e.target.value)}/>
-                <br/>
-                <br/>
-                <label for="reviewBody">Review</label>
-                <br/>
-                <input id="reviewBody" type="text" name="reviewBody" onChange={(e) => setReviewBody(e.target.value)}/>
-                <br/>
-                <button type="submit" onClick={submitReviewAxios}>Submit</button>
-            </form>
+        <>
+        <div>
+            <Navbar />
+        </div>
+        <h1>Let us know what you thought!</h1>
+        <h2>Film title</h2>
+        <StarRating star={rating} starHandler={setRating}/>
+        {console.log(incomingData)}
+        <form>
+            <label>Username</label>
+            <br/>
+            <input id="Name" type="text" name="usersName" onChange={(e) => setUsersName(e.target.value)}/>
+            <br/>
+            <br/>
+            <label for="reviewBody">Review</label>
+            <br/>
+            <input id="reviewBody" type="text" name="reviewBody" onChange={(e) => setReviewBody(e.target.value)}/>
+            <br/>
+            <button type="submit" onClick={submitReviewAxios}>Submit</button>
+        </form>
 
-            {/* <button>Show Reviews</button> */}
-            
-            {/* <ReviewTableView data={incomingData}/> */}
+        <ReviewTableView data={incomingData}/>
 
-            </>
-        )
-        // } else {
+        </>
+        )} else {
+            return (
+                <h1>Loading...</h1>
+            )
+        }
 
         }
 
-        // }
 
 
 export default RatingPage;
