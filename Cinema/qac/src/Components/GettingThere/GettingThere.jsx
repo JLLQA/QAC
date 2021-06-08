@@ -14,7 +14,7 @@ const GettingThere = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div id="dropped-box" className="container-fluid">
         <Container>
           <div align='center'>
@@ -85,10 +85,9 @@ const GettingThere = () => {
                       <br />
                       <h5> We advise pre-booking your parking here to make your travel to the venue much quicker and more economic.</h5>
                       <br />
-                      <h5 id="highlight"> Early Bird discounts are available if you plan to park between 05:00AM-09:00AM, and if you do so, we recommend checking out the <Link id="highlight"
-                        to={{ pathname: `/places` }}>
+                      <h5 id="highlight"> Early Bird discounts are available if you plan to park between 05:00AM-09:00AM, and if you do so, we recommend checking out the <a href="/places">
                         "Places to Go"
-                        </Link> section of the website to plan your day.</h5>
+                        </a> section of the website to plan your day.</h5>
                     </Col>
                   </Row>
                 </TabPane>
