@@ -14,6 +14,7 @@ import Screens from './Components/Bookings/BookingDetails/Screens/Screens'
 import Payment from './Components/Bookings/BookingDetails/Payment/Payment';
 import NewReleases from './Components/NewReleases/NewReleases';
 import Classification from './Components/Classification/Classification';
+import RatingPage from './Components/Review/RatingPage';
 import About from './Components/About/About';
 
 const App = () => {
@@ -62,6 +63,9 @@ const App = () => {
           </Route>
           <Route exact path="/classification">
             <Classification/>
+          </Route>
+          <Route exact path="/movie/review/:id">
+            <RatingPage/>
           </Route>
           <Route exact path="/about">
             <About/>

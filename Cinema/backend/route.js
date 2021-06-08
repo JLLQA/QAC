@@ -74,9 +74,9 @@ ROUTER.get("/movies/find/:id", async (req, res, next) => {
 
 
 // edit movie (add comment)
-ROUTER.patch("/movies/review/:id/:username/:body/:stars", async (req, res, next) => {
+ROUTER.patch("/movies/review/:id", async (req, res, next) => {
     const MOV = await MOVIE.findOneAndUpdate({ id: parseInt(req.params.id) },
-        { $push: { reviews: { critic: req.params.username, stars: parseInt(req.params.stars) } } },
+        { $push: { reviews: { critic: req.body.critic, stars: parseInt(req.body.stars), review: req.body.review} } },
         (err, mov) => {
             if (err) {
                 console.log("ERROR ", err);
@@ -87,6 +87,26 @@ ROUTER.patch("/movies/review/:id/:username/:body/:stars", async (req, res, next)
                     res.status(202).send(`${mov} has been updated`);
                 } catch (error) {
                     const myNotFoundError = new Error(`No ${req.params.id} found in the database`);
+                    next(myNotFoundError);
+                }
+            }
+        }
+    )
+})
+
+//create comment
+ROUTER.patch("/movies/topics/comment/:title", (req, res, next) => {
+    TOPIC.findOneAndUpdate({ title: req.params.title },
+        { $push: { comments: { username: req.body.username, body: req.body.body } } },
+        (err, top) => {
+            if (err) {
+                console.log("ERROR ", err)
+            } else {
+                try{
+                    console.log("nice");
+                    res.status(202).send(`${top} has been updated`);
+                }catch(error){
+                    const myNotFoundError = new Error(`No ${req.params.title} found in the database`);
                     next(myNotFoundError);
                 }
             }
@@ -105,7 +125,8 @@ ROUTER.post("/movies/topics/create", async (req, res) => {
     await TOP.save();
     console.log("done");
     res.send(TOP);
-})
+});
+
 
 
 module.exports = ROUTER;

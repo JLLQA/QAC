@@ -13,9 +13,10 @@ const newroutes = require("./routeReleases")
 
 // setup mongoose
 MONGOOSE.connect("mongodb://localhost/QACinema", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify:false
+    })
     .then(() => {
         app.use(routes, newroutes);
         app.listen(5000, () => {

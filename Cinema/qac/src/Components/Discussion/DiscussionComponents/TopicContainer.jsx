@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import { Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
 
 const TopicContainer = (props) => {
-    const { data, query } = props
-    const handleClick = (event) => {
-        event.preventDefault();
-    }
+    const { data, query, refresh } = props
+
     const Filter = require("bad-words");
     const filter = new Filter();
 
@@ -24,7 +22,7 @@ const TopicContainer = (props) => {
                                         <CardTitle tag="h5">{filter.clean(post.title)}</CardTitle>
                                         <CardSubtitle tag="h6">{filter.clean(post.username)}</CardSubtitle>
                                         <CardText>{filter.clean(post.body)}</CardText>
-                                        <Link to={{ pathname: `/discussion/movie/${post.title}` }}>
+                                        <Link to={{ pathname: `/discussion/${post.title}` }}>
                                             <h3>More</h3>
                                         </Link>
                                         <br />
@@ -60,6 +58,7 @@ const TopicContainer = (props) => {
             </Container>
         )
     }
+
 }
 
 export default TopicContainer;

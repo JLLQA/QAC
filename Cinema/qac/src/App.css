@@ -534,6 +534,10 @@ input:focus, .StripeElement--focus {
 /* Stripe end */
 /* Contact end */
 
+#starButtons{
+  display:none;
+}
+
 /* New Listing start*/
 
 .ModalBody{
