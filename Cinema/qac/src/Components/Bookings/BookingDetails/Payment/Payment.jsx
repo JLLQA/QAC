@@ -2,6 +2,7 @@ import Navbar from '../../../Multipage/Navbar/Navbar';
 import { Container } from 'reactstrap';
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import { useLocation } from 'react-router-dom';
 import CheckoutForm from './Stripe/CheckoutForm';
 
 
@@ -9,8 +10,10 @@ const Payment = () => {
 
     const promise = loadStripe("pk_test_51Izl2BDGah0CokonmJQU36VHNHiohBZTTJiu6ywwTbfadiWjlKuB99P3LqLVXJ3QUeOK7nNAMYobQuKG1eMNT9TQ00zWurivvB");
 
-    const testTotal = 45.91;
-    const testName = "Jane Doe";
+    const location = useLocation();
+
+    const ticketTotal = location.state.detail[6];
+    const bookName = location.state.detail[7];
 
     return (
         <>
@@ -21,7 +24,7 @@ const Payment = () => {
                     <br />
                     <Container>
                         <Elements stripe={promise}>
-                            <CheckoutForm total={testTotal} custName={testName}/>
+                            <CheckoutForm total={ticketTotal} custName={bookName}/>
                         </Elements>
                     </Container>
                     <br />

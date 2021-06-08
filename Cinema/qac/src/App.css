@@ -471,7 +471,7 @@ img {
 }
 
 /* Stripe start */
-/* 
+
 #cardName {
   display: block;
   width: 90%;
@@ -529,7 +529,7 @@ input:focus, .StripeElement--focus {
 #submitButtonStripe:hover {
   background-color: #00B50F;
   color: white;
-} */
+}
 
 /* Stripe end */
 /* Contact end */

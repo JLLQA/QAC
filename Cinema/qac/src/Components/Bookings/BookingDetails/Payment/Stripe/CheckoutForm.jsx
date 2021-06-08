@@ -3,7 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 import './CardStyles.css';
 
-// 4000008260000000
+// 4000008260000000 
 
 export default function CheckoutForm({ total, custName }) {
   const [succeeded, setSucceeded] = useState(false);
@@ -12,6 +12,9 @@ export default function CheckoutForm({ total, custName }) {
   const [disabled, setDisabled] = useState(true);
   const stripe = useStripe();
   const elements = useElements();
+
+  console.log(total);
+  console.log(custName);
 
   const cardStyle = {
     style: {
@@ -78,13 +81,14 @@ export default function CheckoutForm({ total, custName }) {
           {error}
         </div>
       )}
-      <br/>
+      <br />
       <p className={succeeded ? "result-message" : "result-message hidden"}>
-        Payment successful, click
+        Thank you {custName}, your payment successful.
+        <br />
         <a href={`http://localhost:3000/`}>
           {" "}
-          here
-        </a> to return to the Homepage
+          Click here to return to the Homepage
+        </a>
       </p>
     </form>
   );

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Container } from 'reactstrap';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { addDays } from 'date-fns';
-import { useHistory } from 'react-router'
+// import { useHistory } from 'react-router-dom'
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -96,6 +96,8 @@ const BookingDetails = () => {
         setTime(event.target.value);
     }
 
+    const history = useHistory();
+
     const submitForm = (event) => {
         let paye = [];
         event.preventDefault();
@@ -119,11 +121,9 @@ const BookingDetails = () => {
 
         history.push({
             pathname: "/checkout",
-            state: { paye }
+            state: { detail: paye }
         })
     }
-
-    const history = useHistory();
 
     return (
         <div id="dropped-box" className="container-fluid">
