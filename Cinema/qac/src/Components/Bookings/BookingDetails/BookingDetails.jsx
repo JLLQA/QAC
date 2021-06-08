@@ -118,7 +118,7 @@ const BookingDetails = () => {
         }
 
         history.push({
-            pathname: "/payment",
+            pathname: "/checkout",
             state: { paye }
         })
     }
@@ -206,9 +206,7 @@ const BookingDetails = () => {
                             <input id="Booking" placeholder="Please enter your name here:" type="text" onChange={bookerName}></input>
                         </Container>
                         <br />
-                        <Link to={{ pathname: `/payment` }} target="_blank">
-                            <button id="submitButtonStripe" type="submit" >Submit and Pay: £{total}</button>
-                        </Link>
+                        <button id="submitButtonStripe" type="submit" >Submit and Pay: £{total}</button>
                     </form>
                 </Container>
             </Container>

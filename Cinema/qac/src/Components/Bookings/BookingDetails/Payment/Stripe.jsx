@@ -1,13 +1,7 @@
 import React, { useMemo } from "react";
 import { useState } from 'react';
-import {
-    useStripe,
-    useElements,
-    CardNumberElement,
-    CardCvcElement,
-    CardExpiryElement
-} from "@stripe/react-stripe-js";
-
+import { useStripe, useElements, CardNumberElement, CardCvcElement, CardExpiryElement } from "@stripe/react-stripe-js";
+import { useHistory } from 'react-router'
 import useResponsiveFontSize from "./useResponsiveFontSize";
 import { Container } from "reactstrap";
 
@@ -62,14 +56,24 @@ const Stripe = ({ total }) => {
         });
         console.log("[PaymentMethod]", payload);
         console.log(card);
+
+        alert("Payment complete")
+
+        // history.push({
+        //     pathname: "/",
+        // })
     };
+
+    const history = useHistory();
 
     return (
         <form onSubmit={handleSubmit}>
             <Container>
-                <Container>
+                {/* <Container>
                     <label>Name on Card</label>
                     <input id="cardName" placeholder="Jane Doe" type="text" onChange={cardName}></input>
+                </Container> */}
+                <Container>
                 </Container>
                 <br/>
                 <Container>

@@ -16,14 +16,13 @@ import NewReleases from './Components/NewReleases/NewReleases';
 import Classification from './Components/Classification/Classification';
 import About from './Components/About/About';
 
-
 const App = () => {
   return (
     <>
       <Router>
         <Switch>
           <Route exact path="/">
-            <Homepage />S
+            <Homepage />
           </Route>
           <Route exact path="/openings">
             <OpeningTimes />
@@ -40,7 +39,7 @@ const App = () => {
           <Route exact path="/screens">
             <Screens />
           </Route>
-          <Route exact path="/payment">
+          <Route exact path="/checkout">
             <Payment />
           </Route>
           <Route exact path="/gettingthere">
