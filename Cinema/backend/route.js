@@ -39,10 +39,14 @@ ROUTER.get("/movies/find/:id", async (req, res, next) => {
     )
 });
 
-// create review
-ROUTER.patch("/movies/review/:id/:username/:body/:stars", async (req, res, next) => {
+
+
+
+
+
+ROUTER.patch("/movies/review/:id", async (req, res, next) => {
     const MOV = await MOVIE.findOneAndUpdate({ id: parseInt(req.params.id) },
-        { $push: { reviews: { critic: req.params.username, stars: parseInt(req.params.stars) } } },
+        { $push: { reviews: { critic: req.body.critic, stars: parseInt(req.body.stars), review: req.body.review} } },
         (err, mov) => {
             if (err) {
                 console.log("ERROR ", err);

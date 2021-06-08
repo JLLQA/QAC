@@ -13,6 +13,9 @@ const reviewSchema = new SCHEMA({
         required: [true, "Review must have a star rating"],
         max: [5, "Max is 5 stars"],
         min: [0, "Min is 0 stars"]
+    },
+    review: {
+        type: String
     }
 });
 

@@ -5,7 +5,8 @@ import { useParams } from "react-router";
 import { Container } from "reactstrap";
 import Navbar from "../../Multipage/Navbar/Navbar";
 import Showtimes from "./Showtimes"
-
+import { Link } from "react-router-dom"
+ 
 const ListingPage = () => {
 
     const [data, setData] = useState([]);
@@ -49,6 +50,10 @@ const ListingPage = () => {
                         </div>
                     </Container>
                 </div>
+
+                <Link to={{
+                    pathname: `/movie/review/${data.id}`
+                }}>Reviews</Link>
             </div>
         );
     } else {
