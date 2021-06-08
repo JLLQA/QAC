@@ -5,7 +5,7 @@ import { Table, Container } from 'reactstrap';
 const OpeningTimes = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div id="dropped-box" className="container-fluid">
         <Container id = "open">
           <h1>OPENING TIMES</h1>
