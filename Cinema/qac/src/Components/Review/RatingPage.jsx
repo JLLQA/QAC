@@ -23,7 +23,6 @@ const RatingPage = () => {
         }).then((resp) => {
             console.log(resp.data.reviews);
             setIncomingData(resp.data.reviews);
-            // console.log(incomingData);
             setIsLoaded(true);
         }).catch((err) => {
             console.log(err.message);
