@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Col, Container, Form, Nav, Row } from "reactstrap"
+import { Col, Container, Row } from "reactstrap"
 import axios from "axios";
 import Navbar from "../Multipage/Navbar/Navbar"
 import SearchForm from "./DiscussionComponents/SearchForm";

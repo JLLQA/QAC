@@ -3,7 +3,7 @@ import Navbar from "../Multipage/Navbar/Navbar";
 import React from 'react';
 import {
     Card, CardImg, CardText,
-    CardTitle, Row, Col, Button, List
+    Row, Col, Button, List
 } from 'reactstrap';
 
 const Classification = () => {

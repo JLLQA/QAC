@@ -6,8 +6,7 @@ const SCHEMA = MONGOOSE.Schema;
 const reviewSchema = new SCHEMA({
     critic: {
         type: String,
-        required: [true, "Review must have a Critic"],
-        minlength: 5
+        required: [true, "Review must have a Critic"]
     },
     stars: {
         type: Number,
@@ -19,6 +18,38 @@ const reviewSchema = new SCHEMA({
         type: String
     }
 });
+
+const actorSchema = new SCHEMA({
+    name: {
+        type: String,
+        required: [true, "Actor must have a name"],
+        minlength: 2
+    }
+})
+
+const timeSchema = new SCHEMA({
+    time: {
+        type: Date,
+        required: [true]
+    },
+    type: {
+        type: "String",
+        enum: [
+            "Standard",
+            "Premium",
+            null
+        ]
+    }
+})
+
+const dateSchema = new SCHEMA({
+    day: {
+        type: String
+    },
+    times: [timeSchema]
+})
+
+
 
 const movieSchema = new SCHEMA({
     id: {
@@ -53,15 +84,13 @@ const movieSchema = new SCHEMA({
         max: [2021, "Maximum is 2021"],
         min: [2000, "Minimum is 2000"]
     },
-    actors: {
-        type: String,
-        required: [true, "Actor must have a name"],
-        minlength: 2
-    },
+    actors: [actorSchema],
     poster: {
         type: String
     },
-    reviews: ([reviewSchema])
+    reviews: [reviewSchema],
+    showtimes: [dateSchema]
+
 });
 
 module.exports = MONGOOSE.model("movie", movieSchema);
