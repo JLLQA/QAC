@@ -94,6 +94,26 @@ ROUTER.patch("/movies/review/:id/:username/:body/:stars", async (req, res, next)
     )
 })
 
+//create comment
+ROUTER.patch("/movies/topics/comment/:title", (req, res, next) => {
+    TOPIC.findOneAndUpdate({ title: req.params.title },
+        { $push: { comments: { username: req.body.username, body: req.body.body } } },
+        (err, top) => {
+            if (err) {
+                console.log("ERROR ", err)
+            } else {
+                try{
+                    console.log("nice");
+                    res.status(202).send(`${top} has been updated`);
+                }catch(error){
+                    const myNotFoundError = new Error(`No ${req.params.title} found in the database`);
+                    next(myNotFoundError);
+                }
+            }
+        }
+    )
+})
+
 //create topic
 ROUTER.post("/movies/topics/create", async (req, res) => {
     const TOP = new TOPIC({
@@ -105,7 +125,8 @@ ROUTER.post("/movies/topics/create", async (req, res) => {
     await TOP.save();
     console.log("done");
     res.send(TOP);
-})
+});
+
 
 
 module.exports = ROUTER;
