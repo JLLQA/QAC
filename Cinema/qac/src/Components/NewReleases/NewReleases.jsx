@@ -9,12 +9,7 @@ const NewReleases = () => {
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
-    const [q, setQ] = useState("");
-
-    const qHandler = (e) => {
-        setQ(e.target.value);
-    };
-  
+    
     useEffect(() => {
         axios({
             method: "Get",
@@ -35,7 +30,7 @@ const NewReleases = () => {
         return (
             <div>
                 <Navbar />
-                        <ReleaseGrid data={data} query={q} />
+                        <ReleaseGrid data={data} />
             </div>
         );
     }

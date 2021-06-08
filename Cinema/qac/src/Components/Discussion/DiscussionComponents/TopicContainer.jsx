@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
 
 const TopicContainer = (props) => {
-    const { data, query, refresh } = props
+    const { data, query} = props
 
     const Filter = require("bad-words");
     const filter = new Filter();

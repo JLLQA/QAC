@@ -12,7 +12,7 @@ const ExtraDetails = () => {
 
     const [username, setUsername] = useState("");
     const [body, setBody] = useState("");
-    const [refresh,setRefresh] = useState(false);
+    const [refresh, setRefresh] = useState(false);
 
     const { title } = useParams();
 
@@ -27,7 +27,7 @@ const ExtraDetails = () => {
                 setIsLoaded(true);
             })
     }, [refresh])
-    
+
     const handleSubmitReply = (event) => {
         event.preventDefault();
         axios.patch(`http://localhost:5000/movies/topics/comment/${title}`,
@@ -36,7 +36,7 @@ const ExtraDetails = () => {
                 body: body
             })
             .then((res) => {
-                setRefresh((c)=>!c);
+                setRefresh((c) => !c);
             }).catch((err) => {
                 console.log(err)
             })
@@ -47,7 +47,7 @@ const ExtraDetails = () => {
     const Filter = require("bad-words");
     const filter = new Filter();
 
-    
+
     if (isLoaded) {
         if (data.comments.length > 0) {
             return (
