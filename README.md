@@ -99,10 +99,10 @@ Step 1. Run "runme.bat"
 
 ## Built With
 
-* [MongoDB](https://www.mongodb.com/) - Database Management
-* [Express](https://expressjs.com/) - Web Framework
-* [Node](https://nodejs.org/) - Front-End Web Technology
-* [React](https://reactjs.org/) - User Interface
+* [MongoDB](https://www.mongodb.com/) - Document Database
+* [Express](https://expressjs.com/) - Back-End Framework
+* [Node](https://nodejs.org/) - JS Runtime Environment
+* [React](https://reactjs.org/) - Front-End Library
 * [Mocha](https://mochajs.org/) - Testing
 * [Chai](https://www.chaijs.com/) - Testing
 * [Jest](https://jestjs.io/) - Testing
