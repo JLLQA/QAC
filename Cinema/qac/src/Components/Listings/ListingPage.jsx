@@ -11,7 +11,7 @@ const ListingPage = () => {
     useEffect(() => {
         axios({
             method: "Get",
-            url: "http://127.0.0.1:5000/movies",
+            url: "http://localhost:5000/movies",
             headers: { "Access-Control-Allow-Origin": "*"}
         })
             .then((resp) => {

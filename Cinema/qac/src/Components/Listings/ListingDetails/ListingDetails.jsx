@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-// import { useParams } from "react-router-dom";
 import { Container } from "reactstrap";
 import Navbar from "../../Multipage/Navbar/Navbar";
 import Showtimes from "./Showtimes"

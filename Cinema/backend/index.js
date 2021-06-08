@@ -1,9 +1,9 @@
 const MONGOOSE = require("mongoose");
-const EXPRESS = require("express");
+const express = require("express");
 const cors = require('cors');
-let app = EXPRESS();
+let app = express();
 
-app.use(EXPRESS.json())
+app.use(express.json())
 app.use(cors());
 app.options("*", cors());
 

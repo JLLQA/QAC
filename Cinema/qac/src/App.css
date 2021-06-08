@@ -32,7 +32,7 @@ h5 {
   color: white;
 }
 
-h6{
+h6 {
   color: white;
   padding: 0.5rem;
 }
@@ -49,11 +49,11 @@ p {
   color: black;
 }
 
-.additionalClassForHead{
+.additionalClassForHead {
   background-color: #004050 !important;
 }
 
-.additionalClassForContent{
+.additionalClassForContent {
   background-color: #4F0821 !important;
 }
 
@@ -203,12 +203,18 @@ p {
 }
 
 /* Openings end */
+
 /* Listings start */
 
 img {
   width: 16vw;
   height: 24vw;
   border-radius: 20px 20px 20px 20px;
+}
+
+#plan {
+  width: 36vw;
+  height: 24vw;
 }
 
 */ #img-grid {
@@ -268,11 +274,13 @@ img {
 }
 
 /* Listings end */
+
 /* Getting There start */
 
-.nav-tabs{
+.nav-tabs {
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .nav-link {
@@ -288,22 +296,23 @@ img {
   transition: all 0.2s ease-out;
 }
 
-#highlight{
+#highlight {
   color: #ffe167;
 }
 
 /* Getting There end */
+
 /* Places to Go start */
 
-.card{
+.card {
   background-color: #10809C !important;
 }
 
-#external{
+#external {
   background-color: #4F0821;
 }
 
-#external:hover{
+#external:hover {
   background-color: #9C0036;
 }
 
@@ -312,20 +321,21 @@ img {
 }
 
 /* Places to Go end */
+
 /* Contact start */
 
-.formGroup{
+.formGroup {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.alertOne{
+.alertOne {
   line-height: auto;
   font-size: 20px !important;
   color: red !important;
 }
 
-input[type=text] {
+#contact {
   padding: 10px;
   width: 90%;
   max-width: 700px;
@@ -333,7 +343,7 @@ input[type=text] {
   border: 2px solid rgb(59, 124, 124);
 }
 
-#subject{
+#subject {
   padding: 10px;
   width: 90%;
   max-width: 700px;
@@ -342,11 +352,11 @@ input[type=text] {
   text-align: center;
 }
 
-#label{
+#label {
   text-align: right;
 }
 
-#messageBox{
+#messageBox {
   padding: 10px;
   width: 90%;
   max-width: 800px;
@@ -356,7 +366,7 @@ input[type=text] {
   text-align: center;
 }
 
-#infoButton{
+#infoButton {
   padding: 10px;
   width: 90%;
   max-width: 800px;
@@ -364,12 +374,12 @@ input[type=text] {
   border: 2px solid rgb(255, 255, 255);
 }
 
-#infoButton:hover{
+#infoButton:hover {
   background-color: #0964B3;
   color: white;
 }
 
-#submitButton{
+#submitButton {
   padding: 10px;
   width: 90%;
   max-width: 800px;
@@ -377,12 +387,12 @@ input[type=text] {
   border: 2px solid rgb(255, 255, 255);
 }
 
-#submitButton:hover{
+#submitButton:hover {
   background-color: #00B50F;
   color: white;
 }
 
-#resetButton{
+#resetButton {
   padding: 10px;
   width: 90%;
   max-width: 400px;
@@ -390,10 +400,138 @@ input[type=text] {
   border: 2px solid rgb(255, 255, 255);
 }
 
-#resetButton:hover{
+#resetButton:hover {
   background-color: #BF0A00;
   color: white;
 }
+
+/* Contact end */
+
+/*Booking*/
+
+#neg {
+  padding: 2px;
+  width: 5%;
+  max-width: 800px;
+  margin-left: 10px;
+  background-color: #10809C;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+}
+
+#neg:hover {
+  background-color: #BF0A00;
+  color: white;
+}
+
+#pos {
+  padding: 2px;
+  width: 5%;
+  max-width: 800px;
+  margin-left: 10px;
+  background-color: #10809C;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+}
+
+#pos:hover {
+  background-color: #08A870;
+  color: white;
+}
+
+#screenButton {
+  padding: 2px 6px;
+  background-color: #10809C;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  border-radius: 8px;
+}
+
+#screenButton:hover {
+  background-color: #0964B3;
+  color: white;
+}
+
+#seatCounter {
+  padding: 10px;
+  width: 50%;
+  max-width: 700px;
+  margin: auto;
+  display: inline-block;
+}
+
+#Booking {
+  padding: 10px;
+  width: 50%;
+  max-width: 700px;
+  margin: auto;
+  border: 2px solid rgb(59, 124, 124);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stripe start */
+
+#cardName {
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  padding: 10px 14px;
+  font-size: 1em;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background: white;
+}
+
+input, .StripeElement {
+  display: block;
+  margin: 10px 0 20px 0;
+  max-width: 500px;
+  padding: 10px 14px;
+  font-size: 1em;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background: white;
+}
+
+input::placeholder {
+  color: #aab7c4;
+}
+
+input:focus, .StripeElement--focus {
+  box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px, rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+.StripeElement.IdealBankElement, .StripeElement.FpxBankElement, .StripeElement.PaymentRequestButton {
+  padding: 0;
+}
+
+.StripeElement.PaymentRequestButton {
+  height: 40px;
+}
+
+#submitButtonStripe {
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+  background-color: #08A870;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#submitButtonStripe:hover {
+  background-color: #00B50F;
+  color: white;
+}
+
+/* Stripe end */
 /* Contact end */
 
 #starButtons{
