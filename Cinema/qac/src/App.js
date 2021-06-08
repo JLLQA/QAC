@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Homepage from "./Components/Homepage/HomePage"
 import ListingPage from "./Components/Listings/ListingPage"
 import ListingDetails from "./Components/Listings/ListingDetails/ListingDetails"
-import OpeningTimes from  "./Components/OpeningTimes/OpeningTimes"
+import OpeningTimes from "./Components/OpeningTimes/OpeningTimes"
 import Places from "./Components/Places/Places";
 import GettingThere from "./Components/GettingThere/GettingThere";
 import Discussion from "./Components/Discussion/Discussion";
@@ -16,11 +16,13 @@ import NewReleases from './Components/NewReleases/NewReleases';
 import Classification from './Components/Classification/Classification';
 import RatingPage from './Components/Review/RatingPage';
 import About from './Components/About/About';
+import Navbar from './Components/Multipage/Navbar/Navbar';
 
 const App = () => {
   return (
     <>
       <Router>
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <Homepage />
@@ -32,7 +34,7 @@ const App = () => {
             <ListingPage />
           </Route>
           <Route exact path="/moviedetails/:id">
-            <ListingDetails/>
+            <ListingDetails />
           </Route>
           <Route exact path="/bookings">
             <Bookings />
@@ -44,7 +46,7 @@ const App = () => {
             <Payment />
           </Route>
           <Route exact path="/gettingthere">
-            <GettingThere/>
+            <GettingThere />
           </Route>
           <Route exact path="/places">
             <Places />
@@ -53,22 +55,22 @@ const App = () => {
             <Contact />
           </Route>
           <Route exact path="/discussion">
-            <Discussion/>
+            <Discussion />
           </Route>
           <Route exact path="/discussion/movie/:id">
-            <ExtraDetails/>
+            <ExtraDetails />
           </Route>
           <Route exact path="/newreleases">
-            <NewReleases/>
+            <NewReleases />
           </Route>
           <Route exact path="/classification">
-            <Classification/>
+            <Classification />
           </Route>
           <Route exact path="/movie/review/:id">
-            <RatingPage/>
+            <RatingPage />
           </Route>
           <Route exact path="/about">
-            <About/>
+            <About />
           </Route>
         </Switch>
       </Router>

@@ -1,10 +1,8 @@
-import Navbar from '../../../Multipage/Navbar/Navbar';
 import { Container } from 'reactstrap';
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useLocation } from 'react-router-dom';
 import CheckoutForm from './Stripe/CheckoutForm';
-
 
 const Payment = () => {
 
@@ -16,21 +14,18 @@ const Payment = () => {
     const bookName = location.state.detail[7];
 
     return (
-        <>
-            <Navbar />
-            <div id="dropped-box" className="container-fluid" align="center">
+        <div id="dropped-box" className="container-fluid" align="center">
+            <Container>
+                <h1>PAYMENT</h1>
+                <br />
                 <Container>
-                    <h1>PAYMENT</h1>
-                    <br />
-                    <Container>
-                        <Elements stripe={promise}>
-                            <CheckoutForm total={ticketTotal} custName={bookName} />
-                        </Elements>
-                    </Container>
-                    <br />
+                    <Elements stripe={promise}>
+                        <CheckoutForm total={ticketTotal} custName={bookName} />
+                    </Elements>
                 </Container>
-            </div>
-        </>
+                <br />
+            </Container>
+        </div>
     );
 }
 

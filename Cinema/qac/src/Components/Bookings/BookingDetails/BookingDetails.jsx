@@ -108,10 +108,10 @@ const BookingDetails = () => {
             alert('please pick a date');
             return
         }
-        else if (selectedTime == "") {
+        else if (selectedTime === "") {
             alert('please pick a time and screen');
             return
-        } else if (newBookerName == "") {
+        } else if (newBookerName === "") {
             alert('please enter the ticket bookers name');
             return
         } else {

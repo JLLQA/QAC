@@ -1,4 +1,3 @@
-import Navbar from "../Multipage/Navbar/Navbar";
 import React from 'react';
 import { Table } from 'reactstrap';
 import { Link } from "react-router-dom"
@@ -8,7 +7,6 @@ const About = () => {
     return (
         <>
             <div align="center">
-                <Navbar />
                 <h1>ABOUT</h1>
                 <p> Getting to know the team!</p>
                 <p> Known as Team Po, this group of 5 worked extensively to create a functioning website for QA Cinemas.

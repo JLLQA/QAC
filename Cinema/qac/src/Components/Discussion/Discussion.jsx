@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap"
 import axios from "axios";
-import Navbar from "../Multipage/Navbar/Navbar"
 import SearchForm from "./DiscussionComponents/SearchForm";
 import TopicContainer from "./DiscussionComponents/TopicContainer";
 import TopicForm from "./DiscussionComponents/TopicForm";
@@ -60,9 +59,6 @@ const Discussion = () => {
     if (isLoaded) {
         return (
             <div>
-                <div>
-                    <Navbar />
-                </div>
                 <div id="dropped-box" className="container-fluid">
                     <Container align="center">
                         <h1>DISCUSSION BOARD</h1>
@@ -98,7 +94,6 @@ const Discussion = () => {
     } else {
         return (
             <>
-                <Navbar />
                 <h1>Loading...</h1>
             </>
         )

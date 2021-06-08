@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Grid from "./ListingDisplay/Grid";
-import Navbar from "../Multipage/Navbar/Navbar";
 
 const ListingPage = () => {
     
@@ -28,14 +27,12 @@ const ListingPage = () => {
     if (isLoaded) {
         return (
             <div>
-                <Navbar />
                 <Grid data={data} />
             </div>
         );
     } else {
         return (
             <div>
-                <Navbar />
                 <h1>Loading...</h1>
             </div>
         );

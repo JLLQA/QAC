@@ -1,26 +1,18 @@
-import Navbar from "../Multipage/Navbar/Navbar";
-
 import React from 'react';
-import {
-    Card, CardImg, CardText,
-    Row, Col, Button, List
-} from 'reactstrap';
+import { Card, CardImg, CardText, Row, Col, Button, List } from 'reactstrap';
 
 const Classification = () => {
     return (
         <>
-            <Navbar />
             <container align="center">
-             <h1>CLASSIFICATION</h1>
-            <p>The film classification system in the UK is dictated by the rating system provided by the British Board of Film Classification (BBFC).
-                The BBFC has been rating the motion pictures and home video since as early as 1912 and their ratings are comprised of 7 categories. 
+                <h1>CLASSIFICATION</h1>
+                <p>The film classification system in the UK is dictated by the rating system provided by the British Board of Film Classification (BBFC).
+                The BBFC has been rating the motion pictures and home video since as early as 1912 and their ratings are comprised of 7 categories.
                 These catagories and their guideliness are displayed and described below.
             </p>
             </container>
             <div id="dropped-box" className="container-fluid">
                 <Row>
-
-
                     <Col sm="6">
                         <h3 align="center">U Universal - Suitable for all</h3> <br />
                         <CardImg src="https://static.wikia.nocookie.net/rating-system/images/8/88/BBFC_U.svg" alt="U Universal - Suitable for all"></CardImg>
@@ -38,7 +30,7 @@ const Classification = () => {
                                         <li>Sex: Shouldn't be used in a sexual tone and shouldn't be frequent.</li>
                                         <li>Threat and Horror: Horror scenes should be toned down in the horror aspect and shouldn't last on the screen for long.
             The aftermath has to be pleasant or reassuring.</li>
-                                        <li><li>Violence: Should be very mild, but mild use of violence is permissible given an appropirate context like cartoonish, comedic, etc.</li></li>
+                                        <li>Violence: Should be very mild, but mild use of violence is permissible given an appropirate context like cartoonish, comedic, etc.</li>
                                     </ul>
                                 </List>
 
