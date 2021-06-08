@@ -2,7 +2,6 @@ import Navbar from '../../../Multipage/Navbar/Navbar';
 import { Container } from 'reactstrap';
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-// import Stripe from './Stripe';
 import CheckoutForm from './Stripe/CheckoutForm';
 
 
@@ -22,7 +21,6 @@ const Payment = () => {
                     <br />
                     <Container>
                         <Elements stripe={promise}>
-                            {/* <Stripe total={testTotal} /> */}
                             <CheckoutForm total={testTotal} custName={testName}/>
                         </Elements>
                     </Container>
