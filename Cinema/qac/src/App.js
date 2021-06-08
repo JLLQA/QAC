@@ -12,7 +12,10 @@ import Contact from "./Components/Contact/Contact";
 import Bookings from './Components/Bookings/Bookings';
 import Screens from './Components/Bookings/BookingDetails/Screens/Screens'
 import Payment from './Components/Bookings/BookingDetails/Payment/Payment';
+import NewReleases from './Components/NewReleases/NewReleases';
 import Classification from './Components/Classification/Classification';
+import About from './Components/About/About';
+
 
 const App = () => {
   return (
@@ -55,8 +58,14 @@ const App = () => {
           <Route exact path="/discussion/movie/:id">
             <ExtraDetails/>
           </Route>
+          <Route exact path="/newreleases">
+            <NewReleases/>
+          </Route>
           <Route exact path="/classification">
             <Classification/>
+          </Route>
+          <Route exact path="/about">
+            <About/>
           </Route>
         </Switch>
       </Router>
