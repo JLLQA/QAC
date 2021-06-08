@@ -1,7 +1,6 @@
 import emailjs from 'emailjs-com';
 import { useForm } from "react-hook-form";
 import ContactMap from '../Multipage/Map';
-import Navbar from '../Multipage/Navbar/Navbar';
 import { Container } from 'reactstrap';
 import { Link } from "react-router-dom"
 
@@ -24,9 +23,6 @@ const ContactUs = () => {
 
     return (
         <div>
-            <div>
-                <Navbar />
-            </div>
             <div id="dropped-box" className="container-fluid">
                 <Container>
                     <h1>CONTACT</h1>

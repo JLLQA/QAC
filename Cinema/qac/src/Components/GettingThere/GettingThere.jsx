@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Container } from 'reactstrap';
 import classnames from 'classnames';
-import Navbar from "../Multipage/Navbar/Navbar";
 import ContactMap from "../Multipage/Map";
 import { Link } from "react-router-dom"
 
@@ -14,7 +13,6 @@ const GettingThere = () => {
 
   return (
     <>
-      <Navbar />
       <div id="dropped-box" className="container-fluid">
         <Container>
           <div align='center'>

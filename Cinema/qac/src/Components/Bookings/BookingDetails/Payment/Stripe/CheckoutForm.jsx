@@ -28,8 +28,6 @@ const CheckoutForm = ({ total, custName }) => {
             })
             .then(data => {
                 setClientSecret(data.clientSecret);
-                console.log(total);
-                console.log(custName);
             });
     }, []);
 

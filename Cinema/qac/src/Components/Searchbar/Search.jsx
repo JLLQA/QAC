@@ -15,7 +15,6 @@ const Search = ({ query, queryFunction}) => {
                     onChange={queryFunction}
                 />
                 <br></br>
-                {console.log(queryFunction)}
                 <br></br>
             </div>
         </Container>
