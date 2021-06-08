@@ -590,3 +590,11 @@ input:focus, .StripeElement--focus {
   height: 5vw;
   width:5vw;
 }
+
+#gitlink{
+  color: #9C8F08;
+}
+
+#gitlink:hover{
+  color: white;
+}

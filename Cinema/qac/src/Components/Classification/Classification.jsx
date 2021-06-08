@@ -8,7 +8,6 @@ import Rating15 from './Classifications/Rating15';
 import Rating18 from './Classifications/Rating18';
 import RatingR18 from './Classifications/RatingR18';
 
-
 const Classification = () => {
     return (
         <div id="dropped-box" className="container-fluid">

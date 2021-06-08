@@ -8,18 +8,21 @@ const Places = () => {
         <div align='center'>
           <h1>PLACES TO GO</h1>
           <p className="lead">Manchester is vibrant city with many locations to visit.</p>
-          <p>Down below, us at QA Cinema, have recommendations for you of places to visit if you wish to look around the venue.
-              <br />
-               The city of Manchester has plenty of interesting locations to visit and we hope we could help in planning out your day!</p>
+          <p>
+            Down below, us at QA Cinema, have recommendations for you of places to visit if you wish to look around the venue.
+            <br />
+            The city of Manchester has plenty of interesting locations to visit and we hope we could help in planning out your day!
+          </p>
         </div>
         <br />
         <Container>
           <Card body className="text-center">
             <CardTitle tag="h3">Manchester City Centre</CardTitle>
-            <CardText>The city of Manchester is filled with locations to see and spend your time by yourself or friends and family!  </CardText>
+            <CardText>The city of Manchester is filled with locations to see and spend your time by yourself or friends and family!</CardText>
             <CardImg src="https://i.pinimg.com/originals/3c/06/10/3c0610f06e91995eee02f5e582001953.jpg" alt="City Centre" />
-            <Button id="external" href="https://www.visitmanchester.com/things-to-see-and-do" target="_blank">For comprehensive information of places to visit in Manchester,
-               click here.</Button>
+            <Button id="external" href="https://www.visitmanchester.com/things-to-see-and-do" target="_blank">
+              For comprehensive information of places to visit in Manchester,click here.
+            </Button>
           </Card>
           <br />
           <Card body className="text-center">
