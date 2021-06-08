@@ -11,6 +11,7 @@ const Discussion = () => {
     const [title, setTitle] = useState("");
     const [username, setUsername] = useState("");
     const [body, setBody] = useState("");
+    const [refresh,setRefresh] = useState(false);
 
     const handleSubmitSearch = (event) => {
         setQuery(event.target.value);
@@ -35,6 +36,7 @@ const Discussion = () => {
             })
             .then((res) =>{
                 console.log(res)
+                setRefresh((c)=>!c);
             }).catch((err)=> {
                 console.log(err.message);
             })
@@ -53,7 +55,7 @@ const Discussion = () => {
                 console.log(err.message);
                 setIsLoaded(true);
             });
-    }, []);
+    },[refresh]);
 
     if (isLoaded) {
         return (

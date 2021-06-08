@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import { Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
 
 const TopicContainer = (props) => {
-    const { data, query } = props
-    const handleClick = (event) => {
-        event.preventDefault();
-    }
+    const { data, query, refresh } = props
+
     const Filter = require("bad-words");
     const filter = new Filter();
 
@@ -60,6 +58,7 @@ const TopicContainer = (props) => {
             </Container>
         )
     }
+
 }
 
 export default TopicContainer;
