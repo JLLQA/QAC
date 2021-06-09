@@ -3,6 +3,8 @@ import Deluxe from './Pictures/Deluxe_Screen.png';
 import Standard from './Pictures/Standard_Screen.png';
 
 const Screens = () => {
+    document.title = "Screen Information"
+
     return (
         <div id="dropped-box" className="container-fluid">
             <Container>

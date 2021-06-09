@@ -1,46 +1,24 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container } from 'reactstrap';
 import { Link, useHistory } from "react-router-dom";
 import { addDays } from 'date-fns';
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import ScreenTime from './TimeScreen/ScreenTime';
 
 const BookingDetails = () => {
+    document.title = "Bookings"
 
-    const placeholder = [
-        {
-            id: 0, title: "testtitle", showtimes: [
-                "10:00 Screen 1",
-                "12:00 Screen 1"
-            ]
-        },
-        {
-            id: 1, title: "testtitle2", showtimes: [
-                "10:15 Screen 2",
-                "22:15 Screen 2"]
-        },
-        {
-            id: 2, title: "testtitle3", showtimes: [
-                "10:15 Screen 2",
-                "20:15 Screen 2",
-                "22:15 Screen 2"]
-        },
-        {
-            id: 3, title: "testtitle4", showtimes: [
-                "10:15 Screen 2",
-                "20:15 Screen 2",
-                "22:15 Screen 2"]
-        },
-        { id: 4, title: "testtitle", showtimes: ["Please select a film"] }
-    ];
-
+    const [data, setData] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [film, setMovie] = useState("");
-    const [filmTime, setFilmTime] = useState(4);
+    const [filmTime, setFilmTime] = useState(0);
+    const [filmDate, setFilmDate] = useState(null);
+    const [filmDayNum, setFilmDayNum] = useState(null);
     const [selectedTime, setTime] = useState("");
     const [newBookerName, setBookerName] = useState("");
-    const [filmDate, setStartDate] = useState(null);
     const [countA, setCountA] = useState(0);
     const [countB, setCountB] = useState(0);
     const [countC, setCountC] = useState(0);
@@ -48,6 +26,23 @@ const BookingDetails = () => {
 
     let total = Number(ticketPrice[0] * countA + ticketPrice[1] * countB + ticketPrice[2] * countC).toFixed(2);
     let countAll = countA + countB + countC;
+
+    useEffect(() => {
+        axios({
+            method: "Get",
+            url: "http://localhost:5000/movies",
+            headers: { "Access-Control-Allow-Origin": "*" }
+        })
+            .then((resp) => {
+                console.log(resp);
+                setData(resp.data);
+                setIsLoaded(true);
+            })
+            .catch((err) => {
+                console.log(err.message);
+                setIsLoaded(true);
+            });
+    }, []);
 
     const setAdultUp = (event) => {
         event.preventDefault();
@@ -94,6 +89,16 @@ const BookingDetails = () => {
         setTime(event.target.value);
     }
 
+    const setFilmDay = (date) => {
+        setFilmDate((date))
+        console.log(date);
+        if (date == null) {
+            console.log("there is no date");
+        } else {
+            setFilmDayNum((date).getDay());
+        }
+    }
+
     const history = useHistory();
 
     const submitForm = (event) => {
@@ -123,95 +128,88 @@ const BookingDetails = () => {
         })
     }
 
-    return (
-        <div id="dropped-box" className="container-fluid">
-            <Container>
-                <h1>BOOKINGS</h1>
-                <br />
-                <Container >
-                    <form align="center" onSubmit={submitForm}>
-                        <Container id="filmSelect">
-                            <select id="Booking" value={film} onChange={setFilm} >
-                                <option disabled value="">-- Select a Film --</option>
-                                <option value={placeholder[0].id}>{placeholder[0].title}</option>
-                                <option value={placeholder[1].id}>{placeholder[1].title}</option>
-                                <option value={placeholder[2].id}>{placeholder[2].title}</option>
-                                <option value={placeholder[3].id}>{placeholder[3].title}</option>
-                            </select>
-                        </Container>
-                        <br />
-                        <DatePicker
-                            selected={filmDate}
-                            onChange={(date) => setStartDate(date)}
-                            isClearable
-                            includeDates={[new Date(),
-                            addDays(new Date(), 1), addDays(new Date(), 2), addDays(new Date(), 3), addDays(new Date(), 4),
-                            addDays(new Date(), 5), addDays(new Date(), 6), addDays(new Date(), 7), addDays(new Date(), 8),
-                            addDays(new Date(), 9), addDays(new Date(), 10), addDays(new Date(), 11), addDays(new Date(), 12),
-                            addDays(new Date(), 13)]}
-                            placeholderText="Please select a date"
-                        />
-                        <br />
-                        <br />
-                        <Container id="timeSelect">
-                            <select id="Booking" value={selectedTime} onChange={setNewTime}>
-                                <option value="">-- Select a Time and Screen --</option>
-                                {placeholder[filmTime].showtimes.map((many, i) => (
-                                    <option key={i}>{placeholder[filmTime].showtimes[i]}</option>
-                                ))}
-                            </select>
+    if (isLoaded) {
+        return (
+            <div id="dropped-box" className="container-fluid">
+                <Container>
+                    <h1>BOOKINGS</h1>
+                    <br />
+                    <Container >
+                        <form align="center" onSubmit={submitForm}>
+                            <Container id="filmSelect">
+                                <select id="Booking" value={film} onChange={setFilm} >
+                                    <option disabled value="">-- Select a Film --</option>
+                                    {data.map((titles, i) => (
+                                        <option key={i} value={data[i].id}>{titles.title}</option>
+                                    ))}
+                                </select>
+                            </Container>
                             <br />
+                            <DatePicker
+                                selected={filmDate}
+                                onChange={setFilmDay}
+                                isClearable
+                                includeDates={[new Date(),
+                                addDays(new Date(), 1), addDays(new Date(), 2), addDays(new Date(), 3), addDays(new Date(), 4),
+                                addDays(new Date(), 5), addDays(new Date(), 6), addDays(new Date(), 7), addDays(new Date(), 8),
+                                addDays(new Date(), 9), addDays(new Date(), 10), addDays(new Date(), 11), addDays(new Date(), 12),
+                                addDays(new Date(), 13)]}
+                                placeholderText="Please select a date"
+                            />
+                            <br />
+                            <br />
+                            <ScreenTime
+                                data={data}
+                                filmTime={filmTime}
+                                selectedTime={selectedTime}
+                                setNewTime={setNewTime}
+                                filmDayNum={filmDayNum} />
                             <Link to={{ pathname: `/screens` }} target="_blank">
-                                <button id="screenButton" type="button" >
-                                    Please click for sceen info     </button>
+                                <button id="screenButton" type="button" >Please click for screen info</button>
                             </Link>
-                        </Container>
-                        <Container>
+                            <Container>
+                                <br />
+                                <label>Adult Seats (£{ticketPrice[0]} each)</label>
+                                <button id="neg" onClick={setAdultDown}> - </button>
+                                <button id="pos" onClick={setAdultUp}> + </button>
+                                <br />
+                                <input id="seatCounter" placeholder={countA} disabled></input>
+                                <br />
+                                <br />
+                                <label>Child Seats (£{ticketPrice[1]} each)</label>
+                                <button id="neg" onClick={setChildDown}> - </button>
+                                <button id="pos" onClick={setChildUp}> + </button>
+                                <br />
+                                <input id="seatCounter" placeholder={countB} disabled></input>
+                                <br />
+                                <br />
+                                <label>Concession Seats (£{ticketPrice[2]} each)</label>
+                                <button id="neg" onClick={setComDown}> - </button>
+                                <button id="pos" onClick={setComUp}> + </button>
+                                <br />
+                                <input id="seatCounter" placeholder={countC} disabled></input>
+                            </Container>
                             <br />
-                            <label>Adult Seats (£{ticketPrice[0]} each)</label>
-                            <button id="neg" onClick={setAdultDown}>
-                                -
-                            </button>
-                            <button id="pos" onClick={setAdultUp}>
-                                +
-                            </button>
+                            <Container>
+                                <label>Booking Name</label>
+                                <input id="Booking" placeholder="Please enter your name here:" type="text" onChange={bookerName}></input>
+                            </Container>
                             <br />
-                            <input id="seatCounter" placeholder={countA} disabled></input>
-                            <br />
-                            <br />
-                            <label>Child Seats (£{ticketPrice[1]} each)</label>
-                            <button id="neg" onClick={setChildDown}>
-                                -
-                            </button>
-                            <button id="pos" onClick={setChildUp}>
-                                +
-                            </button>
-                            <br />
-                            <input id="seatCounter" placeholder={countB} disabled></input>
-                            <br />
-                            <br />
-                            <label>Consession Seats (£{ticketPrice[2]} each)</label>
-                            <button id="neg" onClick={setComDown}>
-                                -
-                            </button>
-                            <button id="pos" onClick={setComUp}>
-                                +
-                            </button>
-                            <br />
-                            <input id="seatCounter" placeholder={countC} disabled></input>
-                        </Container>
-                        <br />
-                        <Container>
-                            <label>Booking Name</label>
-                            <input id="Booking" placeholder="Please enter your name here:" type="text" onChange={bookerName}></input>
-                        </Container>
-                        <br />
-                        <button id="submitButtonStripe" type="submit" >Submit and Pay: £{total}</button>
-                    </form>
+                            <button id="submitButtonStripe" type="submit" >Submit and Pay: £{total}</button>
+                        </form>
+                    </Container>
                 </Container>
-            </Container>
-        </div>
-    );
+            </div>
+        );
+    } else {
+        return (
+            <div id="dropped-box" className="container-fluid">
+                <h1>Loading...</h1>
+            </div>
+        );
+    }
+
+
 };
 
 export default BookingDetails;

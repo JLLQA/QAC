@@ -25,33 +25,52 @@ const ListingPage = () => {
             });
     }, []);
 
-
-
     if (isLoaded) {
         return (
             <div>
-                <br></br>
+                <br/>
                 <div id="dropped-box" className="container-fluid">
                     <Container>
                         <div>
-
                             <h1 key={data.id}>{data.title}</h1>
                             <Row>
                                 <Col>
-                                    <h3 className="directors">Genre</h3>
-                                    <h4 key={data.id}>- {data.genre}</h4>
+                                    <h3>Director</h3>
+                                    <h5 key={data.id}>{data.director}</h5>
+                                </Col>
+                                <Col>
+                                    <h3>Genre</h3>
+                                    <h5 key={data.id + 1}>{data.genre}</h5>
+                                </Col>
+                                <Col>
                                     <h3>Year</h3>
-                                    <h4 key={data.id}>- {data.year}</h4>
-                                    <h3 key={data.id}>Synopsis - {data.synopsis}</h3>
-                                    <br />
+                                    <h5 key={data.id + 2}>{data.year}</h5>
                                 </Col>
                                 <Col align="right">
-                                    <Link id="reviewButton" to={{
-                                        pathname: `/movie/review/${data.id}`
-                                    }}>Reviews</Link>
+                                    <Link id="reviewButton" to={{pathname: `/movie/review/${data.id}`}}>Reviews</Link>
                                 </Col>
                             </Row>
-
+                            <Col>
+                                <Row>
+                                    <h3>Actors</h3>
+                                </Row>
+                                <Row>
+                                    <br />
+                                    <h5 key={data.id}>
+                                        <ul>{data.actors.map((actor, i) => (
+                                            <li key={i}>
+                                                {actor.name}
+                                            </li>
+                                        ))}
+                                        </ul>
+                                    </h5>
+                                </Row>
+                            </Col>
+                            <Row>
+                                <h3>Synopsis</h3>
+                                <h5 key={data.id + 3}>{data.synopsis}</h5>
+                                <br />
+                            </Row>
                             <Container className="showtimes">
                                 <Showtimes data={data} />
                                 <br />
