@@ -9,7 +9,7 @@ ROUTERNEW.get("/newreleases", async (req, res) => {
             res.send(err.stack);
         } else {
             console.log("Releases")
-            res.send(rel);
+            res.send(rel).status(200);
         }
     });
 });
@@ -96,7 +96,7 @@ ROUTERNEW.post('/createcandyman', async (req, res) => {
     console.log("Candyman movie created");
 })
 
-//delted by _id 
+//delete by _id 
 ROUTERNEW.delete("/delById/:id", async (req, res) => {
     try {
         const REL = await RELEASE.findByIdAndDelete(req.params.id).exec();
