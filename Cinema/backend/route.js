@@ -18,9 +18,8 @@ ROUTER.get("/movies", async (req, res) => {
 
 
 // get one movie by id
-ROUTER.get("/movies/find/:id", async (req, res, next) => {
-    const ID = req.params.id;
-    const MOV = await MOVIE.findOne({ id: parseInt(req.params.id) },
+ROUTER.get("/movies/find/:id", (req, res, next) => {
+    MOVIE.findOne({ id: parseInt(req.params.id) },
         (err, mov) => {
             if (err) {
                 console.error("Error occured: ", err);
@@ -30,13 +29,13 @@ ROUTER.get("/movies/find/:id", async (req, res, next) => {
                     res.send(mov);
                     console.log("Movie found");
                 } catch (e) {
-                    const myNotFoundError = new Error(`No movie with the id "${ID}" found in the database`)
+                    const myNotFoundError = new Error(`No movie with the id "${req.params.id}" found in the database`)
                     next(myNotFoundError);
                 };
             };
 
         }
-    )
+    ) 
 });
 
 
@@ -74,7 +73,8 @@ ROUTER.post("/movies/create", (req, res) => {
         actors: req.body.actors,
         poster: req.body.poster,
         reviews: req.body.reviews,
-        showtimes: req.body.showtimes
+        showtimes: req.body.showtimes,
+        synopsis: req.body.synopsis
     });
     MOV.save();
     res.send(MOV);

@@ -29,14 +29,15 @@ const actorSchema = new SCHEMA({
 
 const timeSchema = new SCHEMA({
     time: {
-        type: Date,
+        type: String,
         required: [true]
     },
-    type: {
+    screen: {
         type: "String",
         enum: [
-            "Standard",
-            "Premium",
+            "Screen 1",
+            "Screen 2",
+            "Screen 3",
             null
         ]
     }
@@ -86,7 +87,12 @@ const movieSchema = new SCHEMA({
     },
     actors: [actorSchema],
     poster: {
-        type: String
+        type: String,
+        required: [true]
+    },
+    synopsis: {
+        type: String,
+        required: [true]
     },
     reviews: [reviewSchema],
     showtimes: [dateSchema]

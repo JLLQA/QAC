@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import { Container } from 'reactstrap';
 import { Link, useHistory } from "react-router-dom";
@@ -9,37 +10,34 @@ import "react-datepicker/dist/react-datepicker.css";
 const BookingDetails = () => {
 
     const placeholder = [
-        { id: 0, title: "testtitle", showtimes: ["Please select a film"] },
         {
-            id: 1, title: "testtitle", showtimes: [
+            id: 0, title: "testtitle", showtimes: [
                 "10:00 Screen 1",
-                "12:00 Screen 1",
-                "12:30 Screen 3",
-                "14:00 Screen 1",
-                "16:00 Screen 1",
-                "16:30 Screen 3",
-                "18:00 Screen 1",
-                "20:00 Screen 1",
-                "20:30 Screen 3",
-                "22:00 Screen 1"]
+                "12:00 Screen 1"
+            ]
         },
         {
-            id: 2, title: "testtitle2", showtimes: [
+            id: 1, title: "testtitle2", showtimes: [
                 "10:15 Screen 2",
-                "11:30 Screen 3",
-                "12:15 Screen 2",
-                "14:15 Screen 2",
-                "15:30 Screen 3",
-                "16:15 Screen 2",
-                "18:15 Screen 2",
-                "19:30 Screen 3",
+                "22:15 Screen 2"]
+        },
+        {
+            id: 2, title: "testtitle3", showtimes: [
+                "10:15 Screen 2",
                 "20:15 Screen 2",
                 "22:15 Screen 2"]
-        }
+        },
+        {
+            id: 3, title: "testtitle4", showtimes: [
+                "10:15 Screen 2",
+                "20:15 Screen 2",
+                "22:15 Screen 2"]
+        },
+        { id: 4, title: "testtitle", showtimes: ["Please select a film"] }
     ];
 
     const [film, setMovie] = useState("");
-    const [filmTime, setFilmTime] = useState(0);
+    const [filmTime, setFilmTime] = useState(4);
     const [selectedTime, setTime] = useState("");
     const [newBookerName, setBookerName] = useState("");
     const [filmDate, setStartDate] = useState(null);
@@ -135,8 +133,10 @@ const BookingDetails = () => {
                         <Container id="filmSelect">
                             <select id="Booking" value={film} onChange={setFilm} >
                                 <option disabled value="">-- Select a Film --</option>
+                                <option value={placeholder[0].id}>{placeholder[0].title}</option>
                                 <option value={placeholder[1].id}>{placeholder[1].title}</option>
                                 <option value={placeholder[2].id}>{placeholder[2].title}</option>
+                                <option value={placeholder[3].id}>{placeholder[3].title}</option>
                             </select>
                         </Container>
                         <br />
