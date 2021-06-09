@@ -11,7 +11,6 @@ const TopicForm = (props) => {
                 <br />
                 <input type="text" name="topic_body" id="topic_body" placeholder="Topic Body" value={body} onChange={handleBody} />
                 <br />
-                <br />
                 <button id="submitButton" onClick={handleSubmitTopic} type="submit">Create Topic</button>
                 <br />
                 <br />

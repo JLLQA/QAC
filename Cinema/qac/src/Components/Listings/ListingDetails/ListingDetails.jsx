@@ -25,8 +25,6 @@ const ListingPage = () => {
             });
     }, []);
 
-
-
     if (isLoaded) {
         return (
             <div>
@@ -38,11 +36,12 @@ const ListingPage = () => {
                             <h1 key={data.id}>{data.title}</h1>
                             <Row>
                                 <Col>
+                                {console.log(data)}
                                     <h3 className="directors">Genre</h3>
                                     <h4 key={data.id}>- {data.genre}</h4>
                                     <h3>Year</h3>
-                                    <h4 key={data.id}>- {data.year}</h4>
-                                    <h3 key={data.id}>Synopsis - {data.synopsis}</h3>
+                                    <h4 key={data.id + 1}>- {data.year}</h4>
+                                    <h3 key={data.id + 2}>Synopsis - {data.synopsis}</h3>
                                     <br />
                                 </Col>
                                 <Col align="right">
