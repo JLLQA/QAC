@@ -6,7 +6,6 @@ const TableView = ({data}) => {
     const [ready, setReady] = useState(false);
     
     let myData = data;
-
         
     if (!ready) {
         return (

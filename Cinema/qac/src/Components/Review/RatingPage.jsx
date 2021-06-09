@@ -1,6 +1,6 @@
 import axios from 'axios';
 import StarRating from './StarRating';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../Multipage/Navbar/Navbar';
 import ReviewTableView from "./ReviewDisplay/ReviewTableView";
 import { useParams } from 'react-router';
@@ -20,7 +20,7 @@ const RatingPage = () => {
         axios({
             method: "get",
             url: `http://localhost:5000/movies/find/${id}`,
-            headers: { "Access-Control-Allow-Origin" : "*"}
+            headers: { "Access-Control-Allow-Origin": "*" }
         }).then((resp) => {
             console.log(resp.data.reviews);
             setIncomingData(resp.data.reviews);
@@ -29,13 +29,13 @@ const RatingPage = () => {
             console.log(err.message);
             setIsLoaded(true);
         })
-        }, []);
+    }, []);
 
-    const{id} = useParams();
+    const { id } = useParams();
 
     const submitReviewAxios = (e) => {
         e.preventDefault();
-        
+
         console.log(usersName, rating, reviewBody);
 
         const reviewData = {
@@ -54,43 +54,39 @@ const RatingPage = () => {
             .catch((err => {
                 console.log(err);
             }))
-        };
+    };
 
-        if (isLoaded) {
-        return(
-        <>
-        <div>
-            <Navbar />
-        </div>
-        <Container>
-        <h1>Let us know what you thought!</h1>
-        <StarRating star={rating} starHandler={setRating}/>
-        {console.log(incomingData)}
-        <form>
-            <label>Username</label>
-            <br/>
-            <input id="Name" type="text" name="usersName" onChange={(e) => setUsersName(e.target.value)}/>
-            <br/>
-            <br/>
-            <label for="reviewBody">Review</label>
-            <br/>
-            <input id="reviewBody" type="text" name="reviewBody" onChange={(e) => setReviewBody(e.target.value)}/>
-            <br/>
-            <button type="submit" onClick={submitReviewAxios}>Submit</button>
-            <button type="reset"> Reset Fields </button>
-        </form>
-        </Container>
+    if (isLoaded) {
+        return (
+            <>
+                <Container>
+                    <h1>Let us know what you thought!</h1>
+                    <StarRating star={rating} starHandler={setRating} />
+                    {console.log(incomingData)}
+                    <form>
+                        <label>Username</label>
+                        <br />
+                        <input id="Name" type="text" name="usersName" onChange={(e) => setUsersName(e.target.value)} />
+                        <br />
+                        <br />
+                        <label for="reviewBody">Review</label>
+                        <br />
+                        <input id="reviewBody" type="text" name="reviewBody" onChange={(e) => setReviewBody(e.target.value)} />
+                        <br />
+                        <button type="submit" onClick={submitReviewAxios}>Submit</button>
+                        <button type="reset"> Reset Fields </button>
+                    </form>
+                </Container>
+                <ReviewTableView data={incomingData} />
+            </>
+        )
+    } else {
+        return (
+            <h1>Loading...</h1>
+        )
+    }
 
-        <ReviewTableView data={incomingData}/>
-
-        </>
-        )} else {
-            return (
-                <h1>Loading...</h1>
-            )
-        }
-
-        }
+}
 
 
 

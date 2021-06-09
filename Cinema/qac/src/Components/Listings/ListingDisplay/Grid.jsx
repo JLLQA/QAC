@@ -16,13 +16,10 @@ const Grid = ({ data }) => {
 
     useEffect(() => {
         let array = [];
-        // let newarr = [];
 
         while (data.length) {
-            array.push(data.splice(0,3));
+            array.push(data.splice(0,2));
         }
-        // newarr[0] = array;
-
 
         setObjArray(array);
         setReady(true);
