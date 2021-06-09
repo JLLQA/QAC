@@ -5,6 +5,8 @@ import { Container } from 'reactstrap';
 import { Link } from "react-router-dom"
 
 const ContactUs = () => {
+    document.title = "Contact Us"
+
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 

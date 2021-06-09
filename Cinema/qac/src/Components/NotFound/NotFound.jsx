@@ -1,6 +1,7 @@
 import { Container } from "reactstrap";
 
 const Notfound = () => {
+    document.title = "404"
 
     return (
         <div id="dropped-box" className="container-fluid">

@@ -6,7 +6,7 @@ import { addDays } from 'date-fns';
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-import ScreenTime from './TimeScreen/ScreenTime';
+import ScreenTime from './ScreenTime/ScreenTime';
 
 const BookingDetails = () => {
     document.title = "Bookings"

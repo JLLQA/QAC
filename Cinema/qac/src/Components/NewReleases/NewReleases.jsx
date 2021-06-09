@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ReleaseGrid from "./ReleaseDisplay/ReleaseGrid";
 
 const NewReleases = () => {
+    document.title = "Upcoming Releases"
 
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);

@@ -5,6 +5,8 @@ import ContactMap from "../Multipage/Map";
 import { Link } from "react-router-dom"
 
 const GettingThere = () => {
+  document.title = "Getting There"
+
   const [activeTab, setActiveTab] = useState('1');
 
   const toggle = tab => {

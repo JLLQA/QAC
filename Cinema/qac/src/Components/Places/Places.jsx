@@ -2,6 +2,8 @@ import { Card, CardText, CardTitle, Button, CardImg, Container } from 'reactstra
 import React from 'react';
 
 const Places = () => {
+  document.title = "Places to Go"
+
   return (
     <div id="dropped-box" className="container-fluid">
       <Container>
