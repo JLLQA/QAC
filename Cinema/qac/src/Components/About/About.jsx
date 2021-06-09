@@ -3,6 +3,7 @@ import { Container, Table } from 'reactstrap';
 import { Link } from "react-router-dom"
 
 const About = () => {
+    document.title = "About"
 
     return (
         <div id="dropped-box" className="container-fluid" align="center">

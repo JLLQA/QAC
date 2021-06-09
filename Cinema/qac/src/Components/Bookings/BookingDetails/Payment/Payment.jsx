@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import CheckoutForm from './Stripe/CheckoutForm';
 
 const Payment = () => {
+    document.title = "Payment"
 
     const promise = loadStripe("pk_test_51Izl2BDGah0CokonmJQU36VHNHiohBZTTJiu6ywwTbfadiWjlKuB99P3LqLVXJ3QUeOK7nNAMYobQuKG1eMNT9TQ00zWurivvB");
 
