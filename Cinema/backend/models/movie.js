@@ -77,6 +77,9 @@ const movieSchema = new SCHEMA({
             "Comedy",
             "Tragedy",
             "Rebirth",
+            "Crime/Comedy",
+            "Horror/Thriller",
+            "Family/Comedy",
             null
         ]
     },
