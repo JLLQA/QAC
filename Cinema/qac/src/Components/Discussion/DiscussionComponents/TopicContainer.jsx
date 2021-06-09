@@ -28,7 +28,6 @@ const TopicContainer = (props) => {
                                         <br />
                                     </CardBody>
                                 </Card>
-                                <br />
                             </Col>
                         </Row>
                     ))}
@@ -58,7 +57,6 @@ const TopicContainer = (props) => {
             </Container>
         )
     }
-
 }
 
 export default TopicContainer;

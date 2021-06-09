@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const About = () => {
 
     return (
-        <div align="center" id="dropped-box" className="container-fluid" align="center">
+        <div id="dropped-box" className="container-fluid" align="center">
             <Container>
                 <h1>ABOUT US</h1>
                 <h3> Get to know the team</h3>
@@ -14,7 +14,7 @@ const About = () => {
                     <br />
                     Applying knowledge from over 10 weeks of training, the team aimed to meet the specification handed to them at the start of the project.
                 </p>
-                <div >
+                <div id="dropped-box" className="container-fluid">
                     <Table id="open-table" borderless striped >
                         <thead align="center">
                             <tr >

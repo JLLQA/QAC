@@ -1,5 +1,3 @@
-import ReviewTableData from './ReviewTableData';
-
 const ReviewTableRow = ({data}) => {
     console.log(data);
     return (

@@ -25,8 +25,6 @@ const ListingPage = () => {
             });
     }, []);
 
-
-
     if (isLoaded) {
         return (
             <div>
