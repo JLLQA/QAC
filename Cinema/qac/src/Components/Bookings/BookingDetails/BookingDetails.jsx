@@ -19,21 +19,17 @@ const BookingDetails = () => {
         {
             id: 1, title: "testtitle2", showtimes: [
                 "10:15 Screen 2",
-                "11:30 Screen 3",
-                "12:15 Screen 2",
                 "22:15 Screen 2"]
         },
         {
             id: 2, title: "testtitle3", showtimes: [
                 "10:15 Screen 2",
-                "11:30 Screen 3",
                 "20:15 Screen 2",
                 "22:15 Screen 2"]
         },
         {
             id: 3, title: "testtitle4", showtimes: [
                 "10:15 Screen 2",
-                "11:30 Screen 3",
                 "20:15 Screen 2",
                 "22:15 Screen 2"]
         },
