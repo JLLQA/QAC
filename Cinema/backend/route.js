@@ -35,17 +35,12 @@ ROUTER.get("/movies/find/:id", (req, res, next) => {
             };
 
         }
-    ) 
+    )
 });
-
-
-
-
-
 
 ROUTER.patch("/movies/review/:id", async (req, res, next) => {
     const MOV = await MOVIE.findOneAndUpdate({ id: parseInt(req.params.id) },
-        { $push: { reviews: { critic: req.body.critic, stars: parseInt(req.body.stars), review: req.body.review} } },
+        { $push: { reviews: { critic: req.body.critic, stars: parseInt(req.body.stars), review: req.body.review } } },
         (err, mov) => {
             if (err) {
                 console.log("ERROR ", err);
