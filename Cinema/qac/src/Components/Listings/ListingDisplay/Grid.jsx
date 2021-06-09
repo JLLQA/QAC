@@ -31,7 +31,6 @@ const Grid = ({ data }) => {
                 <Container align="center">
                     <h1>LISTINGS</h1>
                     <Searchbar query={q} queryFunction={qHandler} />
-                    {console.log(qHandler)}
                     <table id="img-table">
                         <thead>
                             <tr>
