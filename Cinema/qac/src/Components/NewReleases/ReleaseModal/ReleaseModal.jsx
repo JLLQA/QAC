@@ -18,13 +18,13 @@ const ReleaseModal = (props) => {
                         <Col >
                             <br />
                             <Row className="modalRow">
+                                Director: {eachRel.director}
+                            </Row>
+                            <Row className="modalRow">
                                 Genre: {eachRel.genre}
                             </Row>
                             <Row className="modalRow">
                                 Budget: ${eachRel.budget} Million 
-                            </Row>
-                            <Row className="modalRow">
-                                Director: {eachRel.director}
                             </Row>
                             <Row className="modalRow">
                                 Release: {eachRel.releasedate}
@@ -53,7 +53,7 @@ const ReleaseModal = (props) => {
                     <br />
                     <Row>
                         <div className="modalBorder">
-                            <h5 >Storyline:</h5>
+                            <h5 >Synopsis:</h5>
                             <p>{eachRel.story}</p>
                         </div>
                     </Row>

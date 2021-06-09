@@ -2,12 +2,10 @@ import { Container } from 'reactstrap';
 
 const ScreenTime = ({ data, selectedTime, setNewTime, filmTime, filmDayNum }) => {
 
-    console.log(filmDayNum);
-
-    if (filmTime == 0 || filmDayNum == null ) {
+    if (filmTime === 0 || filmDayNum === null) {
         return (
             <Container>
-                <select id="Booking" value={selectedTime} onChange={setNewTime}>
+                <select id="Booking" value={selectedTime} onChange={(e) => setNewTime}>
                     <option disabled value="">-- Select a Time and Screen --</option>
                 </select>
                 <br />
@@ -16,10 +14,10 @@ const ScreenTime = ({ data, selectedTime, setNewTime, filmTime, filmDayNum }) =>
     } else {
         return (
             <Container id="timeSelect">
-                <select id="Booking" value={selectedTime} onChange={setNewTime}>
-                    <option value="">-- Select a Time and Screen --</option>
-                    {data[filmTime].showtimes[filmDayNum].times.map((many, i) => (
-                        <option key={i}>{many.time} - {many.screen}</option>
+                <select id="Booking" value={selectedTime} onChange={(e) => setNewTime(e)}>
+                    <option disabled value="">-- Select a Time and Screen --</option>
+                    {data[filmTime-1].showtimes[filmDayNum].times.map((many, i) => (
+                        <option key={i} value={many.time + " & " + many.screen}>{many.time} - {many.screen}</option>
                     ))}
                 </select>
                 <br />

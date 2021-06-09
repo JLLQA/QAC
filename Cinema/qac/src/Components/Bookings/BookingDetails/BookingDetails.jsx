@@ -139,14 +139,14 @@ const BookingDetails = () => {
                             <Container id="filmSelect">
                                 <select id="Booking" value={film} onChange={setFilm} >
                                     <option disabled value="">-- Select a Film --</option>
-                                    <option value={data[0].id}>{data[0].title}</option>
-                                    <option value={data[1].id}>{data[1].title}</option>
+                                    {data.map((titles, i) => (
+                                        <option key={i} value={data[i].id}>{titles.title}</option>
+                                    ))}
                                 </select>
                             </Container>
                             <br />
                             <DatePicker
                                 selected={filmDate}
-                                // onChange={(date) => setFilmDate(date)}
                                 onChange={setFilmDay}
                                 isClearable
                                 includeDates={[new Date(),
@@ -162,7 +162,7 @@ const BookingDetails = () => {
                                 data={data}
                                 filmTime={filmTime}
                                 selectedTime={selectedTime}
-                                setnewTime={setNewTime}
+                                setNewTime={setNewTime}
                                 filmDayNum={filmDayNum} />
                             <Link to={{ pathname: `/screens` }} target="_blank">
                                 <button id="screenButton" type="button" >Please click for screen info</button>
