@@ -73,7 +73,8 @@ ROUTER.post("/movies/create", (req, res) => {
         actors: req.body.actors,
         poster: req.body.poster,
         reviews: req.body.reviews,
-        showtimes: req.body.showtimes
+        showtimes: req.body.showtimes,
+        synopsis: req.body.synopsis
     });
     MOV.save();
     res.send(MOV);

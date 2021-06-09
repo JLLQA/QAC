@@ -35,10 +35,9 @@ const ListingPage = () => {
                     <Container>
                         <div>
                             <h1 key = {data.id}>{data.title}</h1>
-                            <h3 className="directors">Genre</h3>
-                            <h4 key = {data.id}>- {data.genre}</h4>
-                            <h3>Year</h3>
-                            <h4 key = {data.id}>- {data.year}</h4>
+                            <h3 className="Genre">Genre - {data.genre}</h3>
+                            <h3>Year - {data.year}</h3>
+                            <h3>Synopsis - {data.synopsis}</h3>
                             <br />
                             <Container className="showtimes">
                                 <Showtimes data={data} />
