@@ -20,7 +20,7 @@ const Showtimes = ({ data }) => {
                                     {day.times.map((time) => (
                                         <>
                                             <p>{time.time}</p>
-                                            <p>{time.type}</p>
+                                            <p>{time.screen}</p>
                                         </>
                                     )
                                     )}
