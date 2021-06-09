@@ -17,6 +17,7 @@ import About from './Components/About/About';
 import Contact from "./Components/Contact/Contact";
 import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
+import NotFound from "./Components/NotFound/NotFound";
 
 const App = () => {
   return (
@@ -71,6 +72,9 @@ const App = () => {
           </Route>
           <Route exact path="/topics/:title">
             <ExtraDetails />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </Router>
