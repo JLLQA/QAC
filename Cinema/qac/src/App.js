@@ -69,7 +69,7 @@ const App = () => {
           <Route exact path="/discussion">
             <Discussion />
           </Route>
-          <Route exact path="/discussion/movie/:id">
+          <Route exact path="/topics/:title">
             <ExtraDetails />
           </Route>
         </Switch>

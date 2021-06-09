@@ -1,4 +1,3 @@
-import Navbar from "../../Multipage/Navbar/Navbar"
 import { Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -42,17 +41,13 @@ const ExtraDetails = () => {
             })
     }
 
-
-
     const Filter = require("bad-words");
     const filter = new Filter();
-
 
     if (isLoaded) {
         if (data.comments.length > 0) {
             return (
                 <>
-                    <Navbar />
                     <div id="dropped-box" className="container-fluid">
                         <Container>
                             <Row>
@@ -96,7 +91,6 @@ const ExtraDetails = () => {
         } else {
             return (
                 <>
-                    <Navbar />
                     <div id="dropped-box" className="container-fluid">
                         <Container>
                             <Row>
@@ -128,7 +122,6 @@ const ExtraDetails = () => {
     } else {
         return (
             <>
-                <Navbar />
                 <h1>Loading...</h1>
             </>
         )
