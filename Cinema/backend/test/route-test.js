@@ -139,7 +139,7 @@ describe('/route Testing for Listings....', () => {
                 chai
                     .request(server)
                     .patch('/movies/review/:id')
-                    .send({ id: parseInt(movId)}, {$push: {reviews:movReview}})
+                    .send({ id: parseInt(movId) }, { $push: { reviews: movReview } })
                     .end((err, res) => {
                         res.should.have.status(404);
                         done();
@@ -147,5 +147,5 @@ describe('/route Testing for Listings....', () => {
                     });
             });
     });
-    
+
 });

@@ -24,7 +24,7 @@ ROUTERTOPIC.get("/topics/:title", async (req, res) => {
         } else {
             try {
                 res.send(top);
-                console.log("topic found")
+                console.log("Topic found")
             } catch (e) {
                 const myNotFoundError = new Error(`No topic with the title "${req.params.title}" found in the database`)
                 next(myNotFoundError);
@@ -43,8 +43,8 @@ ROUTERTOPIC.patch("/movies/topics/comment/:title", async (req, res, next) => {
                 res.status(404).send(err.stack);
             } else {
                 try {
-                    console.log("nice");
                     res.status(202).send(`${top} has been updated`);
+                    console.log("Create a new comment");
                 } catch (error) {
                     const myNotFoundError = new Error(`No ${req.params.title} found in the database`);
                     next(myNotFoundError);
@@ -63,10 +63,9 @@ ROUTERTOPIC.post("/movies/topics/create", async (req, res) => {
         comments: []
     });
     await TOP.save();
-    console.log("done");
     res.send(TOP);
+    console.log("A new topic has been created");
 });
 
-//fail update (try using a random title)
 
 module.exports = ROUTERTOPIC;

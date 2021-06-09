@@ -24,7 +24,7 @@ after((done) => {
     done();
 });
 
-describe('/routeReleases Testing for NewReleases....', () => {
+describe('/routeReleases Testing for Topics....', () => {
 
     it('should verify that we have 0 topics in the DB', (done) => {
         chai
@@ -55,7 +55,6 @@ describe('/routeReleases Testing for NewReleases....', () => {
                 let movTitle = res.body.title;
                 res.should.have.status(200);
                 res.body.should.be.a('object');
-                console.log(res.body);
                 res.body.title.should.equal("007 Movie");
                 res.body.username.should.equal("Name1");
 
@@ -79,7 +78,6 @@ describe('/routeReleases Testing for NewReleases....', () => {
             .get('/topics')
             .end((err, res) => {
                 let movTitle = res.body[0].title;
-                console.log("The movie ID is: " + movTitle);
                 res.should.have.status(200);
                 res.body.should.be.a('array');
 
@@ -89,25 +87,10 @@ describe('/routeReleases Testing for NewReleases....', () => {
                     .send({ title: movTitle}, {$push: {comments : movTop}} )
                     .end((err, res) => {
                         res.should.have.status(202);
-                        console.log(res.body);
                         done();
                     });
                 });
     });
-
-    // it('should verify that we get an error when getting topic does not exist', (done) => {
-    //     let invalidTitle = "InvalidTitle";
-
-    //     chai
-    //         .request(server)
-    //         .get('/topics/' + invalidTitle)
-    //         .end((err, res) => {
-    //             // res.should.have.status(404);
-    //             // console.log(res);
-    //             // expect(res.body).to.contain("Error occured")
-    //             done();
-    //         });
-    // });
 
 
 });

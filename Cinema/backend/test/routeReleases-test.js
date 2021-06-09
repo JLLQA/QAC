@@ -107,11 +107,10 @@ describe('/routeReleases Testing for NewReleases....', () => {
                 let candyId = res.body[2]._id;
 
                 chai
-                .request(server)
+                    .request(server)
                     .delete('/delById/' + candyId)
                     .end((err, res) => {
                         res.should.have.status(200);
-                        console.log(res.body._id);
                         expect(candyId).to.equal(res.body._id);
                         done();
                     });
