@@ -37,9 +37,61 @@ describe('/route Testing for Listings....', () => {
             });
     });
 
+    it('should be able to create the Demon Slayer Movie', (done) => {
+        chai
+            .request(server)
+            .post('/setup/initialreleases1')
+            .send()
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.id.should.equal(0);
+                res.body.genre.should.equal("Quest");
+                done();
+            });
+    });
+
+    it('should be able to create the Cruella', (done) => {
+        chai
+            .request(server)
+            .post('/setup/initialreleases2')
+            .send()
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.id.should.equal(1);
+                res.body.year.should.equal(2021);
+                done();
+            });
+    });
+
+    it('should be able to create the A Quiet Place 2', (done) => {
+        chai
+            .request(server)
+            .post('/setup/initialreleases3')
+            .send()
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.id.should.equal(2);
+                res.body.director.should.contain("John");
+                done();
+            });
+    });
+
+    it('should be able to create the Peter Rabbit 2: The Runaway', (done) => {
+        chai
+            .request(server)
+            .post('/setup/initialreleases4')
+            .send()
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.id.should.equal(3);
+                res.body.genre.should.contain("Comedy");
+                done();
+            });
+    });
+
     it('should verify that a new movie can be created and can findById', (done) => {
         let MOV = new MOVIE({
-            "id": 1,
+            "id": 5,
             "title": "Demon Slayer",
             "director": "Gotouge",
             "genre": "Quest",
@@ -72,35 +124,8 @@ describe('/route Testing for Listings....', () => {
             });
     });
 
-    //The update  test
-    // it('should verify that an existing movie can be updated with a review', (done) => {
-
-    //     let movReview = { "critic": "Critic1", "stars": 1, "review": "Did not like this movie unfortunately" };
-    //     chai
-    //         .request(server)
-    //         .get('/movies')
-    //         .end((err, res) => {
-    //             let movId = res.body[0].id;
-    //             console.log("The movie ID is: " + movId);
-    //             res.should.have.status(200);
-    //             res.body.should.be.a('array');
-
-    //             // chai
-    //             //     .request(server)
-    //             //     .patch('/movies/review/:id')
-    //             //     .send({ id: parseInt(movId)}, {$push: {reviews:movReview}})
-    //             //     .end((err, res) => {
-    //             //         console.log("THis ");
-    //             //         console.log(res.body);
-    //             //         res.should.have.status(404);
-
-    //             //     });
-    //             done();
-    //         // });
-    // });
-
     // The update fail test
-    it('should verify that an a review can be added', (done) => {
+    it('should verify that the update movie can fail', (done) => {
 
         let movReview = { "critic": "Critic1", "stars": 1, "review": "Did not like this movie unfortunately" };
         chai
@@ -108,7 +133,6 @@ describe('/route Testing for Listings....', () => {
             .get('/movies')
             .end((err, res) => {
                 let movId = res.body[0].id;
-                console.log("The movie ID is: " + movId);
                 res.should.have.status(200);
                 res.body.should.be.a('array');
 
@@ -117,25 +141,11 @@ describe('/route Testing for Listings....', () => {
                     .patch('/movies/review/:id')
                     .send({ id: parseInt(movId)}, {$push: {reviews:movReview}})
                     .end((err, res) => {
-                        res.should.have.status(202);
+                        res.should.have.status(404);
                         done();
 
                     });
             });
     });
-
-    //Find by id for non existabnt id
-    it('should verify that you cannot find by a non existant id', (done) => {
-        chai
-        .request(server)
-        .get('/movies/find/' + 5)
-        .end((err, res) => {
-            // res.should.have.status(200);
-            // res.body.should.be.a('object');
-            console.log(res.body);
-            // res.body.title.should.equal("Demon Slayer");
-            done();
-        });
-
-    });
+    
 });

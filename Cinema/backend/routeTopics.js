@@ -20,7 +20,7 @@ ROUTERTOPIC.get("/topics/:title", async (req, res) => {
     const TOP = await TOPIC.findOne({ title: req.params.title }, (err, top) => {
         if (err) {
             console.error("Error occured: ", err);
-            res.send(err.stack);
+            res.status(404).send(err.stack);
         } else {
             try {
                 res.send(top);
@@ -34,12 +34,13 @@ ROUTERTOPIC.get("/topics/:title", async (req, res) => {
 });
 
 //create comment
-ROUTERTOPIC.patch("/movies/topics/comment/:title", (req, res, next) => {
-    TOPIC.findOneAndUpdate({ title: req.params.title },
+ROUTERTOPIC.patch("/movies/topics/comment/:title", async (req, res, next) => {
+    const TOP = await TOPIC.findOneAndUpdate({ title: req.params.title },
         { $push: { comments: { username: req.body.username, body: req.body.body } } },
         (err, top) => {
             if (err) {
-                console.log("ERROR ", err)
+                console.log("ERROR ", err);
+                res.status(404).send(err.stack);
             } else {
                 try {
                     console.log("nice");
@@ -66,5 +67,6 @@ ROUTERTOPIC.post("/movies/topics/create", async (req, res) => {
     res.send(TOP);
 });
 
+//fail update (try using a random title)
 
 module.exports = ROUTERTOPIC;

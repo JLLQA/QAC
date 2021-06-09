@@ -22,6 +22,9 @@ const routes = require("./route");
 const newroutes = require("./routeReleases");
 const topicroutes = require("./routeTopics");
 
+MONGOOSE.set('useCreateIndex', true);
+MONGOOSE.set('useFindAndModify', false)
+
 // setup mongoose
 MONGOOSE.connect(process.env.REACT_APP_DOMAIN, {
   useNewUrlParser: true,
