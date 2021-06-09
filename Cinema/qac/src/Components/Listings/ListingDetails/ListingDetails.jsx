@@ -32,6 +32,7 @@ const ListingPage = () => {
                 <div id="dropped-box" className="container-fluid">
                     <Container>
                         <div>
+
                             <h1 key={data.id}>{data.title}</h1>
                             <Row>
                                 <Col>
@@ -39,6 +40,7 @@ const ListingPage = () => {
                                     <h4 key={data.id}>- {data.genre}</h4>
                                     <h3>Year</h3>
                                     <h4 key={data.id}>- {data.year}</h4>
+                                    <h3 key={data.id}>Synopsis - {data.synopsis}</h3>
                                     <br />
                                 </Col>
                                 <Col align="right">
@@ -47,6 +49,7 @@ const ListingPage = () => {
                                     }}>Reviews</Link>
                                 </Col>
                             </Row>
+
                             <Container className="showtimes">
                                 <Showtimes data={data} />
                                 <br />

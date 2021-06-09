@@ -12,6 +12,7 @@ const RatingPage = () => {
     const [reviewBody, setReviewBody] = useState("");
     const [incomingData, setIncomingData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [refresh,setRefresh] = useState(false);
 
     useEffect(() => {
         axios({
@@ -26,7 +27,7 @@ const RatingPage = () => {
             console.log(err.message);
             setIsLoaded(true);
         })
-    }, []);
+    }, [refresh]);
 
     const { id } = useParams();
 
@@ -46,7 +47,7 @@ const RatingPage = () => {
         axios.patch(`http://localhost:5000/movies/review/${id}`, reviewData)
             .then((response => {
                 console.log(response);
-
+                setRefresh((c)=>!c);
             }))
             .catch((err => {
                 console.log(err);

@@ -87,10 +87,12 @@ const movieSchema = new SCHEMA({
     },
     actors: [actorSchema],
     poster: {
-        type: String
+        type: String,
+        required: [true]
     },
-    synopsis:{
-        type:String,
+    synopsis: {
+        type: String,
+        required: [true]
     },
     reviews: [reviewSchema],
     showtimes: [dateSchema]
