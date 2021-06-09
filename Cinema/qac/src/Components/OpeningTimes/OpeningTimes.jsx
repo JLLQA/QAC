@@ -13,8 +13,8 @@ const OpeningTimes = () => {
           <Table size="sm" borderless id="open-table">
             <thead>
               <tr>
-                <th>DAY</th>
-                <th>TIME</th>
+                <th id="head">DAY</th>
+                <th id="head">TIME</th>
               </tr>
             </thead>
             <tbody>

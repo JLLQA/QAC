@@ -15,7 +15,7 @@ const RatingPG = () => {
                     It should be suitable for general viewing and should not have scenes that may unsettle a child of an age around 8 years.
                 </CardText>
                 <List>
-                    <ul>
+                    <ul id="classification">
                         <br />
                         <li>Dangerous Behaviour: Dangerous behaviour that could encourage children to imitate should be avoided, especially if these actions are depicted as fun. No glorifying of weapons such as knives.</li>
                         <li>Discrimination: Is unacceptable unless discouraged, used as educational or depicted in historical context. Discrimination by characters or individuals that may appeal to children is likely to be unacceptable.</li>

@@ -11,9 +11,11 @@ const RatingR18 = () => {
                 <CardText>
                     <h3 align="center">R18 - Adult works for licensed premises only</h3>
                     <br />
-                    The R18 film category is a legally restricted classification for works including strong sexual content.
-                    These films can only be should in specially licensed cinemas and may only be distributed in licensed sex shops.
-                    These works may not be supplied by mail order and will be filtered out of main publicly available search services unless adult content is enabled.
+                    <p id="classification">
+                        The R18 film category is a legally restricted classification for works including strong sexual content.
+                        These films can only be should in specially licensed cinemas and may only be distributed in licensed sex shops.
+                        These works may not be supplied by mail order and will be filtered out of main publicly available search services unless adult content is enabled.
+                    </p>
                 </CardText>
                 <Container align="center">
                     <Button id="infoButton" href="https://www.bbfc.co.uk/rating/r18">For more info on '18 – Adult works for licensed premises only' rating.</Button>

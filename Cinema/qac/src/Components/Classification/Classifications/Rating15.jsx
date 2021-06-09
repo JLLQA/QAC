@@ -13,7 +13,7 @@ const Rating15 = () => {
                     A 15 rated film should not be seen by children under the age of 15 at the cinema, nor be bought or rented by them.
                 </CardText>
                 <List>
-                    <ul>
+                    <ul id="classification">
                         <br />
                         <li>Dangerous Behaviour: Dangerous behaviour like suicide, self harm, etc. should not be promoted or displayed in such detail that it may be imitated. Ease of access of weapons should only be displayed if the context is justified.</li>
                         <li>Discrimination: The film as a whole should not endorse discrimination. Strong discriminatory language may be present as long as it is not endorsed in the film.</li>

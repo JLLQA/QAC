@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, Button, List , Container } from 'reactstrap';
+import { Card, CardImg, CardText, Button, List, Container } from 'reactstrap';
 
 const RatingU = () => {
     return (
@@ -13,7 +13,7 @@ const RatingU = () => {
                     A U rated film has to be suitable for an audience of all ages. The film also has to follow the following guidelines on these matters;
                     </CardText>
                 <List>
-                    <ul>
+                    <ul id="classification">
                         <br />
                         <li>Dangerous Behaviour: Bad/anti-social behaviour that could encourage young children should be discouraged.</li>
                         <li>Discrimination: Is unacceptable, unless strongly discouraged.</li>

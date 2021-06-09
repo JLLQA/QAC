@@ -28,7 +28,7 @@ const ListingPage = () => {
     if (isLoaded) {
         return (
             <div>
-                <br/>
+                <br />
                 <div id="dropped-box" className="container-fluid">
                     <Container>
                         <div>
@@ -47,9 +47,10 @@ const ListingPage = () => {
                                     <h5 key={data.id + 2}>{data.year}</h5>
                                 </Col>
                                 <Col align="right">
-                                    <Link id="reviewButton" to={{pathname: `/movie/review/${data.id}`}}>Reviews</Link>
+                                    <Link id="reviewButton" to={{ pathname: `/movie/review/${data.id}` }}>Reviews</Link>
                                 </Col>
                             </Row>
+                            <br />
                             <Col>
                                 <Row>
                                     <h3>Actors</h3>

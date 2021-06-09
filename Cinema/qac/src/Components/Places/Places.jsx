@@ -29,7 +29,13 @@ const Places = () => {
           <br />
           <Card body className="text-center">
             <CardTitle tag="h3">The Printworks</CardTitle>
-            <CardText>This venue is large complex, ideal for a day out with family and friends, comprising of leisure activities and bars and restaurants.</CardText>
+            <CardText>
+              This venue is large complex, ideal for a day out with family and friends, comprising of leisure activities and bars and restaurants.
+              <br />
+              <br />
+              <h4>Special Offer</h4>
+              Free drink with any food purchase with the coupon attached to your receipt from select stores within The Printworks.
+            </CardText>
             <CardImg src="https://www.staycity.com/staycity2017/wp-content/uploads/2018/10/Printworks-Manchester.png" alt="Printworks" />
             <Button id="external" href="https://printworks-manchester.com/" target="_blank">Visit the 'Printworks' website for more info</Button>
           </Card>
@@ -44,8 +50,14 @@ const Places = () => {
           <br />
           <Card body className="text-center">
             <CardTitle tag="h3">Sea Life Manchester Aquarium</CardTitle>
-            <CardText>As one of the biggest aquariums in Europe, housing hundreds of diverse marine life,
-                 the Blue Planet Aquarium is one of the finest attractions in Manchester.</CardText>
+            <CardText>
+              As one of the biggest aquariums in Europe, housing hundreds of diverse marine life,
+              the Blue Planet Aquarium is one of the finest attractions in Manchester.
+              <br />
+              <br />
+              <h4>Special Offer</h4>
+              20% off your next in person adult ticket purchase when you present a valid Aquarium ticket from the same month.
+            </CardText>
             <CardImg src="https://www.visitsealife.com/manchester/media/uyrf5wtj/hp_banner_011920x875.jpg" alt="Aquarium" />
             <Button id="external" href='https://www.visitsealife.com/manchester/' target="_blank">Visit the 'Sea Life Manchester Aquarium' website for more info </Button>
           </Card>
