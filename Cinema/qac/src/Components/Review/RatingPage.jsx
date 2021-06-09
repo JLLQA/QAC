@@ -6,6 +6,7 @@ import StarRating from './StarRating';
 import ReviewTableView from "./ReviewDisplay/ReviewTableView";
 
 const RatingPage = () => {
+    document.title = "Movie Reviews"
 
     const [rating, setRating] = useState(null);
     const [usersName, setUsersName] = useState("");

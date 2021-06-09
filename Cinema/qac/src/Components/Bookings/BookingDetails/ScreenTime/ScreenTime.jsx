@@ -16,7 +16,7 @@ const ScreenTime = ({ data, selectedTime, setNewTime, filmTime, filmDayNum }) =>
             <Container id="timeSelect">
                 <select id="Booking" value={selectedTime} onChange={(e) => setNewTime(e)}>
                     <option disabled value="">-- Select a Time and Screen --</option>
-                    {data[filmTime-1].showtimes[filmDayNum].times.map((many, i) => (
+                    {data[filmTime].showtimes[filmDayNum].times.map((many, i) => (
                         <option key={i} value={many.time + " & " + many.screen}>{many.time} - {many.screen}</option>
                     ))}
                 </select>

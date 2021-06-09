@@ -2,6 +2,8 @@ import React from 'react';
 import { Table, Container } from 'reactstrap';
 
 const OpeningTimes = () => {
+  document.title = "Opening Times"
+
   return (
     <div id="dropped-box" className="container-fluid">
       <Container id="open">
@@ -11,8 +13,8 @@ const OpeningTimes = () => {
           <Table size="sm" borderless id="open-table">
             <thead>
               <tr>
-                <th>DAY</th>
-                <th>TIME</th>
+                <th id="head">DAY</th>
+                <th id="head">TIME</th>
               </tr>
             </thead>
             <tbody>

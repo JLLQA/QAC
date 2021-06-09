@@ -6,6 +6,8 @@ import TopicContainer from "./DiscussionComponents/TopicContainer";
 import TopicForm from "./DiscussionComponents/TopicForm";
 
 const Discussion = () => {
+    document.title = "Discussion"
+
     const [query, setQuery] = useState("");
     const [title, setTitle] = useState("");
     const [username, setUsername] = useState("");

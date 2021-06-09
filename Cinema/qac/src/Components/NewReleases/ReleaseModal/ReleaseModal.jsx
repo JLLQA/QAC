@@ -9,7 +9,7 @@ const ReleaseModal = (props) => {
         <Modal {...props} centered  >
             <Modal.Header className="ModalBody" closeButton>
                 <Modal.Title>
-                    Movie: {eachRel.title} 
+                   {eachRel.title} 
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className="ModalBody">
