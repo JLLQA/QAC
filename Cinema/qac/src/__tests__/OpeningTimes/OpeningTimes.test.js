@@ -8,3 +8,4 @@ test('opening times text is present', () => {
   const linkElement = screen.getByText("OPENING TIMES");
   expect(linkElement).toBeInTheDocument();
   });
+  
