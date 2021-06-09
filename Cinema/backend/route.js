@@ -2,7 +2,6 @@ const ROUTER = require("express").Router();
 const MOVIE = require("./models/movie");
 
 
-
 // get all
 ROUTER.get("/movies", async (req, res) => {
     const MOV = await MOVIE.find((err, mov) => {
@@ -15,7 +14,6 @@ ROUTER.get("/movies", async (req, res) => {
         }
     });
 });
-
 
 // get one movie by id
 ROUTER.get("/movies/find/:id", (req, res, next) => {
@@ -37,11 +35,6 @@ ROUTER.get("/movies/find/:id", (req, res, next) => {
         }
     ) 
 });
-
-
-
-
-
 
 ROUTER.patch("/movies/review/:id", async (req, res, next) => {
     MOVIE.findOneAndUpdate({ id: parseInt(req.params.id) },
