@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Col, Container, Form, Nav, Row } from "reactstrap"
+import { Col, Container, Row } from "reactstrap"
 import axios from "axios";
-import Navbar from "../Multipage/Navbar/Navbar"
 import SearchForm from "./DiscussionComponents/SearchForm";
 import TopicContainer from "./DiscussionComponents/TopicContainer";
 import TopicForm from "./DiscussionComponents/TopicForm";
@@ -11,6 +10,7 @@ const Discussion = () => {
     const [title, setTitle] = useState("");
     const [username, setUsername] = useState("");
     const [body, setBody] = useState("");
+    const [refresh,setRefresh] = useState(false);
 
     const handleSubmitSearch = (event) => {
         setQuery(event.target.value);
@@ -35,6 +35,7 @@ const Discussion = () => {
             })
             .then((res) =>{
                 console.log(res)
+                setRefresh((c)=>!c);
             }).catch((err)=> {
                 console.log(err.message);
             })
@@ -53,14 +54,11 @@ const Discussion = () => {
                 console.log(err.message);
                 setIsLoaded(true);
             });
-    }, []);
+    },[refresh]);
 
     if (isLoaded) {
         return (
             <div>
-                <div>
-                    <Navbar />
-                </div>
                 <div id="dropped-box" className="container-fluid">
                     <Container align="center">
                         <h1>DISCUSSION BOARD</h1>
@@ -95,10 +93,9 @@ const Discussion = () => {
         )
     } else {
         return (
-            <>
-                <Navbar />
+            <div id="dropped-box" className="container-fluid">
                 <h1>Loading...</h1>
-            </>
+            </div>
         )
 
     }

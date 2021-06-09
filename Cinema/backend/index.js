@@ -1,23 +1,25 @@
 const MONGOOSE = require("mongoose");
-const EXPRESS = require("express");
+const express = require("express");
 const cors = require('cors');
-let app = EXPRESS();
+let app = express();
 
-app.use(EXPRESS.json())
+app.use(express.json())
 app.use(cors());
-app.options("*",cors());
+app.options("*", cors());
 
 const routes = require("./route");
-const newroutes = require("./routeReleases")
+const newroutes = require("./routeReleases");
+const topicroutes = require("./routeTopics");
 
 
 // setup mongoose
 MONGOOSE.connect("mongodb://localhost/QACinema", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+})
     .then(() => {
-        app.use(routes, newroutes);
+        app.use(routes, newroutes, topicroutes);
         app.listen(5000, () => {
             console.log("Server has started");
         })

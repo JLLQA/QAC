@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-// import { useParams } from "react-router-dom";
 import { Container } from "reactstrap";
-import Navbar from "../../Multipage/Navbar/Navbar";
+import { Link } from "react-router-dom"
 import Showtimes from "./Showtimes"
-
+ 
 const ListingPage = () => {
 
     const [data, setData] = useState([]);
@@ -31,7 +30,6 @@ const ListingPage = () => {
     if (isLoaded) {
         return (
             <div>
-                <Navbar />
                 <br></br>
                 <div id="dropped-box" className="container-fluid">
                     <Container>
@@ -49,12 +47,14 @@ const ListingPage = () => {
                         </div>
                     </Container>
                 </div>
+                <Link to={{
+                    pathname: `/movie/review/${data.id}`
+                }}>Reviews</Link>
             </div>
         );
     } else {
         return (
             <div>
-                <Navbar />
                 <h1>Loading...</h1>
             </div>
         );
