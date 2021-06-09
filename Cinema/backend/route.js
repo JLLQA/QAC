@@ -35,7 +35,7 @@ ROUTER.get("/movies/find/:id", (req, res, next) => {
             };
 
         }
-    )
+    ) 
 });
 
 
