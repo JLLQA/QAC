@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, Button } from 'reactstrap';
+import { Card, CardImg, CardText, Button, Container } from 'reactstrap';
 
 const RatingR18 = () => {
     return (
@@ -15,7 +15,9 @@ const RatingR18 = () => {
                     These films can only be should in specially licensed cinemas and may only be distributed in licensed sex shops.
                     These works may not be supplied by mail order and will be filtered out of main publicly available search services unless adult content is enabled.
                 </CardText>
-                <Button id="infoButton" href="https://www.bbfc.co.uk/rating/r18">For more info on '18 – Adult works for licensed premises only' rating.</Button>
+                <Container align="center">
+                    <Button id="infoButton" href="https://www.bbfc.co.uk/rating/r18">For more info on '18 – Adult works for licensed premises only' rating.</Button>
+                </Container>
             </Card>
         </div>
     )

@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, Button, List } from 'reactstrap';
+import { Card, CardImg, CardText, Button, List, Container } from 'reactstrap';
 
 const Rating12 = () => {
     return (
@@ -27,7 +27,9 @@ const Rating12 = () => {
                         <li>Violence: Moderate violence is permissible. Infrequent strong violent scenes are permissible as long as there is a proper context.</li>
                     </ul>
                 </List>
-                <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/12">For more info on '12 – Suitable for 12 years and over' rating.</Button>
+                <Container align="center">
+                    <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/12">For more info on '12 – Suitable for 12 years and over' rating.</Button>
+                </Container>
             </Card>
         </div>
     )

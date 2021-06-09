@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, Button, List } from 'reactstrap';
+import { Card, CardImg, CardText, Button, List, Container } from 'reactstrap';
 
 const Rating18 = () => {
     return (
@@ -20,7 +20,9 @@ const Rating18 = () => {
                         <li> Presence of overly explicit sexual content.</li>
                     </ul>
                 </List>
-                <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/18">For more info on '18 – Suitable only for adults' rating.</Button>
+                <Container align="center">
+                    <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/18">For more info on '18 – Suitable only for adults' rating.</Button>
+                </Container>
             </Card>
         </div>
     )

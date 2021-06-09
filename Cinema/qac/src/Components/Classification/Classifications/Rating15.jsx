@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, Button, List } from 'reactstrap';
+import { Card, CardImg, CardText, Button, List, Container } from 'reactstrap';
 
 const Rating15 = () => {
     return (
@@ -26,8 +26,9 @@ const Rating15 = () => {
                         <li>Violence: Strong violence is permissible but the film should not focus on injury or the aspect of inflicting pain. Strong gore and sadistic violence is not permissible.</li>
                     </ul>
                 </List>
-
-                <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/15">For more info on '15 – Suitable only for 15 years and over' rating.</Button>
+                <Container align="center">
+                    <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/15">For more info on '15 – Suitable only for 15 years and over' rating.</Button>
+                </Container>
             </Card>
         </div>
     )

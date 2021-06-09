@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, Button, List } from 'reactstrap';
+import { Card, CardImg, CardText, Button, List , Container } from 'reactstrap';
 
 const RatingU = () => {
     return (
@@ -25,7 +25,9 @@ const RatingU = () => {
                         <li>Violence: Should be very mild, but mild use of violence is permissible given an appropriate context like cartoonish, comedic, etc.</li>
                     </ul>
                 </List>
-                <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/u">For more info on 'U Universal' rating.</Button>
+                <Container align="center">
+                    <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/u">For more info on 'U Universal' rating.</Button>
+                </Container>
             </Card>
         </div>
     )

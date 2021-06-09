@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, Button, List } from 'reactstrap';
+import { Card, CardImg, CardText, Button, List, Container } from 'reactstrap';
 
 const RatingPG = () => {
     return (
@@ -27,7 +27,9 @@ const RatingPG = () => {
                         <li>Violence: Should be mild, but moderated use of violence is permissible given an appropriate context like history, etc.</li>
                     </ul>
                 </List>
-                <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/pg">For more info on 'PG Parental Guidance' rating.</Button>
+                <Container align="center">
+                    <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/pg">For more info on 'PG Parental Guidance' rating.</Button>
+                </Container>
             </Card>
         </div>
     )
