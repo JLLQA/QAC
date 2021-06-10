@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It matches snapshot 1`] = `[Function]`;
+
+exports[`Testing Rating page functionality It matches snapshot 1`] = `[Function]`;
