@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
 import ListingPage from '../../../src/Components/Listings/ListingPage';
 import renderer from 'react-test-renderer';
 
