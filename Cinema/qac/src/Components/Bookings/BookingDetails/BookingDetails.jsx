@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Container } from 'reactstrap';
-import { Link, useHistory } from "react-router-dom";
+import { Container, Button } from 'reactstrap';
+import { useHistory } from "react-router-dom";
 import { addDays } from 'date-fns';
 import DatePicker from "react-datepicker";
 
@@ -164,9 +164,9 @@ const BookingDetails = () => {
                                 selectedTime={selectedTime}
                                 setNewTime={setNewTime}
                                 filmDayNum={filmDayNum} />
-                            <Link to={{ pathname: `/screens` }} target="_blank">
-                                <button id="screenButton" type="button" >Please click for screen info</button>
-                            </Link>
+                            <Button id="infoButton" type="button" href="http://localhost:3000/screens" target="_blank">
+                                Please click for screen info
+                            </Button>
                             <Container>
                                 <br />
                                 <label>Adult Seats (£{ticketPrice[0]} each)</label>

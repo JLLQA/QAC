@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { Col, Container, Row } from "reactstrap";
-import { Link } from "react-router-dom"
+import { Col, Container, Row, Button } from "reactstrap";
 import Showtimes from "./Showtimes"
 
 const ListingPage = () => {
@@ -24,6 +23,8 @@ const ListingPage = () => {
                 setIsLoaded(true);
             });
     }, []);
+
+    var reviewUrl = `http://localhost:3000/movie/review/${data.id}`;
 
     if (isLoaded) {
         return (
@@ -47,7 +48,9 @@ const ListingPage = () => {
                                     <h5 key={data.id + 2}>{data.year}</h5>
                                 </Col>
                                 <Col align="right">
-                                    <Link id="reviewButton" to={{ pathname: `/movie/review/${data.id}` }}>Reviews</Link>
+                                    <Button id="reviewButton" href={reviewUrl} type="button">
+                                        Reviews
+                                    </Button>
                                 </Col>
                             </Row>
                             <br />
