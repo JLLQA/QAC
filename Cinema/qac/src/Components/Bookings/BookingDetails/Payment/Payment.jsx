@@ -11,6 +11,8 @@ const Payment = () => {
 
     const location = useLocation();
 
+    console.log(useLocation());
+
     const ticketTotal = location.state.detail[6];
     const bookName = location.state.detail[7];
 
