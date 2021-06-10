@@ -32,35 +32,35 @@ const About = () => {
                                 <td>Jordan</td>
                                 <td>Lewis</td>
                                 <td>JLewis@qa.com</td>
-                                <td><a id="gitlink" href="https://www.github.com/JLLQA" target="_blank" rel="noreferrer">github.com/JLLQA</a></td>
+                                <td><a id="gitlink" href="https://www.github.com/JLLQA" target="_blank" rel="noreferrer">github.com-JLLQA</a></td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
                                 <td>Mark</td>
                                 <td>Gasmido</td>
                                 <td>MGasmido@qa.com</td>
-                                <td><a id="gitlink" href="https://www.github.com/markgasmidoQA" target="_blank" rel="noreferrer">github.com/markgasmidoQA</a></td>
+                                <td><a id="gitlink" href="https://www.github.com/markgasmidoQA" target="_blank" rel="noreferrer">github.com-markgasmidoQA</a></td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>Philip</td>
                                 <td>Ugona</td>
                                 <td>PUgona@qa.com</td>
-                                <td><a id="gitlink" href="https://www.github.com/PUgonaQA" target="_blank" rel="noreferrer">github.com/PUgonaQA</a></td>
+                                <td><a id="gitlink" href="https://www.github.com/PUgonaQA" target="_blank" rel="noreferrer">github.com-PUgonaQA</a></td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
                                 <td>Ryan</td>
                                 <td>Glennerster</td>
                                 <td>RGlennerster@qa.com</td>
-                                <td><a id="gitlink" href="https://www.github.com/ryanglennersterQA" target="_blank" rel="noreferrer">github.com/ryanglennersterQA</a></td>
+                                <td><a id="gitlink" href="https://www.github.com/ryanglennersterQA" target="_blank" rel="noreferrer">github.com-ryanglennersterQA</a></td>
                             </tr>
                             <tr>
                                 <th scope="row">5</th>
                                 <td>Mohamed Sajath</td>
                                 <td>Raffeek</td>
                                 <td>MMohamedRaffeek@qa.com</td>
-                                <td><a id="gitlink" href="https://www.github.com/sajathraffeekQA" target="_blank" rel="noreferrer">github.com/sajathraffeekQA</a></td>
+                                <td><a id="gitlink" href="https://www.github.com/sajathraffeekQA" target="_blank" rel="noreferrer">github.com-sajathraffeekQA</a></td>
                             </tr>
                         </tbody>
                     </Table>
