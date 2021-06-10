@@ -1,10 +1,10 @@
 import emailjs from 'emailjs-com';
 import { useForm } from "react-hook-form";
+import { Container, Button } from 'reactstrap';
 import ContactMap from '../Multipage/Map';
-import { Container } from 'reactstrap';
-import { Link } from "react-router-dom"
 
 const ContactUs = () => {
+    document.title = "Contact Us"
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -29,10 +29,9 @@ const ContactUs = () => {
                     <ContactMap />
                     <br />
                     <div align="center">
-                        <Link to={{ pathname: `/gettingthere` }}>
-                            <button id="infoButton" type="button">
-                                Click for more Travel Info     </button>
-                        </Link>
+                        <Button id="infoButton" type="button" href="http://localhost:3000/gettingthere">
+                            Click for more Travel Info
+                        </Button>
                         <br />
                         <br />
                     </div>
@@ -105,7 +104,7 @@ const ContactUs = () => {
                                     </div>
                                 </div>
                                 <div className="formGroup">
-                                    <input id="submitButton" type="submit" value=" Submit Form "/>
+                                    <input id="submitButton" type="submit" value=" Submit Form " />
                                 </div>
                                 <div>
                                     <button type="reset" id="resetButton" value="reset"> Reset Form </button>

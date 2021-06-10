@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Grid from "./ListingDisplay/Grid";
 
 const ListingPage = () => {
-    
+    document.title = "Movie Listings"
+
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 

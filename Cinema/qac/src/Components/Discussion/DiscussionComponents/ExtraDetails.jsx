@@ -1,6 +1,6 @@
+import axios from "axios";
 import { Card, CardText, CardBody, CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router";
 import ReplyForm from "./ReplyForm";
 
@@ -61,6 +61,7 @@ const ExtraDetails = () => {
                                     </Card>
                                 </Col>
                             </Row>
+                            <br />
                             <Row>
                                 <ReplyForm
                                     username={username}
