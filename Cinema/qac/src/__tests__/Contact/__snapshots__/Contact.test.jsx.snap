@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test for contact page It matches the snapshot 1`] = `
+<div>
+  <div
+    className="container-fluid"
+    id="dropped-box"
+  >
+    <div
+      className="container"
+    >
+      <h1>
+        CONTACT
+      </h1>
+      <div
+        align="center"
+        className="container"
+      >
+        <br />
+        <h2>
+          Where We Are
+        </h2>
+        <br />
+        <div
+          className="row justify-content-md-center"
+        >
+          <div
+            className="col-md-auto"
+          >
+            <h3>
+              Our Address
+            </h3>
+            <p>
+              8th Floor St James Buildings
+              <br />
+              79 Oxford Street
+              <br />
+              Manchester
+              <br />
+              M1 6FQ
+            </p>
+          </div>
+          <div
+            className="col col-lg-6"
+            style={
+              Object {
+                "height": "40vh",
+                "width": "50%",
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+              onMouseDownCapture={[Function]}
+              onMouseMove={[Function]}
+              style={
+                Object {
+                  "height": "100%",
+                  "margin": 0,
+                  "padding": 0,
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": "100%",
+                    "left": 0,
+                    "margin": 0,
+                    "padding": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": "100%",
+                  }
+                }
+              />
+              <div
+                style={
+                  Object {
+                    "height": "50%",
+                    "left": "50%",
+                    "margin": 0,
+                    "padding": 0,
+                    "position": "absolute",
+                    "top": "50%",
+                    "width": "50%",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "height": "100%",
+                      "left": 0,
+                      "margin": 0,
+                      "padding": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "height": 0,
+                        "left": 0,
+                        "position": "absolute",
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  >
+                    <div>
+                      QA Cinema
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div
+        align="center"
+      >
+        <a
+          aria-label={null}
+          className="btn btn-secondary"
+          href="http://localhost:3000/gettingthere"
+          id="infoButton"
+          onClick={[Function]}
+          type="button"
+        >
+          Click for more Travel Info
+        </a>
+        <br />
+        <br />
+      </div>
+      <div
+        align="center"
+      >
+        <h2>
+          Send us an Email
+        </h2>
+        <h4>
+          Please fill out the form below and we will reply by email
+        </h4>
+        <form
+          className="contact-form"
+          onSubmit={[Function]}
+        >
+          <div>
+            <div
+              className="formGroup"
+            >
+              <div>
+                <label>
+                  Name:
+                </label>
+              </div>
+              <div>
+                <input
+                  id="contact"
+                  name="Name"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Enter name here"
+                  type="text"
+                />
+                <div />
+              </div>
+            </div>
+            <div
+              className="formGroup"
+            >
+              <div>
+                <label>
+                  Email:
+                </label>
+              </div>
+              <div>
+                <input
+                  id="contact"
+                  name="Email"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Enter email here"
+                  type="text"
+                />
+                <div />
+              </div>
+            </div>
+            <div
+              className="formGroup"
+            >
+              <div>
+                <label>
+                  Subject:
+                </label>
+              </div>
+              <div>
+                <select
+                  id="subject"
+                  name="Subject"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                >
+                  <option
+                    disabled={true}
+                    selected={true}
+                    value=""
+                  >
+                    -- Select a Subject --
+                  </option>
+                  <option
+                    value="Movies"
+                  >
+                    Movies
+                  </option>
+                  <option
+                    value="Tickets"
+                  >
+                    Ticket Enquiries
+                  </option>
+                  <option
+                    value="Location"
+                  >
+                    Location
+                  </option>
+                  <option
+                    value="Other"
+                  >
+                    Other
+                  </option>
+                </select>
+                <div />
+              </div>
+            </div>
+            <div
+              className="formGroup"
+            >
+              <div>
+                <label>
+                  Message:
+                </label>
+              </div>
+              <div>
+                <textarea
+                  id="messageBox"
+                  name="Message"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Enter message here"
+                />
+                <div />
+              </div>
+            </div>
+            <div
+              className="formGroup"
+            >
+              <input
+                id="submitButton"
+                type="submit"
+                value=" Submit Form "
+              />
+            </div>
+            <div>
+              <button
+                id="resetButton"
+                type="reset"
+                value="reset"
+              >
+                 Reset Form 
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
