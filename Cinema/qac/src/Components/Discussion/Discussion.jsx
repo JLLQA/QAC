@@ -6,11 +6,13 @@ import TopicContainer from "./DiscussionComponents/TopicContainer";
 import TopicForm from "./DiscussionComponents/TopicForm";
 
 const Discussion = () => {
+    document.title = "Discussion"
+
     const [query, setQuery] = useState("");
     const [title, setTitle] = useState("");
     const [username, setUsername] = useState("");
     const [body, setBody] = useState("");
-    const [refresh,setRefresh] = useState(false);
+    const [refresh, setRefresh] = useState(false);
 
     const handleSubmitSearch = (event) => {
         setQuery(event.target.value);
@@ -28,15 +30,15 @@ const Discussion = () => {
     const handleSubmitTopic = (event) => {
         event.preventDefault();
         axios.post("http://localhost:5000/movies/topics/create",
-            {   
-                username:username,
-                title:title,
-                body:body
+            {
+                username: username,
+                title: title,
+                body: body
             })
-            .then((res) =>{
+            .then((res) => {
                 console.log(res)
-                setRefresh((c)=>!c);
-            }).catch((err)=> {
+                setRefresh((c) => !c);
+            }).catch((err) => {
                 console.log(err.message);
             })
         //axios request to create a new discussion object using states
@@ -54,7 +56,7 @@ const Discussion = () => {
                 console.log(err.message);
                 setIsLoaded(true);
             });
-    },[refresh]);
+    }, [refresh]);
 
     if (isLoaded) {
         return (
@@ -62,6 +64,7 @@ const Discussion = () => {
                 <div id="dropped-box" className="container-fluid">
                     <Container align="center">
                         <h1>DISCUSSION BOARD</h1>
+                        <br />
                         <Row>
                             <Col>
                                 <SearchForm
@@ -70,6 +73,7 @@ const Discussion = () => {
                                 />
                             </Col>
                         </Row>
+                        <br />
                         <Row>
                             <TopicForm
                                 title={title}
@@ -100,7 +104,5 @@ const Discussion = () => {
 
     }
 }
-
-
 
 export default Discussion;

@@ -536,65 +536,107 @@ input:focus, .StripeElement--focus {
 }
 
 /* Stripe end */
+
 /* Contact end */
 
-#starButtons{
-  display:none;
+#starButtons {
+  display: none;
 }
 
 /* New Listing start*/
 
-.ModalBody{
+.ModalBody {
   color: white;
-   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.95), #4F0821);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.95), #4F0821);
 }
 
 .modal-footer {
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.95), #4F0821);
 }
 
-.modalRow{
-  line-height:32px;
+.modalRow {
+  line-height: 32px;
   border-top: 0.5px solid rgb(255, 255, 255, 0.295);
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.295) ;
-
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.295);
 }
 
-.modalBorder{
+.modalBorder {
   border-top: 1px solid rgb(255, 255, 255, 0.295);
   border-bottom: 1px solid rgba(255, 255, 255, 0.295);
 }
 
-#modalButton{
+#modalButton {
   padding: 10px;
   background-color: #ffa2a250;
   border: 2px solid rgb(255, 255, 255, 0.295);
 }
 
-#modalButton:hover{
+#modalButton:hover {
   background-color: rgb(92, 46, 49);
 }
 
-#modalClose{
+#modalClose {
   padding: 10px;
   background-color: #aaffa250;
   border: 2px solid rgb(255, 255, 255, 0.295);
 }
 
-#modalClose:hover{
+#modalClose:hover {
   background-color: rgb(90, 197, 90);
 }
+
 /* New Listing start*/
+
 /* Classifications */
-#movCert{
+
+#movCert {
   height: 5vw;
-  width:5vw;
+  width: 5vw;
 }
 
-#gitlink{
+#gitlink {
   color: #9C8F08;
 }
 
-#gitlink:hover{
+#gitlink:hover {
   color: white;
+}
+
+#reviewButton {
+  font-size: 1.5rem;
+  color: white;
+  background-color: #10809C;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+#reviewButton:hover {
+  color: white;
+  background-color: #9C8F08;
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+}
+
+#Review {
+  padding: 10px;
+  width: 50%;
+  max-width: 700px;
+  margin: auto;
+  border: 2px solid rgb(59, 124, 124);
+  align-items: center;
+  justify-content: center;
+}
+
+#head {
+  font-size: 1.5rem;
+}
+
+#classification {
+  padding: 0;
+  margin: 0px 20px;
+  text-align: left;
+}
+
+#CarouselName{
+  text-shadow: -2px -2px 0 black, 2px -2px black, -2px 2px black, 2px 2px black;
 }

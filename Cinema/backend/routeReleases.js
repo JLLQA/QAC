@@ -55,7 +55,6 @@ ROUTERNEW.post('/create007', async (req, res) => {
     console.log("007 movie created");
 })
 
-
 //create spiderman movie
 ROUTERNEW.post('/createspiderman', async (req, res) => {
     const REL = new RELEASE({

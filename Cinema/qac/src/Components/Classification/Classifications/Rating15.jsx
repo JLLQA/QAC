@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, Button, List } from 'reactstrap';
+import { Card, CardImg, CardText, Button, List, Container } from 'reactstrap';
 
 const Rating15 = () => {
     return (
@@ -13,7 +13,7 @@ const Rating15 = () => {
                     A 15 rated film should not be seen by children under the age of 15 at the cinema, nor be bought or rented by them.
                 </CardText>
                 <List>
-                    <ul>
+                    <ul id="classification">
                         <br />
                         <li>Dangerous Behaviour: Dangerous behaviour like suicide, self harm, etc. should not be promoted or displayed in such detail that it may be imitated. Ease of access of weapons should only be displayed if the context is justified.</li>
                         <li>Discrimination: The film as a whole should not endorse discrimination. Strong discriminatory language may be present as long as it is not endorsed in the film.</li>
@@ -26,8 +26,9 @@ const Rating15 = () => {
                         <li>Violence: Strong violence is permissible but the film should not focus on injury or the aspect of inflicting pain. Strong gore and sadistic violence is not permissible.</li>
                     </ul>
                 </List>
-
-                <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/15">For more info on '15 – Suitable only for 15 years and over' rating.</Button>
+                <Container align="center">
+                    <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/15">For more info on '15 – Suitable only for 15 years and over' rating.</Button>
+                </Container>
             </Card>
         </div>
     )

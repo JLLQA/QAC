@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, Button, List } from 'reactstrap';
+import { Card, CardImg, CardText, Button, List, Container } from 'reactstrap';
 
 const Rating12A = () => {
     return (
@@ -16,7 +16,7 @@ const Rating12A = () => {
                     The 12A rating is for cinema only.
                 </CardText>
                 <List>
-                    <ul>
+                    <ul id="classification">
                         <br />
                         <li>Dangerous Behaviour: Dangerous behaviour that could encourage children to imitate should be avoided, especially if these actions are depicted as fun. No glorifying of weapons such as knives. Anti-social behaviour should not be promoted.</li>
                         <li>Discrimination: The film as a whole should not endorse discrimination. Strong discriminatory language should not be present unless strongly condemned.</li>
@@ -28,7 +28,9 @@ const Rating12A = () => {
                         <li>Violence: Moderate violence is permissible. Infrequent strong violent scenes are permissible as long as there is a proper context.</li>
                     </ul>
                 </List>
-                <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/12">For more info on '12A – Suitable for 12 years and over' rating.</Button>
+                <Container align="center">
+                    <Button id="infoButton" type="button" href="https://www.bbfc.co.uk/rating/12">For more info on '12A – Suitable for 12 years and over' rating.</Button>
+                </Container>
             </Card>
         </div>
     )
