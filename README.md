@@ -1,4 +1,4 @@
-Coverage: X%
+Coverage: 83%
 # QA Cinemas
 
 Group project tasked with creating full-stack Web application for a “QA Cinema” chain, implementing full MERN stack with use of Jest, Mocha and Chai for front-end and back-end testing respectively.
@@ -51,14 +51,30 @@ Step 2. Navigate to the download location and double-click to run the executeabl
 
 #### What to do if you don't have mongoDB
 ```
-Step 1. Navigate to the link above --> "Download".
-Step 2. 
+Step 1. Navigate to the link above --> Select the relevant option for your operating system --> Download.
+Step 2. Navigate to the download location and double-click to run the executeable.
+Step 3. Click "Next".
+Step 4. Click "Next".
+Step 5. Click "Complete".
+Step 6. Click "Next".
+Step 7. Untick Install MongoDb Compass --> Click "Next".
+Step 8. Click "Install".
+Step 9. In Windows search bar type:
+	Environment Variables
+Step 10. Under User variables --> Edit --> Browse --> C:\Program Files\MongoDB\Server\bin
+Step 11. Navigate to C:\Program Files\MongoDB\Server\4.4\bin\ directory in File Explorer and double-click on mongo.exe.
 ```
 
 #### What to do if you don't have Node.js
 ```
 Step 1. Navigate to the link above --> "Download".
-Step 2. 
+Step 2. Navigate to the download location and double-click to run the executeable.
+Step 3. Press "Next".
+Step 4. Click accept and "Next".
+Step 5. Leave the destination as default and click "Next".
+Step 6. Click "Next".
+Step 7. Click "Next".
+Step 8. Click "Install".
 ```
 
 ### Installing
@@ -84,7 +100,7 @@ Step 5. Enter the following commands, pressing the return key after each one:
 
 ## Running the tests
 
-To run the backend automated unit and integration tests with Mocha and Chai
+To run the back-end automated unit and integration tests with Mocha and Chai
 
 ```
 Step 1. Have the project open in VSCode
@@ -98,7 +114,7 @@ Step 4. Enter the following command followed by the return key:
 	npm run coverage
 ```
 
-To run the frontend automated testing with Jest
+To run the front-end automated testing with Jest
 
 ```
 Step 1. Have the project open in VSCode
@@ -116,7 +132,7 @@ Step 4. Enter the following command followed by the return key:
 
 Example of Mocha and Chai test
 
-```html
+```node
 describe('/server Testing the payment requests...', () => {
 
     it('should be able to send a payment to stripe', (done) => {
@@ -145,16 +161,41 @@ describe('/server Testing the payment requests...', () => {
 
 ### Jest
 
-Explain what these tests test and why
+Jest is a JavaScript Testing Framework with a focus on simplicity.
 
-```
-Give an example
+Example of Jest test for the form on the Contact page.
+
+```node
+test("testing the form", () => {
+
+        const handleSubmit = jest.fn();
+      	const formTest = render(
+            <Contact handleSubmit={handleSubmit} />
+        );
+        
+        const nameInput = screen.getByPlaceholderText('Enter name here');
+        const emailInput = screen.getByPlaceholderText('Enter email here');
+              
+        const messageInput = screen.getByPlaceholderText('Enter message here');
+        
+        fireEvent.change(nameInput, { target: { value: "abc" } });
+        fireEvent.change(emailInput, { target: { value: "abc@qa.com" } });
+        
+        fireEvent.click(screen.getByText("-- Select a Subject --"));
+        fireEvent.click(screen.getByText("Movies"));
+        
+        fireEvent.change(messageInput, { target: { value: "hello" } });
+
+        expect(nameInput.value).toBe("abc");
+        expect(emailInput.value).toBe("abc@qa.com");
+        expect(messageInput.value).toBe("hello");
+           
+    });
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
-
+How to deploy
 ```
 Step 1. Have the project open in VSCode
 Step 2. Terminal --> New Terminal
@@ -177,7 +218,8 @@ Step 9. Enter the following commands, pressing the return key after each one:
 Step 10. Open postman
 Step 11. File --> New Tab
 Step 12. Click GET and change it to POST
-Step 13. Where it says "Enter request URL" enter the following urls one at a time clicking the blue SEND button after each one:
+Step 13. Where it says "Enter request URL", enter the following urls one at a time:
+	*NOTE* Make sure to press the blue SEND button after each one
 	http://5000/setup/initialreleases1
 	http://5000/setup/initialreleases2
 	http://5000/setup/initialreleases3
@@ -194,9 +236,9 @@ Step 13. Where it says "Enter request URL" enter the following urls one at a tim
 * [Express](https://expressjs.com/) - Back-End Framework
 * [React](https://reactjs.org/) - Front-End Library
 * [Node](https://nodejs.org/) - JS Runtime Environment
-* [Mocha](https://mochajs.org/) - Backend Testing
-* [Chai](https://www.chaijs.com/) - Backend Testing
-* [Jest](https://jestjs.io/) - Frontend Testing
+* [Mocha](https://mochajs.org/) - Back-end Testing
+* [Chai](https://www.chaijs.com/) - Back-end Testing
+* [Jest](https://jestjs.io/) - Front-end Testing
 
 ## Versioning
 
@@ -215,9 +257,3 @@ Step 13. Where it says "Enter request URL" enter the following urls one at a tim
 This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
 
 *For help in [Choosing a license](https://choosealicense.com/)*
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
