@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for 404 page It matches the snapshot 1`] = `
+<div
+  className="container-fluid"
+  id="dropped-box"
+>
+  <div
+    align="center"
+    className="container"
+  >
+    <div
+      className="container"
+    >
+      <h1>
+        ~~404~~
+      </h1>
+    </div>
+    <br />
+    <div
+      className="container"
+    >
+      <h3>
+        You silly goose
+      </h3>
+      <h3>
+        We're sorry but that page can't be found
+      </h3>
+    </div>
+    <br />
+    <div
+      className="container"
+    >
+      <img
+        alt="basicplan"
+        id="plan"
+        src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12B60/production/_109004667_02untitledgoosegamescreen3840x2160.png"
+      />
+    </div>
+    <br />
+    <div
+      className="container"
+    >
+      <h3>
+        Don't worry we're working on it
+      </h3>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test for 404 page It matches the snapshot 1`] = `
+<div
+  className="container-fluid"
+  id="dropped-box"
+>
+  <div
+    align="center"
+    className="container"
+  >
+    <div
+      className="container"
+    >
+      <h1>
+        ~~404~~
+      </h1>
+    </div>
+    <br />
+    <div
+      className="container"
+    >
+      <h3>
+        You silly goose
+      </h3>
+      <h3>
+        We're sorry but that page can't be found
+      </h3>
+    </div>
+    <br />
+    <div
+      className="container"
+    >
+      <img
+        alt="basicplan"
+        id="plan"
+        src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12B60/production/_109004667_02untitledgoosegamescreen3840x2160.png"
+      />
+    </div>
+    <br />
+    <div
+      className="container"
+    >
+      <h3>
+        Don't worry we're working on it
+      </h3>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test for contact page It matches the snapshot 1`] = `
+<div
+  className="container-fluid"
+  id="dropped-box"
+>
+  <div
+    align="center"
+    className="container"
+  >
+    <div
+      className="container"
+    >
+      <h1>
+        ~~404~~
+      </h1>
+    </div>
+    <br />
+    <div
+      className="container"
+    >
+      <h3>
+        You silly goose
+      </h3>
+      <h3>
+        We're sorry but that page can't be found
+      </h3>
+    </div>
+    <br />
+    <div
+      className="container"
+    >
+      <img
+        alt="basicplan"
+        id="plan"
+        src="https://ichef.bbci.co.uk/news/976/cpsprodpb/12B60/production/_109004667_02untitledgoosegamescreen3840x2160.png"
+      />
+    </div>
+    <br />
+    <div
+      className="container"
+    >
+      <h3>
+        Don't worry we're working on it
+      </h3>
+    </div>
+  </div>
+</div>
+`;
