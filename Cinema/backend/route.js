@@ -88,7 +88,7 @@ ROUTER.post("/movies/create", (req, res) => {
 //             [
 //                 {
 //                     day: "Sunday", times: [
-//                         { time: "11:30", screen: "Screen 1" },
+//                         { time: "11:30",  screen: "Screen 1" },
 //                         { time: "13:00", screen: "Screen 3" },
 //                         { time: "15:40", screen: "Screen 3" },
 //                         { time: "16:30", screen: "Screen 1" },
