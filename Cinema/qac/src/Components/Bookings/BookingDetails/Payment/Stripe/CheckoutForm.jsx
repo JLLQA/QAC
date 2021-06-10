@@ -99,6 +99,7 @@ const CheckoutForm = ({ total, custName }) => {
             </button>
             {error && (
                 <div className="card-error" role="alert">
+                    <br />
                     {error}
                 </div>
             )}
