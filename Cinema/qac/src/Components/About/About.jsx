@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Table } from 'reactstrap';
-import { Link } from "react-router-dom"
+import { Container, Table, Button } from 'reactstrap';
 
 const About = () => {
     document.title = "About"
@@ -67,10 +66,9 @@ const About = () => {
                 </div>
                 <br />
                 <div align="center">
-                    <Link to={{ pathname: `/contact` }}>
-                        <button id="infoButton" type="button">
-                            If you wish to contact the team, please click here</button>
-                    </Link>
+                    <Button id="infoButton" href="http://localhost:3000/contact" type="button">
+                        If you wish to contact the team, please click here
+                    </Button>
                 </div>
             </Container>
         </div>

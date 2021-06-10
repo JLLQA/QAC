@@ -90,6 +90,7 @@ const GettingThere = () => {
                       <br />
                       <h5 id="highlight">
                         Early Bird discounts are available if you plan to park between 05:00AM-09:00AM, and if you do so, we recommend checking out the
+                        <a href="localhost:3000/places"> Click me</a>
                         <Link id="highlight"
                           to={{ pathname: `/places` }}>
                           "Places to Go"
