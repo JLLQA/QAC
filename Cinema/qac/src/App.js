@@ -77,6 +77,7 @@ const App = () => {
             <NotFound />
           </Route>
         </Switch>
+        <Navbar />
       </Router>
     </>
   );
