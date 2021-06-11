@@ -47,7 +47,7 @@ const ExtraDetails = () => {
     if (isLoaded) {
         if (data.comments.length > 0) {
             return (
-                <>
+                <div>
                     <div id="dropped-box" className="container-fluid">
                         <Container>
                             <Row>
@@ -87,11 +87,15 @@ const ExtraDetails = () => {
                             ))}
                         </Container>
                     </div>
-                </>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
             )
         } else {
             return (
-                <>
+                <div>
                     <div id="dropped-box" className="container-fluid">
                         <Container>
                             <Row>
@@ -117,7 +121,11 @@ const ExtraDetails = () => {
                             <br />
                         </Container>
                     </div>
-                </>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
             )
         }
     } else {

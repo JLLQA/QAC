@@ -57,7 +57,7 @@ const RatingPage = () => {
 
     if (isLoaded) {
         return (
-            <>
+            <div>
                 <div id="dropped-box" className="container-fluid">
                     <Container>
                         <h1>REVIEWS</h1>
@@ -87,7 +87,11 @@ const RatingPage = () => {
                         </div>
                     </Container>
                 </div>
-            </>
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
         )
     } else {
         return (
