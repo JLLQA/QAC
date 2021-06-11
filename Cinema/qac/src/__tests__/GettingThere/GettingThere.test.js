@@ -1,4 +1,6 @@
 import '@testing-library/jest-dom';
+import { getByTestId, getByText, render, screen } from '@testing-library/react';
+import GettingThere from '../../Components/GettingThere/GettingThere';
 import { render, screen } from '@testing-library/react';
 
 import renderer from 'react-test-renderer';
@@ -30,5 +32,4 @@ describe('test for GettingThere page', () => {
         const tree = renderer.create(<h5>We advise pre-booking your parking here to make your travel to the venue much quicker and more economic.</h5>).toJSON();
         expect(tree).toMatchSnapshot();
     });
-
 });
