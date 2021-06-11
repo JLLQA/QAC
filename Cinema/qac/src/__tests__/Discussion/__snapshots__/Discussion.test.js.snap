@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing discussion page functionality Text component loaded correctly 1`] = `
+<h1>
+  DISCUSSION BOARD
+</h1>
+`;
