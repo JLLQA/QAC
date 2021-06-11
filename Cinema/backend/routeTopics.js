@@ -20,11 +20,11 @@ ROUTERTOPIC.get("/topics/:title", async (req, res) => {
     const TOP = await TOPIC.findOne({ title: req.params.title }, (err, top) => {
         if (err) {
             console.error("Error occured: ", err);
-            res.send(err.stack);
+            res.status(404).send(err.stack);
         } else {
             try {
                 res.send(top);
-                console.log("topic found")
+                console.log("Topic found")
             } catch (e) {
                 const myNotFoundError = new Error(`No topic with the title "${req.params.title}" found in the database`)
                 next(myNotFoundError);
@@ -34,16 +34,17 @@ ROUTERTOPIC.get("/topics/:title", async (req, res) => {
 });
 
 //create comment
-ROUTERTOPIC.patch("/movies/topics/comment/:title", (req, res, next) => {
-    TOPIC.findOneAndUpdate({ title: req.params.title },
+ROUTERTOPIC.patch("/movies/topics/comment/:title", async (req, res, next) => {
+    const TOP = await TOPIC.findOneAndUpdate({ title: req.params.title },
         { $push: { comments: { username: req.body.username, body: req.body.body } } },
         (err, top) => {
             if (err) {
-                console.log("ERROR ", err)
+                console.log("ERROR ", err);
+                res.status(404).send(err.stack);
             } else {
                 try {
-                    console.log("nice");
                     res.status(202).send(`${top} has been updated`);
+                    console.log("Create a new comment");
                 } catch (error) {
                     const myNotFoundError = new Error(`No ${req.params.title} found in the database`);
                     next(myNotFoundError);
@@ -62,8 +63,8 @@ ROUTERTOPIC.post("/movies/topics/create", async (req, res) => {
         comments: []
     });
     await TOP.save();
-    console.log("done");
     res.send(TOP);
+    console.log("A new topic has been created");
 });
 
 
