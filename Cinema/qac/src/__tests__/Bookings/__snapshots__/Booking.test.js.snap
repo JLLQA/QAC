@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It matches the snapshot 1`] = `
+<div>
+  <div
+    className="container-fluid"
+    id="dropped-box"
+  >
+    <h1>
+      Loading...
+    </h1>
+  </div>
+</div>
+`;
