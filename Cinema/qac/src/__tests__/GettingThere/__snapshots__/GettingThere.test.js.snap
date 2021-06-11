@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test for GettingThere page It matches the snapshot 1`] = `
+<h5>
+  We advise pre-booking your parking here to make your travel to the venue much quicker and more economic.
+</h5>
+`;
