@@ -637,6 +637,16 @@ input:focus, .StripeElement--focus {
   text-align: left;
 }
 
-#CarouselName{
+#CarouselName {
   text-shadow: -2px -2px 0 black, 2px -2px black, -2px 2px black, 2px 2px black;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#homeTitle{
+  font-size: 4rem;
 }

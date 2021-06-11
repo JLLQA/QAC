@@ -18,6 +18,7 @@ import Contact from "./Components/Contact/Contact";
 import Discussion from "./Components/Discussion/Discussion";
 import ExtraDetails from "./Components/Discussion/DiscussionComponents/ExtraDetails";
 import NotFound from "./Components/NotFound/NotFound";
+import Footer from './Components/Multipage/Footer/Footer';
 
 const App = () => {
   return (
@@ -77,6 +78,9 @@ const App = () => {
             <NotFound />
           </Route>
         </Switch>
+        <footer className="footer--pin">
+          <Footer />
+        </footer>
       </Router>
     </>
   );

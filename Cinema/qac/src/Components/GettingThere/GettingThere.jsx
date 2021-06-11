@@ -16,7 +16,7 @@ const GettingThere = () => {
   }
 
   return (
-    <>
+    <div>
       <div id="dropped-box" className="container-fluid">
         <Container align='center'>
           <div>
@@ -142,7 +142,11 @@ const GettingThere = () => {
           </Container>
         </Container>
       </div>
-    </>
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
   );
 }
 

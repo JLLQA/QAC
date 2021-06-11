@@ -5,6 +5,10 @@ const Bookings = () => {
     return (
         <div>
             <BookingDetails />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
     );
 }

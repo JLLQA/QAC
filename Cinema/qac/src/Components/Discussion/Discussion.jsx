@@ -93,6 +93,10 @@ const Discussion = () => {
                         </Container>
                     </Container>
                 </div>
+                <br />
+                <br />
+                <br />
+                <br />
             </div>
         )
     } else {

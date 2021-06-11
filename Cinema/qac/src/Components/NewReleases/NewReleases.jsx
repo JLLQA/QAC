@@ -29,6 +29,10 @@ const NewReleases = () => {
         return (
             <div>
                 <ReleaseGrid data={data} />
+                <br />
+                <br />
+                <br />
+                <br />
             </div>
         );
     }
