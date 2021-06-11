@@ -1,72 +1,48 @@
 import { CollapsibleComponent, CollapsibleHead, CollapsibleContent } from "react-collapsible-component";
 
-const Showtimes = (props) => {
+const Showtimes = ({ data }) => {
+    if (data.showtimes[0].times.length > 0) {
 
-    return (
-        <div>
-            <br />
-            <h3>Show Times</h3>
-            <CollapsibleComponent>
-                <CollapsibleHead className="additionalClassForHead">
-                    {props.data.title}
-                    </CollapsibleHead>
-                <CollapsibleContent className="additionalClassForContent">
-                    <p>
-                        {props.data.genre}
-                    </p>
-                </CollapsibleContent>
-                <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 1
-                    </CollapsibleHead>
-                <CollapsibleContent className="additionalClassForContent">
-                    <p>
-                        Lorem
-                    </p>
-                </CollapsibleContent>
-                <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 2
-                    </CollapsibleHead>
-                <CollapsibleContent className="additionalClassForContent">
-                    <p>
-                        Lorem
-                    </p>
-                </CollapsibleContent>
-                <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 3
-                    </CollapsibleHead>
-                <CollapsibleContent className="additionalClassForContent">
-                    <p>
-                        Lorem
-                    </p>
-                </CollapsibleContent>
-                <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 4
-                    </CollapsibleHead>
-                <CollapsibleContent className="additionalClassForContent">
-                    <p>
-                        Lorem
-                    </p>
-                </CollapsibleContent>
-                <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 5
-                    </CollapsibleHead>
-                <CollapsibleContent className="additionalClassForContent">
-                    <p>
-                        Lorem
-                    </p>
-                </CollapsibleContent>
-                <CollapsibleHead className="additionalClassForHead">
-                    Day 1 + 6
-                    </CollapsibleHead>
-                <CollapsibleContent className="additionalClassForContent">
-                    <p>
-                        Lorem
-                    </p>
-                </CollapsibleContent>
-            </CollapsibleComponent>
-            <br></br>
-        </div>
-    )
+        return (
+            <>
+                <div>
+                    <br />
+                    <h3>Show Times - {data.title}</h3>
+                    <CollapsibleComponent>
+                        {data.showtimes.map((day) => (
+                            <>
+                                <CollapsibleHead className="additionalClassForHead">
+                                    <p>
+                                        {day.day}
+                                    </p>
+                                </CollapsibleHead>
+                                <CollapsibleContent className="additionalClassForContent">
+                                    {day.times.map((time) => (
+                                        <>
+                                            <p>{time.time}</p>
+                                            <p>{time.screen}</p>
+                                        </>
+                                    )
+                                    )}
+                                </CollapsibleContent>
+                            </>
+                        ))}
+                    </CollapsibleComponent>
+                </div>
+            </>
+        )
+    } else{
+        return (
+            <>
+                <div>
+                    <br />
+                    <h3>Show Times - {data.title}</h3>
+                    
+                    <h4>NO SHOW TIMES</h4>
+                </div>
+            </>
+        )
+    }
 }
 
 export default Showtimes;

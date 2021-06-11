@@ -1,20 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Navbar from "../Multipage/Navbar/Navbar";
 import ReleaseGrid from "./ReleaseDisplay/ReleaseGrid";
 
-
 const NewReleases = () => {
+    document.title = "Upcoming Releases"
 
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
-    const [q, setQ] = useState("");
 
-    const qHandler = (e) => {
-        setQ(e.target.value);
-    };
-  
     useEffect(() => {
         axios({
             method: "Get",
@@ -34,15 +28,13 @@ const NewReleases = () => {
     if (isLoaded) {
         return (
             <div>
-                <Navbar />
-                        <ReleaseGrid data={data} query={q} />
+                <ReleaseGrid data={data} />
             </div>
         );
     }
     else {
         return (
-            <div>
-                <Navbar />
+            <div id="dropped-box" className="container-fluid">
                 <h1>Loading...</h1>
             </div>
         );

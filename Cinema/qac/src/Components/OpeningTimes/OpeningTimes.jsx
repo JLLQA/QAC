@@ -1,20 +1,20 @@
-import Navbar from "../Multipage/Navbar/Navbar";
 import React from 'react';
 import { Table, Container } from 'reactstrap';
 
 const OpeningTimes = () => {
+  document.title = "Opening Times"
+
   return (
-    <div>
-      {/* <Navbar /> */}
-      <div id="dropped-box" className="container-fluid">
-        <Container id = "open">
-          <h1>OPENING TIMES</h1>
-          <br/>
+    <div id="dropped-box" className="container-fluid">
+      <Container id="open">
+        <h1>OPENING TIMES</h1>
+        <br />
+        <div id="dropped-box" className="container-fluid">
           <Table size="sm" borderless id="open-table">
             <thead>
               <tr>
-                <th>DAY</th>
-                <th>TIME</th>
+                <th id="head">DAY</th>
+                <th id="head">TIME</th>
               </tr>
             </thead>
             <tbody>
@@ -52,8 +52,8 @@ const OpeningTimes = () => {
               </tr>
             </tbody>
           </Table>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </div>
   );
 }

@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It matches the snapshot 1`] = `
+<div
+  className="container-fluid"
+  id="dropped-box"
+>
+  <div
+    className="container"
+  >
+    <div
+      align="center"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="container"
+        >
+          <h1>
+            Screens 1 and 2
+          </h1>
+          <h3>
+            Classic Screen
+          </h3>
+          <p>
+            These charming screens feature our iconic classic red padded seats, suitable for people of ages.
+          </p>
+        </div>
+        <div
+          className="container"
+        >
+          <img
+            alt="basicseat"
+            src="https://c.stocksy.com/a/sS2400/z9/962790.jpg"
+          />
+          <img
+            alt="basicplan"
+            id="plan"
+            src="Standard_Screen.png"
+          />
+        </div>
+      </div>
+      <div
+        className="container"
+      >
+        <div
+          className="container"
+        >
+          <h1>
+            Screen 3
+          </h1>
+          <h3>
+            Deluxe Screen
+          </h3>
+          <p>
+            We like to refer to this screen as our "Directors Box".
+            <br />
+            These VIP seats have extra room to stretch out, a wider chair and are in the prime position, giving you a perfect cinematic experience to view films the way they where meant to be seen.
+          </p>
+        </div>
+        <div
+          className="container"
+        >
+          <img
+            alt="deluxeseat"
+            src="https://www.showcasecinemas.com/Media/1739/woburnseatsmob2.jpg"
+          />
+          <img
+            alt="deluxeplan"
+            id="plan"
+            src="Deluxe_Screen.png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

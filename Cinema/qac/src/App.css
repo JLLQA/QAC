@@ -32,7 +32,7 @@ h5 {
   color: white;
 }
 
-h6{
+h6 {
   color: white;
   padding: 0.5rem;
 }
@@ -45,15 +45,19 @@ p {
   color: white;
 }
 
+li {
+  color: white;
+}
+
 .card-text {
   color: black;
 }
 
-.additionalClassForHead{
+.additionalClassForHead {
   background-color: #004050 !important;
 }
 
-.additionalClassForContent{
+.additionalClassForContent {
   background-color: #4F0821 !important;
 }
 
@@ -203,12 +207,18 @@ p {
 }
 
 /* Openings end */
+
 /* Listings start */
 
 img {
   width: 16vw;
   height: 24vw;
   border-radius: 20px 20px 20px 20px;
+}
+
+#plan {
+  width: 36vw;
+  height: 24vw;
 }
 
 */ #img-grid {
@@ -268,11 +278,13 @@ img {
 }
 
 /* Listings end */
+
 /* Getting There start */
 
-.nav-tabs{
+.nav-tabs {
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .nav-link {
@@ -288,22 +300,23 @@ img {
   transition: all 0.2s ease-out;
 }
 
-#highlight{
+#highlight {
   color: #ffe167;
 }
 
 /* Getting There end */
+
 /* Places to Go start */
 
-.card{
+.card {
   background-color: #10809C !important;
 }
 
-#external{
+#external {
   background-color: #4F0821;
 }
 
-#external:hover{
+#external:hover {
   background-color: #9C0036;
 }
 
@@ -312,20 +325,21 @@ img {
 }
 
 /* Places to Go end */
+
 /* Contact start */
 
-.formGroup{
+.formGroup {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.alertOne{
+.alertOne {
   line-height: auto;
   font-size: 20px !important;
   color: red !important;
 }
 
-input[type=text] {
+#contact {
   padding: 10px;
   width: 90%;
   max-width: 700px;
@@ -333,7 +347,7 @@ input[type=text] {
   border: 2px solid rgb(59, 124, 124);
 }
 
-#subject{
+#subject {
   padding: 10px;
   width: 90%;
   max-width: 700px;
@@ -342,11 +356,11 @@ input[type=text] {
   text-align: center;
 }
 
-#label{
+#label {
   text-align: right;
 }
 
-#messageBox{
+#messageBox {
   padding: 10px;
   width: 90%;
   max-width: 800px;
@@ -356,7 +370,7 @@ input[type=text] {
   text-align: center;
 }
 
-#infoButton{
+#infoButton {
   padding: 10px;
   width: 90%;
   max-width: 800px;
@@ -364,12 +378,12 @@ input[type=text] {
   border: 2px solid rgb(255, 255, 255);
 }
 
-#infoButton:hover{
+#infoButton:hover {
   background-color: #0964B3;
   color: white;
 }
 
-#submitButton{
+#submitButton {
   padding: 10px;
   width: 90%;
   max-width: 800px;
@@ -377,12 +391,12 @@ input[type=text] {
   border: 2px solid rgb(255, 255, 255);
 }
 
-#submitButton:hover{
+#submitButton:hover {
   background-color: #00B50F;
   color: white;
 }
 
-#resetButton{
+#resetButton {
   padding: 10px;
   width: 90%;
   max-width: 400px;
@@ -390,53 +404,239 @@ input[type=text] {
   border: 2px solid rgb(255, 255, 255);
 }
 
-#resetButton:hover{
+#resetButton:hover {
   background-color: #BF0A00;
   color: white;
 }
+
 /* Contact end */
+
+/*Booking*/
+
+#neg {
+  padding: 2px;
+  width: 5%;
+  max-width: 800px;
+  margin-left: 10px;
+  background-color: #10809C;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+}
+
+#neg:hover {
+  background-color: #BF0A00;
+  color: white;
+}
+
+#pos {
+  padding: 2px;
+  width: 5%;
+  max-width: 800px;
+  margin-left: 10px;
+  background-color: #10809C;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+}
+
+#pos:hover {
+  background-color: #08A870;
+  color: white;
+}
+
+#screenButton {
+  padding: 2px 6px;
+  background-color: #10809C;
+  border: 1px solid rgb(255, 255, 255);
+  color: white;
+  border-radius: 8px;
+}
+
+#screenButton:hover {
+  background-color: #0964B3;
+  color: white;
+}
+
+#seatCounter {
+  padding: 10px;
+  width: 50%;
+  max-width: 700px;
+  margin: auto;
+  display: inline-block;
+}
+
+#Booking {
+  padding: 10px;
+  width: 50%;
+  max-width: 700px;
+  margin: auto;
+  border: 2px solid rgb(59, 124, 124);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stripe start */
+
+#cardName {
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  padding: 10px 14px;
+  font-size: 1em;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background: white;
+}
+
+input, .StripeElement {
+  display: block;
+  margin: 10px 0 20px 0;
+  max-width: 500px;
+  padding: 10px 14px;
+  font-size: 1em;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px, rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background: white;
+}
+
+input::placeholder {
+  color: #aab7c4;
+}
+
+input:focus, .StripeElement--focus {
+  box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px, rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+.StripeElement.IdealBankElement, .StripeElement.FpxBankElement, .StripeElement.PaymentRequestButton {
+  padding: 0;
+}
+
+.StripeElement.PaymentRequestButton {
+  height: 40px;
+}
+
+#submitButtonStripe {
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+  background-color: #08A870;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#submitButtonStripe:hover {
+  background-color: #00B50F;
+  color: white;
+}
+
+/* Stripe end */
+
+/* Contact end */
+
+#starButtons {
+  display: none;
+}
 
 /* New Listing start*/
 
-.ModalBody{
+.ModalBody {
   color: white;
-   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.95), #4F0821);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.95), #4F0821);
 }
 
 .modal-footer {
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.95), #4F0821);
 }
 
-.modalRow{
-  line-height:32px;
+.modalRow {
+  line-height: 32px;
   border-top: 0.5px solid rgb(255, 255, 255, 0.295);
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.295) ;
-
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.295);
 }
 
-.modalBorder{
+.modalBorder {
   border-top: 1px solid rgb(255, 255, 255, 0.295);
   border-bottom: 1px solid rgba(255, 255, 255, 0.295);
 }
 
-#modalButton{
+#modalButton {
   padding: 10px;
   background-color: #ffa2a250;
   border: 2px solid rgb(255, 255, 255, 0.295);
 }
 
-#modalButton:hover{
+#modalButton:hover {
   background-color: rgb(92, 46, 49);
 }
 
-#modalClose{
+#modalClose {
   padding: 10px;
   background-color: #aaffa250;
   border: 2px solid rgb(255, 255, 255, 0.295);
 }
 
-#modalClose:hover{
+#modalClose:hover {
   background-color: rgb(90, 197, 90);
 }
 
 /* New Listing start*/
+
+/* Classifications */
+
+#movCert {
+  height: 5vw;
+  width: 5vw;
+}
+
+#gitlink {
+  color: #9C8F08;
+}
+
+#gitlink:hover {
+  color: white;
+}
+
+#reviewButton {
+  font-size: 1.5rem;
+  color: white;
+  background-color: #10809C;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+#reviewButton:hover {
+  color: white;
+  background-color: #9C8F08;
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+}
+
+#Review {
+  padding: 10px;
+  width: 50%;
+  max-width: 700px;
+  margin: auto;
+  border: 2px solid rgb(59, 124, 124);
+  align-items: center;
+  justify-content: center;
+}
+
+#head {
+  font-size: 1.5rem;
+}
+
+#classification {
+  padding: 0;
+  margin: 0px 20px;
+  text-align: left;
+}
+
+#CarouselName{
+  text-shadow: -2px -2px 0 black, 2px -2px black, -2px 2px black, 2px 2px black;
+}

@@ -1,16 +1,14 @@
-import Navbar from "../Multipage/Navbar/Navbar";
+import { Container } from "reactstrap";
 import CarouselDisplay from "./CarouselDisplay";
 
 const HomePage = () => {
+    document.title = "Home"
+
     return (
-        <div>
-            <div>
-                <Navbar />
-            </div>
-            <div id="dropped-box" className="container-fluid">
-                <CarouselDisplay />
-            </div>
-        </div>
+        <Container>
+            <br />
+            <CarouselDisplay />
+        </Container>
     );
 }
 

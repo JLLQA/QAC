@@ -6,16 +6,51 @@ const SCHEMA = MONGOOSE.Schema;
 const reviewSchema = new SCHEMA({
     critic: {
         type: String,
-        required: [true, "Review must have a Critic"],
-        minlength: 5
+        required: [true, "Review must have a Critic"]
     },
     stars: {
         type: Number,
         required: [true, "Review must have a star rating"],
         max: [5, "Max is 5 stars"],
         min: [0, "Min is 0 stars"]
+    },
+    review: {
+        type: String
     }
 });
+
+const actorSchema = new SCHEMA({
+    name: {
+        type: String,
+        required: [true, "Actor must have a name"],
+        minlength: 2
+    }
+})
+
+const timeSchema = new SCHEMA({
+    time: {
+        type: String,
+        required: [true]
+    },
+    screen: {
+        type: "String",
+        enum: [
+            "Screen 1",
+            "Screen 2",
+            "Screen 3",
+            null
+        ]
+    }
+})
+
+const dateSchema = new SCHEMA({
+    day: {
+        type: String
+    },
+    times: [timeSchema]
+})
+
+
 
 const movieSchema = new SCHEMA({
     id: {
@@ -42,6 +77,9 @@ const movieSchema = new SCHEMA({
             "Comedy",
             "Tragedy",
             "Rebirth",
+            "Crime/Comedy",
+            "Horror/Thriller",
+            "Family/Comedy",
             null
         ]
     },
@@ -50,15 +88,18 @@ const movieSchema = new SCHEMA({
         max: [2021, "Maximum is 2021"],
         min: [2000, "Minimum is 2000"]
     },
-    actors: {
-        type: String,
-        required: [true, "Actor must have a name"],
-        minlength: 2
-    },
+    actors: [actorSchema],
     poster: {
-        type: String
+        type: String,
+        required: [true]
     },
-    reviews: ([reviewSchema])
+    synopsis: {
+        type: String,
+        required: [true]
+    },
+    reviews: [reviewSchema],
+    showtimes: [dateSchema]
+
 });
 
 module.exports = MONGOOSE.model("movie", movieSchema);

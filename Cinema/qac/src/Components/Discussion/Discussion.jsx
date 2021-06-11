@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
-import { Col, Container, Form, Nav, Row } from "reactstrap"
+import { Col, Container, Row } from "reactstrap"
 import axios from "axios";
-import Navbar from "../Multipage/Navbar/Navbar"
 import SearchForm from "./DiscussionComponents/SearchForm";
 import TopicContainer from "./DiscussionComponents/TopicContainer";
 import TopicForm from "./DiscussionComponents/TopicForm";
 
 const Discussion = () => {
+    document.title = "Discussion"
+
     const [query, setQuery] = useState("");
     const [title, setTitle] = useState("");
     const [username, setUsername] = useState("");
     const [body, setBody] = useState("");
+    const [refresh, setRefresh] = useState(false);
 
     const handleSubmitSearch = (event) => {
         setQuery(event.target.value);
@@ -28,14 +30,15 @@ const Discussion = () => {
     const handleSubmitTopic = (event) => {
         event.preventDefault();
         axios.post("http://localhost:5000/movies/topics/create",
-            {   
-                username:username,
-                title:title,
-                body:body
+            {
+                username: username,
+                title: title,
+                body: body
             })
-            .then((res) =>{
+            .then((res) => {
                 console.log(res)
-            }).catch((err)=> {
+                setRefresh((c) => !c);
+            }).catch((err) => {
                 console.log(err.message);
             })
         //axios request to create a new discussion object using states
@@ -53,17 +56,15 @@ const Discussion = () => {
                 console.log(err.message);
                 setIsLoaded(true);
             });
-    }, []);
+    }, [refresh]);
 
     if (isLoaded) {
         return (
             <div>
-                <div>
-                    <Navbar />
-                </div>
                 <div id="dropped-box" className="container-fluid">
                     <Container align="center">
                         <h1>DISCUSSION BOARD</h1>
+                        <br />
                         <Row>
                             <Col>
                                 <SearchForm
@@ -72,6 +73,7 @@ const Discussion = () => {
                                 />
                             </Col>
                         </Row>
+                        <br />
                         <Row>
                             <TopicForm
                                 title={title}
@@ -95,15 +97,12 @@ const Discussion = () => {
         )
     } else {
         return (
-            <>
-                <Navbar />
+            <div id="dropped-box" className="container-fluid">
                 <h1>Loading...</h1>
-            </>
+            </div>
         )
 
     }
 }
-
-
 
 export default Discussion;

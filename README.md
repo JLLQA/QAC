@@ -1,7 +1,7 @@
 Coverage: X%
 # QA Cinemas
 
-One Paragraph of project description goes here
+Group project tasked with creating full-stack Web application for a “QA Cinema” chain, implementing full MERN stack with use of Jest, Mocha and Chai for front-end and back-end testing respectively.
 
 ## Getting Started
 
@@ -9,62 +9,79 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 #### List of required programs
 * [Git Bash](https://git-scm.com/downloads)
-* [Java](https://www.oracle.com/uk/java/technologies/javase-jdk11-downloads.html)
-* [MySQL Workbench](https://www.mysql.com/downloads/)
 
 #### Additional programs for development and testing purposes
-* [Eclipse IDE](https://www.eclipse.org/downloads/)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Postman](https://www.postman.com/downloads/)
-* [SonarQube](https://www.sonarqube.org/downloads/)
+
+
+
 
 #### What to do if you don't have X
 ```
 Step 1. Installing steps
 ```
 
+
+
+#### What to do if you don't have Git Bash
+```
+Step 1. Navigate to the link above and download the relevant option for your operating system.
+Step 2. Once downloaded navigate to the files location on your local machine, double-click and press "Run".
+Step 3. Once you are running the installer, after reading the license press "Next".
+Step 4. Select the destination location and press "Next".
+Step 5. Leave the selected components as they are and press "Next".
+Step 6. Leave the default start menu folder as it is and press "Next".
+Step 7. Change the default editor to your personal preference and press "Next".
+Step 8. Leave the PATH environment as "Use Git from Git Bash only" and press "Next".
+Step 9. Leave the backend as OpenSSL and press "Next".
+Step 10. Leave the line ending conversations as default and press "Next".
+Step 11. Leave the Terminal Emulator as default and press "Next".
+Step 12. Leave the extra options as default and press "Next".
+Step 13. Do not add experimental options and press "Install".
+Step 14. Wait for the install to end and press "Finish".
+```
+
+#### What to do if you don't have Visual Studio Code
+```
+Step 1. Navigate to the link above --> "Download".
+Step 2. Navigate to the download location and double-click to run the executeable.
+Step 3. Accept the agreement and click "Next".
+Step 4. Leave defaults and click "Next".
+Step 5. Click install.
+```
+
 ### Installing
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
-
 ```
-Give the example
+Step 1. Clone the repository to your local machine.
+Step 2. Open project in VSCode
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
 Explain how to run the automated tests for this system. Break down into which tests and what they do
 
-### Unit Tests 
+### Mocha
 
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
-
-### Integration Tests 
-Explain what these tests test, why and how to run them
+JS testing framework specifically designed for use with asynchronous functions.
 
 ```
 Give an example
 ```
 
-### User-acceptance Tests
+### Chai
+
+Testing framework for integration-testing web-applications.
+
+```
+Give an example
+```
+
+### Jest
 
 Explain what these tests test and why
 
@@ -76,17 +93,19 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
+```
+Step 1. Run "runme.bat"
+```
+
 ## Built With
 
-* [Html](https://en.wikipedia.org/wiki/HTML), [Css](https://en.wikipedia.org/wiki/CSS) & [JavaScript](https://www.javascript.com/) - Front-End Web Technologies
-* [Java](https://www.java.com/en/) - Back-End Programming Language
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [Spring](https://spring.io/) - API Development Platform
-* [SonarQube](https://www.sonarqube.org/) - Static Analysis
-* [MySQL](https://www.mysql.com/) - Database Management
-* [JUnit](https://junit.org/junit4/) - Unit Testing
-* [Mockito](https://site.mockito.org/) - Unit Testing
-* [Selenium](https://www.selenium.dev/) - User-Acceptancce Testing
+* [MongoDB](https://www.mongodb.com/) - Document Database
+* [Express](https://expressjs.com/) - Back-End Framework
+* [Node](https://nodejs.org/) - JS Runtime Environment
+* [React](https://reactjs.org/) - Front-End Library
+* [Mocha](https://mochajs.org/) - Testing
+* [Chai](https://www.chaijs.com/) - Testing
+* [Jest](https://jestjs.io/) - Testing
 
 ## Versioning
 
@@ -94,7 +113,11 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Jordan Lewis** - [JLLQA](https://github.com/JLLQA)
+* **Mark Gasmido** - [markgasmidoQA](https://github.com/markgasmidoQA)
+* **Philip Ugona** - [PUgonaQA](https://github.com/PUgonaQA)
+* **Ryan Glennerster** - [RyanGlennersterQA](https://github.com/RyanGlennersterQA)
+* **Mohamed Sajath Raffeek** - [sajathraffeekQA](https://github.com/sajathraffeekQA)
 
 ## License
 

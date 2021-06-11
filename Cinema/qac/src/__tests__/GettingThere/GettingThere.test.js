@@ -1,31 +1,35 @@
 import '@testing-library/jest-dom';
 import { getByTestId, getByText, render, screen } from '@testing-library/react';
 import GettingThere from '../../Components/GettingThere/GettingThere';
+import { render, screen } from '@testing-library/react';
 
-describe('Tests for the Getting There page', () => {
+import renderer from 'react-test-renderer';
+import { BrowserRouter as Router} from "react-router-dom"
 
-test('GETTING TO THE CINEMA text is present', () => {
-  render( <GettingThere /> );
-  const gettingText = screen.getByText("GETTING TO THE CINEMA");
-  expect(gettingText).toBeInTheDocument();
-  });
+import GettingThere from '../../Components/GettingThere/GettingThere';
 
-  test('Getting address in the getting there page', () => {
-    render(<GettingThere /> );
-  const addressText = screen.getByText(/M1 6FQ/i);
-  expect(addressText).tobeInTheDocument();
+describe('test for GettingThere page', () => {
 
-  });
+    test('Getting There heading text is present', () => {
+        render(<Router>
+       <GettingThere />
+        </Router>);
+        const linkElement = screen.getByText("GETTING TO THE CINEMA");
+        expect(linkElement).toBeInTheDocument();
+    });
 
-//   test('Getting address', () => {
+    test("testing hrefs to contain links", () => {
+        render(<Router>
+        <GettingThere />
+         </Router>);
+        expect(screen.getByRole('link', { name: /"Places to Go"/i })).toHaveAttribute('href', '/places');
+    });
 
-//     render(<GettingThere /> );
-
-//     const element = getByText('M1 6FQ')
-
-// expect(element).toHaveTextContent('M1 6FQ')
-
-
-//   });
-
+    test("It matches the snapshot", () => {
+        render(<Router>
+            <GettingThere />
+             </Router>);
+        const tree = renderer.create(<h5>We advise pre-booking your parking here to make your travel to the venue much quicker and more economic.</h5>).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 });
